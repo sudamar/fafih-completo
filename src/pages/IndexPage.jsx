@@ -3,6 +3,7 @@ import About from '../components/index/About';
 import Atendimentos from '../components/index/Atendimentos';
 import Cursos from '../components/index/Cursos';
 import Depoimentos from '../components/index/Depoimentos';
+import Noticias from '../components/index/Noticias';
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <Atendimentos />
       <Cursos />
       <Depoimentos />
+      <Noticias />
     </main>
   );
 };
