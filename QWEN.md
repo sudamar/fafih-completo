@@ -1,0 +1,1 @@
+Ler e seguir as recomendações presente nos arquivos CLAUDE.MD e ESTRUTURA.md antes de codificar no projeto. 

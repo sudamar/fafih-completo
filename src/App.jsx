@@ -18,6 +18,9 @@ import MembrosAnalistasPage from './pages/MembrosAnalistasPage';
 import NoticiasCartaAbertaPage from './pages/NoticiasCartaAbertaPage';
 import NoticiasCursosPage from './pages/NoticiasCursosPage';
 import OuvidoriaPage from './pages/OuvidoriaPage';
+import NucleoApoioDocentePage from './pages/NucleoApoioDocentePage';
+import PolosPage from './pages/PolosPage';
+import RegulamentosPage from './pages/RegulamentosPage';
 
 function App() {
   useEffect(() => {
@@ -74,6 +77,9 @@ function App() {
           <Route path="/noticia-carta-aberta" element={<NoticiasCartaAbertaPage />} />
           <Route path="/noticia-cursos" element={<NoticiasCursosPage />} />
           <Route path="/ouvidoria" element={<OuvidoriaPage />} />
+          <Route path="/nucleo-apoio-docente" element={<NucleoApoioDocentePage />} />
+          <Route path="/polos" element={<PolosPage />} />
+          <Route path="/regulamentos" element={<RegulamentosPage />} />
         </Routes>
         <Footer />
         <CookieConsent />
