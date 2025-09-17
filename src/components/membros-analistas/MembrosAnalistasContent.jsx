@@ -1,0 +1,520 @@
+import styles from './MembrosAnalistasContent.module.css';
+
+const MembrosAnalistasContent = () => {
+  const analistas = [
+    {
+      nome: "Ajax Perez Salvador",
+      tipo: "Analista Didata",
+      cidade: "São Paulo - Pinheiros / SP",
+      telefone: "(11) 99136-5956",
+      email: "apersal@uol.com.br"
+    },
+    {
+      nome: "Ana Paula Maluf",
+      tipo: "Analista Didata",
+      telefone: "(11) 94123-0102",
+      email: "anapaulazm@yahoo.com.br"
+    },
+    {
+      nome: "André Orioli",
+      tipo: "Analista em Formação",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "(21) 99978-3477",
+      email: "profunda.psi@gmail.com"
+    },
+    {
+      nome: "Bárbara Pessanha Lima",
+      tipo: "Analista Didata em Formação",
+      endereco: "Clínica Revigore Rua República do Peru, 444. Copacabana.",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "(21) 98266-8835",
+      email: "barbarapesslima@gmail.com"
+    },
+    {
+      nome: "Beatriz Proença Whitaker de Assumpção",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 98134-4004",
+      email: "biapwa@gmail.com"
+    },
+    {
+      nome: "Carolina Held dos Santos",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99550-3540",
+      email: "carolinaheld17@gmail.com"
+    },
+    {
+      nome: "Caroline Santos Costa",
+      tipo: "Analista em Formação",
+      cidade: "Porto Alegre/RS / RS",
+      telefone: "(61) 98526-4506",
+      email: "caroline.s.costa82@gmail.com"
+    },
+    {
+      nome: "Claci Maria Strieder",
+      tipo: "Membro Analista",
+      endereco: "SDN - Conj. Nacional de Brasília Torre Vermelha - Sala 4076",
+      cidade: "Brasília / DF",
+      telefone: "(61) 99951-0003",
+      email: "clacims@gmail.com"
+    },
+    {
+      nome: "Clarisse Grand Court",
+      tipo: "Analista em Formação",
+      endereco: "Travessa Visconde de Morais, 226 - Botafogo",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "(21) 99182-7547",
+      email: "clarisse.court@gmail.com"
+    },
+    {
+      nome: "Cristiane dos Santos",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99488-7593",
+      email: "crissantos68@gmail"
+    },
+    {
+      nome: "Daniel Gomes",
+      tipo: "Membro Analista",
+      endereco: "Rua Doutor Thirso Martins, 100 cj 314 - Vila Mariana",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 98415-3021",
+      email: "dgterapia@gmail.com"
+    },
+    {
+      nome: "Daniela Aimar Euzebio",
+      tipo: "Membro Analista",
+      endereco: "R. Domingos de Morais, 2781 -(ao lado do metrô Santa Cruz).",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99623-5529",
+      email: "daniela.euzebio@gmail.com"
+    },
+    {
+      nome: "Denise Largman",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 94650-4444",
+      email: "deniselargman@gmail.com"
+    },
+    {
+      nome: "Dimas Künsch",
+      tipo: "Analista em Formação",
+      endereco: "R. Olimpia de Almeida Prado, 27 Barra Funda ( próximo ao metrô Marechal Deodoro)",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99789-1771",
+      email: "dimas.kunsch@gmail.com"
+    },
+    {
+      nome: "Dulce Kurauti",
+      tipo: "Membro Analista",
+      endereco: "Vila Mariana.",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 95681-6931",
+      email: "dulce_kurauti@hotmail.com"
+    },
+    {
+      nome: "Elaine Cristina Bedin",
+      tipo: "Analista em Formação",
+      endereco: "Av. Santa Inês 909 sala 6 -- Santana (próximo ao metro Santana e Jardins)",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 2769-6475 / (11) 99628-9241",
+      email: "elainebedinreis@gmail.com"
+    },
+    {
+      nome: "Elfriede Cristina Seidel Walzberg",
+      tipo: "Analista em Formação",
+      endereco: "Alameda Jabuta 616",
+      cidade: "Vinhedo / SP",
+      telefone: "(19) 99712-5072",
+      email: "elfriede.walzberg@gmail.com"
+    },
+    {
+      nome: "Euflausina Goes dos Santos",
+      tipo: "Analista em Formação",
+      endereco: "Rua Dr. Pinto Ferraz, 313 - casa 03 Vila Mariana - São Paulo/SP (Em frente ao metrô Vila Mariana) / Rua Olivério Guaranha, 51 - Mandaqui - São Paulo/SP",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 97140-3129",
+      email: "euflau@gmail.com"
+    },
+    {
+      nome: "Everton de Brito Dias",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo",
+      telefone: "(786) 223-0125",
+      email: "everton.dias@gmail.com"
+    },
+    {
+      nome: "Gabriel Andrade",
+      tipo: "Analista em Formação",
+      cidade: "Brasília / DF",
+      telefone: "(61) 99645-5430",
+      email: "gabriel.g3p@gmail.com"
+    },
+    {
+      nome: "Gilmara Marques Fadim Alves",
+      tipo: "Analista Didata em Formação",
+      endereco: "R. Manuel da Nóbrega, 354 - Paraíso ( próximo ao Metrô Brigadeiro).",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99201-0118",
+      email: "gmf.alves@terra.com.br"
+    },
+    {
+      nome: "Guilherme Henrique Gazzotto Duque",
+      tipo: "Analista em Formação",
+      cidade: "Maringá / PR",
+      telefone: "(43) 99644-2171",
+      email: "guilherme.hg.duque@gmail.com"
+    },
+    {
+      nome: "Isa Fernanda Vianna Carvalho",
+      tipo: "Analista em Formação",
+      endereco: "Estrada do Limoeiro, 1680/casa 23,",
+      cidade: "Guapimirim / RJ",
+      telefone: "(21) 2010-3363 / (21) 97282-3226",
+      email: "isafvc@gmail.com",
+      biografia: "Atendimentos na Tijuca e no Catete no Rio de Janeiro."
+    },
+    {
+      nome: "Itala Resendde Carvalhal",
+      tipo: "Analista em Formação",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "(21) 99347-1835",
+      email: "itala.carvalhal@gmail.com"
+    },
+    {
+      nome: "Ivone Ferreira",
+      tipo: "Membro Analista",
+      endereco: "Rua Barão do Triunfo, 427 cj 1002 - Campo Belo",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 5031-6203",
+      email: "ivone@nucleoivoneferreira.com.br"
+    },
+    {
+      nome: "Jaqueline Aguiar Carvalho",
+      tipo: "Analista em Formação",
+      cidade: "Uberaba / MG",
+      telefone: "(34) 99117-6533",
+      email: "jac.aguiarcarvalho@gmail.com"
+    },
+    {
+      nome: "José Eugenio de Oliveira Menezes",
+      tipo: "Analista em Formação",
+      endereco: "Rua Rocha 490. Apto 45",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99449-3332",
+      email: "menezes.eugenio@gmail.com"
+    },
+    {
+      nome: "José Luiz Balestrini Junior",
+      tipo: "Analista Didata em Formação",
+      endereco: "Av. Ibijau, 236 - Moema",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 98207-7766",
+      email: "balestrini@lungfu.com.br"
+    },
+    {
+      nome: "Keller Alves Villela Ocaña Bruno",
+      tipo: "Membro Analista",
+      endereco: "Rua Dr. Pinto Ferraz, 313 casa 3, Vila Mariana.",
+      cidade: "São Paulo e Guarulhos / SP",
+      telefone: "(11) 98225-4490",
+      email: "kellervillela@terra.com.br"
+    },
+    {
+      nome: "Leandro Scapellato Cruz",
+      tipo: "Analista em Formação",
+      endereco: "Instituto Innsaei, SHIN QL 5, CJ 05, Casa 12,- Lago Norte , Brasília/DF.",
+      cidade: "Brasília / DF",
+      telefone: "(61) 99915-0219",
+      email: "institutoinnsaei@gmail.com"
+    },
+    {
+      nome: "Leila Cristina Montanha",
+      tipo: "Membro Analista",
+      endereco: "Rua Ponte Alta, 36 - Aclimação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 98596-8335",
+      email: "leilacm@uol.com.br"
+    },
+    {
+      nome: "Leonardo Torres",
+      tipo: "Analista Didata em Formação",
+      endereco: "Rua Dr. Pinto Ferraz, 313 casa 3, Vila Mariana.",
+      cidade: "São Paulo / SP",
+      telefone: "(54) 99331-0389",
+      email: "leosouzatorres@gmail.com"
+    },
+    {
+      nome: "Lia Romano",
+      tipo: "Analista Didata",
+      endereco: "Rua Dona Avelina, 346 - Vila Mariana",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 5579-5761",
+      email: "lia.romano@uol.com.br"
+    },
+    {
+      nome: "Lilian Wurzba",
+      tipo: "Analista Didata",
+      endereco: "Al. Iraé, 620, cj. 93 - Moema",
+      cidade: "(11) 5051-6891 / SP",
+      telefone: "(11) 5051-6891",
+      email: "laliwi@uol.com.br"
+    },
+    {
+      nome: "Lorena de Sousa Oliveira",
+      tipo: "Analista em Formação",
+      endereco: "Qs 31 Conjunto 4 Lote 1, Riacho Fundo II, Brasília, DF",
+      cidade: "Brasilia / DF",
+      telefone: "(61) 99179-1880",
+      email: "olivslorena@gmail.com"
+    },
+    {
+      nome: "Luciana Gimenes Branco",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99985-2654",
+      email: "lubranco@embranco.etc.br"
+    },
+    {
+      nome: "Marcella Helena Ferreira",
+      tipo: "Membro Analista",
+      endereco: "Rua Doutor Thirso Martins, 100 cj 314 - Vila Mariana (metrô Santa Cruz)",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99604-5099",
+      email: "marcellahlferreira@gmail.com"
+    },
+    {
+      nome: "Maria Cristina Guarnieri",
+      tipo: "Analista Didata",
+      cidade: "São Paulo - Pinheiros / SP",
+      telefone: "(11) 3085-7973",
+      email: "crisguarnieri@uol.com.br"
+    },
+    {
+      nome: "Maria da Glória G. de Miranda",
+      tipo: "Analista Didata em Formação",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99338-3545",
+      email: "mgloriagmiranda@gmail.com"
+    },
+    {
+      nome: "Maria Helena Soares Marinho",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo",
+      telefone: "(11) 98256-5819",
+      email: "lemarinhofernandes@gmail.com"
+    },
+    {
+      nome: "Maria Ivanilde Ferreira Alves",
+      tipo: "Analista em Formação",
+      cidade: "Brasília - Sobradinho / DF",
+      telefone: "(61) 99984-9922",
+      email: "ivyalves41@yahoo.com.br"
+    },
+    {
+      nome: "Marta Beatriz Conceição Guedes",
+      tipo: "Analista em Formação",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "(21) 99227-7468",
+      email: "guedes.marta@gmail.com"
+    },
+    {
+      nome: "Mauro Ângelo Soave Junior",
+      tipo: "Analista Didata em Formação",
+      endereco: "Atendimento online.",
+      cidade: "Brasília / DF",
+      telefone: "(61) 99677-4719",
+      email: "maurosohan@gmail.com"
+    },
+    {
+      nome: "Michella Paula Cechinel Reis",
+      tipo: "Analista em Formação",
+      endereco: "SHCGN 707, bloco A, casa 36, Asa Norte, Brasília-DF CEP 70-740.731",
+      cidade: "Brasília / DF",
+      telefone: "(61) 99561-0990",
+      email: "michellacechinel@gmail.com"
+    },
+    {
+      nome: "Mônica Araujo Contreras",
+      tipo: "Analista em Formação",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "21 99573-5043",
+      email: "psi.acontreras@gmail.com"
+    },
+    {
+      nome: "Monica Martinez",
+      tipo: "Analista em Formação",
+      endereco: "Rua Girassol, 139 - cj. 42 - Vila Madalena e Open Mall The Square - Rodovia Raposo Tavares, km 22. - Conjunto 311 - Bloco C - Granja Viana - Cotia - SP .",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99449-5034",
+      email: "monicamartinezpsi@gmail.com"
+    },
+    {
+      nome: "Natalhe Vieni",
+      tipo: "Analista Didata em Formação",
+      endereco: "Rua Doutor Pinto Ferraz, 313 casa 3 - Vila Mariana (ao lado do metrô vila mariana).",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99456-0194",
+      email: "natalhegarciacosta@gmail.com"
+    },
+    {
+      nome: "Patricia Moura Vernalha",
+      tipo: "Analista em Formação",
+      endereco: "Rua Professor Germano Negrini ,113- Centro ,São Roque SP",
+      cidade: "São Paulo / SP",
+      telefone: "11 4098-5000",
+      email: "pmoura08@gmail.com"
+    },
+    {
+      nome: "Patricia Silva Cordeiro",
+      tipo: "Analista em Formação",
+      endereco: "Alameda Bristol, 189",
+      cidade: "Cotia / SP",
+      telefone: "(11) 98181-0985",
+      email: "patricia@pscergonomia.com.br"
+    },
+    {
+      nome: "Paula de Azevedo Bernardi Peñas",
+      tipo: "Analista em Formação",
+      endereco: "R. Estevão de Almeida, 106 - Perdizes, São Paulo - SP, 05014-010, Brasil",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99604-6150",
+      email: "pab.paula.bernardi@gmail.com"
+    },
+    {
+      nome: "Pedro Pimentel Rocha",
+      tipo: "Analista em Formação",
+      cidade: "Goiania / GO",
+      telefone: "62 99614-1018",
+      email: "pedrorocha2@gmail.com"
+    },
+    {
+      nome: "Rafael Rodrigues de Souza",
+      tipo: "Analista Didata em Formação",
+      endereco: "Rua Dr. Neto de Araújo, 320 -- Sala 310 -- Vila Mariana",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 99739-3491",
+      email: "rafael@solucaoativa.com.br"
+    },
+    {
+      nome: "Renata Fraccini Pastorello",
+      tipo: "Analista em Formação",
+      cidade: "São Paulo",
+      telefone: "11 - 98167-3200",
+      email: "renatapastorello@hotmail.com"
+    },
+    {
+      nome: "Rita de Cássia Macieira",
+      tipo: "Membro Analista",
+      endereco: "Rua dr. Alceu de Campos Rodrigues, 229 cj 512 - V. Olimpia",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 3842-5504",
+      email: "ritamacieira@bol.com.br"
+    },
+    {
+      nome: "Sebastien Pierre Maurice Baudry",
+      tipo: "Analista em Formação",
+      endereco: "(Principal) R. Manuel da Nóbrega, 354 -- Paraíso/ Rua Voluntários da pátria, 654 -- Santana",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 97601-0125",
+      email: "oi@sebastianb.com"
+    },
+    {
+      nome: "Selma de Fátima Silva Canôas",
+      tipo: "Membro Analista",
+      endereco: "Rua Ásia, 49 (400 metros do metro Sumaré).",
+      cidade: "São Paulo / SP",
+      telefone: "(11) 3032-4090 / (11) 3031-9280",
+      email: "selmacanoas@gmail.com"
+    },
+    {
+      nome: "Silvana Gomes Venancio",
+      tipo: "Analista em Formação",
+      cidade: "Rio de Janeiro / RJ",
+      telefone: "21 99799-2971",
+      email: "sgvenancio@gmail.com"
+    },
+    {
+      nome: "Silvia Maria Guerra Molina",
+      tipo: "Membro Analista",
+      cidade: "São Paulo - Piracicaba / SP",
+      telefone: "(19) 99151-0909 / (19) 3434-8593",
+      email: "silvia.maria@gmail.com"
+    },
+    {
+      nome: "Simone Magaldi",
+      tipo: "Analista Didata",
+      cidade: "São Paulo - Moema / SP",
+      telefone: "(11) 5535-4695 / (11) 94066-0279 WhatsApp",
+      email: "simonemagaldi@ijep.com.br"
+    },
+    {
+      nome: "Tania Pulier Garrido",
+      tipo: "Analista em Formação",
+      endereco: "Rua Pero Vaz de Caminha, 293, Vila Valença, São Vicente, SP",
+      telefone: "(13) 99722-9503",
+      email: "tania.pulier@gmail.com"
+    },
+    {
+      nome: "Wagner Hilário Padula Borges",
+      tipo: "Analista em Formação",
+      endereco: "Guarulhos/São Paulo - SP",
+      telefone: "11 99603-1980",
+      email: "wagner.hilariopb@gmail.com"
+    },
+    {
+      nome: "Waldemar Magaldi Filho",
+      tipo: "Analista Didata",
+      cidade: "São Paulo - Moema / SP",
+      telefone: "(11) 5535-4695 / 11 94066-0279 WhatsApp",
+      email: "wmagaldi@ijep.com.br"
+    }
+  ];
+
+  return (
+    <section className="page-section">
+      <div className="container">
+        <h1>Nossos Membros Analistas</h1>
+        <div className="conheca-intro">
+          <p>Conheça o corpo de analistas do IJEP, profissionais qualificados, especialistas pós-graduados pela FAFIH, dedicados à prática clínica e ao contínuo aprofundamento de sua formação em psicologia analítica e suas vertentes.</p>
+        </div>
+
+        <div className={styles.analistasGrid}>
+          {analistas.map((analista, index) => (
+            <div key={index} className={styles.analistaCard}>
+              <h2>{analista.nome}</h2>
+              <p className={styles.tipo}>{analista.tipo}</p>
+
+              {analista.endereco && (
+                <p><strong>Endereço:</strong> {analista.endereco}</p>
+              )}
+
+              {analista.cidade && (
+                <p><strong>Cidade:</strong> {analista.cidade}</p>
+              )}
+
+              {analista.telefone && (
+                <p><strong>Telefone:</strong> {analista.telefone}</p>
+              )}
+
+              {analista.email && (
+                <p><strong>Email:</strong> <a href={`mailto:${analista.email}`}>{analista.email}</a></p>
+              )}
+
+              {analista.biografia && (
+                <p><strong>Biografia:</strong> {analista.biografia}</p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="page-actions">
+          <a href="/" className="btn-page-action btn-secondary">Voltar</a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default MembrosAnalistasContent;

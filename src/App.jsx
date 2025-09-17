@@ -12,6 +12,12 @@ import ConsultarDiplomaPage from './pages/ConsultarDiplomaPage';
 import CorpoDocentePage from './pages/CorpoDocentePage';
 import CpaPage from './pages/CpaPage';
 import CursoAionJoPage from './pages/CursoAionJoPage';
+import FormasIngressoPage from './pages/FormasIngressoPage';
+import IniciacaoCientificaPage from './pages/IniciacaoCientificaPage';
+import MembrosAnalistasPage from './pages/MembrosAnalistasPage';
+import NoticiasCartaAbertaPage from './pages/NoticiasCartaAbertaPage';
+import NoticiasCursosPage from './pages/NoticiasCursosPage';
+import OuvidoriaPage from './pages/OuvidoriaPage';
 
 function App() {
   useEffect(() => {
@@ -62,6 +68,12 @@ function App() {
           <Route path="/corpo-docente" element={<CorpoDocentePage />} />
           <Route path="/cpa" element={<CpaPage />} />
           <Route path="/curso-aion-jo" element={<CursoAionJoPage />} />
+          <Route path="/formas-de-ingresso" element={<FormasIngressoPage />} />
+          <Route path="/iniciacao-cientifica" element={<IniciacaoCientificaPage />} />
+          <Route path="/membros-analistas" element={<MembrosAnalistasPage />} />
+          <Route path="/noticia-carta-aberta" element={<NoticiasCartaAbertaPage />} />
+          <Route path="/noticia-cursos" element={<NoticiasCursosPage />} />
+          <Route path="/ouvidoria" element={<OuvidoriaPage />} />
         </Routes>
         <Footer />
         <CookieConsent />

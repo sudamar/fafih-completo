@@ -1,0 +1,116 @@
+.articleContent {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.articleContent p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.coursesList {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.courseItem {
+  background-color: var(--background-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.courseItem h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.courseItem p {
+  margin-bottom: 0;
+  font-style: italic;
+  color: #555;
+}
+
+.highlight {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.highlight p {
+  margin-bottom: 0;
+  text-align: left;
+  font-weight: 500;
+}
+
+.scheduleInfo {
+  background-color: var(--background-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.scheduleInfo h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.scheduleInfo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.scheduleInfo li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.scheduleInfo li:before {
+  content: "•";
+  color: var(--secondary-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.scheduleInfo li:last-child {
+  border-bottom: none;
+}
+
+.enrollmentBanner {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.enrollmentBanner h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.enrollmentBanner p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}

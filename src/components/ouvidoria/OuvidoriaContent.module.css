@@ -1,0 +1,226 @@
+/* Ouvidoria Styles */
+.ouvidoria-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.ouvidoria-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid;
+  border-image: var(--gradient) 1;
+}
+
+.info-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-card ul li:last-child {
+  border-bottom: none;
+}
+
+.ouvidoria-form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid;
+  border-image: var(--gradient) 1;
+}
+
+.ouvidoria-form h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-row:has(.form-group:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+  font-family: 'Lato', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.btn-reset {
+  background-color: #6c757d;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-reset:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+
+.ouvidoria-contact {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid;
+  border-image: var(--gradient) 1;
+  margin-bottom: 2rem;
+}
+
+.ouvidoria-contact h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.contact-item {
+  text-align: center;
+  padding: 1rem;
+}
+
+.contact-item h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .ouvidoria-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-submit,
+  .btn-reset {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .ouvidoria-form {
+    padding: 1.5rem;
+  }
+
+  .info-card {
+    padding: 1rem;
+  }
+}

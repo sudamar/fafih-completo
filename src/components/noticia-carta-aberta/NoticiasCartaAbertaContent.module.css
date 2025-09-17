@@ -1,0 +1,48 @@
+.articleContent {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.articleContent p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+.quote {
+  background-color: var(--background-color);
+  border-left: 4px solid var(--secondary-color);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.quote p {
+  font-style: italic;
+  color: #444;
+  margin-bottom: 0;
+}
+
+.author {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.author p {
+  margin-bottom: 0;
+  text-align: left;
+  font-weight: 500;
+}
+
+.author strong {
+  font-weight: 700;
+}
