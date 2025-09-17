@@ -1,0 +1,185 @@
+/* Estilos para a página da Ouvidoria */
+
+.ouvidoria-page .page-header {
+  background-color: #2c3e50;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.ouvidoria-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto 3rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.ouvidoria-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ouvidoria-info-cards .info-card {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #3498db;
+}
+
+.ouvidoria-info-cards .info-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #2c3e50;
+}
+
+.ouvidoria-info-cards .info-card p,
+.ouvidoria-info-cards .info-card ul {
+  color: #555;
+}
+
+.ouvidoria-info-cards .info-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.ouvidoria-info-cards .info-card ul li {
+  margin-bottom: 0.5rem;
+}
+
+.ouvidoria-form-container {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.ouvidoria-form-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.ouvidoria-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.ouvidoria-form .form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.ouvidoria-form input[type="text"],
+.ouvidoria-form input[type="email"],
+.ouvidoria-form input[type="tel"],
+.ouvidoria-form select,
+.ouvidoria-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.ouvidoria-form input:focus,
+.ouvidoria-form select:focus,
+.ouvidoria-form textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.ouvidoria-form .radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.ouvidoria-form .radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: #2980b9;
+}
+
+.btn-submit:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.ouvidoria-contato {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.ouvidoria-contato h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.contato-item {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.contato-item h3 {
+  font-size: 1.3rem;
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+.contato-item p {
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .ouvidoria-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
+}

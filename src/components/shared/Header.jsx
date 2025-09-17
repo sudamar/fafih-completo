@@ -48,6 +48,7 @@ const Header = () => {
       <div className={`header-group-right ${isMenuOpen ? 'nav-active' : ''}`}>
         <nav>
           <ul>
+            <li><Link to="/">Início</Link></li>
             <li className={openDropdown === 'institucional' ? 'open' : ''}>
               <a href="#conheca-fafih" onClick={() => toggleDropdown('institucional')}>Institucional</a>
               <ul className="dropdown-menu">
@@ -80,7 +81,7 @@ const Header = () => {
             <li className={openDropdown === 'contato' ? 'open' : ''}>
               <a href="#contato" onClick={() => toggleDropdown('contato')}>Contato</a>
               <ul className="dropdown-menu">
-                <li><a href="#" className="ouvidoria-trigger">Ouvidoria</a></li>
+                <li><Link to="/ouvidoria">Ouvidoria</Link></li>
                 <li><Link to="/perguntas-frequentes">Perguntas Frequentes</Link></li>
               </ul>
             </li>
