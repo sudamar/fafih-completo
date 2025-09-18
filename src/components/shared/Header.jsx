@@ -83,6 +83,7 @@ const Header = () => {
               <ul className="dropdown-menu">
                 <li><Link to="/ouvidoria">Ouvidoria</Link></li>
                 <li><Link to="/perguntas-frequentes">Perguntas Frequentes</Link></li>
+                <li><Link to="/consultar-diploma">Consultar Diploma</Link></li>
               </ul>
             </li>
           </ul>

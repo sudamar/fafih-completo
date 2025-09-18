@@ -1,0 +1,146 @@
+
+.pageSection {
+    padding: 4rem 5%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.container h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--primary-color, #0A2342); /* Added fallback */
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.container h1::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000); /* Using the gradient directly */
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.introText {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: -2rem auto 3rem auto;
+    color: #444;
+}
+
+.infoText {
+    font-size: 0.95rem;
+    text-align: justify;
+    max-width: 800px;
+    margin: 3rem auto 0 auto;
+    color: #555;
+}
+
+/* Formulário de Consulta */
+.searchFormContainer {
+    background-color: var(--card-bg, #FFFFFF); /* Added fallback */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.searchFormContainer h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--secondary-color, #2C678F); /* Added fallback */
+    text-align: left;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.searchGroup {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.formField {
+    flex: 1;
+}
+
+.formField label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #555;
+}
+
+.formField input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
+
+.separator {
+    text-align: center;
+    font-weight: 700;
+    color: var(--secondary-color, #2C678F); /* Added fallback */
+    margin: 0.75rem 0;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btnForm {
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid var(--primary-color, #0A2342); /* Added fallback */
+}
+
+.btnPrimary {
+    background-color: var(--primary-color, #0A2342); /* Added fallback */
+    color: white;
+}
+
+.btnPrimary:hover {
+    background-color: #081c33;
+    border-color: #081c33;
+}
+
+.btnOutline {
+    background-color: transparent;
+    color: var(--primary-color, #0A2342); /* Added fallback */
+}
+
+.btnOutline:hover {
+    background-color: var(--primary-color, #0A2342); /* Added fallback */
+    color: white;
+}
+
+.buttonContainer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .searchGroup {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
