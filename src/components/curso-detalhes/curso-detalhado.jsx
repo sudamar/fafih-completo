@@ -373,38 +373,6 @@ const CursoDetalhado = ({ courseId }) => {
                 </div>
               </article>
             )}
-          </div>
-
-          <aside className={styles.sidebar}>
-            <section className={styles.sidebarCard}>
-              <div className={styles.sidebarPrice}>
-                {price && <strong>{price}</strong>}
-                {price && <span>À vista ou em até 18x</span>}
-                {monthlyPrice && <small>{monthlyPrice}</small>}
-              </div>
-
-              {enrollmentInfo.length > 0 && (
-                <div className={styles.sidebarMeta}>
-                  {enrollmentInfo.map((item) => (
-                    <span key={item.label}>
-                      <span className={styles.metaIcon}>
-                        <i aria-hidden className={item.icon} />
-                      </span>
-                      {item.label}: {item.value}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              <div className={styles.sidebarButtons}>
-                <button type="button" className={styles.primaryButton}>
-                  Inscrever-se Agora
-                </button>
-                <button type="button" className={styles.secondaryButton}>
-                  Download da Ementa
-                </button>
-              </div>
-            </section>
 
             {supportChannels.length > 0 && (
               <section className={styles.contactCard}>
@@ -445,6 +413,38 @@ const CursoDetalhado = ({ courseId }) => {
                 </div>
               </section>
             )}
+          </div>
+
+          <aside className={styles.sidebar}>
+            <section className={styles.sidebarCard}>
+              <div className={styles.sidebarPrice}>
+                {price && <strong>{price}</strong>}
+                {price && <span>À vista ou em até 18x</span>}
+                {monthlyPrice && <small>{monthlyPrice}</small>}
+              </div>
+
+              {enrollmentInfo.length > 0 && (
+                <div className={styles.sidebarMeta}>
+                  {enrollmentInfo.map((item) => (
+                    <span key={item.label}>
+                      <span className={styles.metaIcon}>
+                        <i aria-hidden className={item.icon} />
+                      </span>
+                      {item.label}: {item.value}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <div className={styles.sidebarButtons}>
+                <button type="button" className={styles.primaryButton}>
+                  Inscrever-se Agora
+                </button>
+                <button type="button" className={styles.secondaryButton}>
+                  Download da Ementa
+                </button>
+              </div>
+            </section>
           </aside>
         </div>
       </div>
