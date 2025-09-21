@@ -1,12 +1,11 @@
 
-let heroVideoCursoPosJung = '../../assets/video-curso-1.mp4';
-let heroVideoCursoPsicosomatica = '../../assets/video-curso-2.mp4';
-let heroVideoCursoArteterapia = '../../assets/video-curso-3.mp4';
-let heroVideoCursoLivrosNegros = '../../assets/video-curso-4.mp4';
-let heroVideoCursoSonhando = '../../assets/video-curso-5.mp4';
-let heroVideoCursoDeAion = '../../assets/video-curso-6.mp4';
-let heroVideoCursoFormacao = '../../assets/video-curso-7.mp4';
-let heroVideoCursoEventos = '../../assets/video-curso-8.mp4';
+import heroVideoCursoPosJung from '../../assets/videos/video-curso-1.mp4';
+import heroVideoCursoPsicosomatica from '../../assets/videos/video-curso-2.mp4';
+import heroVideoCursoArteterapia from '../../assets/videos/video-curso-3.mp4';
+import heroVideoCursoLivrosNegros from '../../assets/videos/video-curso-4.mp4';
+import heroVideoCursoSonhando from '../../assets/videos/video-curso-5.mp4';
+import heroVideoCursoDeAion from '../../assets/videos/video-curso-6.mp4';
+import heroVideoCursoFormacao from '../../assets/videos/video-curso-7.mp4';
 
 export const courseDetailsMap = {
   1: {
@@ -711,10 +710,9 @@ export const courseDetailsMap = {
     ],
     image: 'https://i.imgur.com/M3vP6UT.png',
     hero: {
-      type: 'video',
-      source: heroVideoCursoEventos,
+      type: 'image',
+      source: 'https://i.imgur.com/M3vP6UT.png',
       alt: 'Divulgação dos Congressos Junguianos do IJEP',
-      fallbackImage: 'https://i.imgur.com/M3vP6UT.png',
     },
     category: 'eventos',
     categoryLabel: 'Eventos',
