@@ -12,7 +12,7 @@ const CorpoDocenteContent = () => {
       especialidade: "Filosofia Contemporânea, Epistemologia",
       email: "carlos.silva@fafih.edu.br",
       categoria: "doutor",
-      foto: "https://i.imgur.com/placeholder1.jpg"
+      foto: "https://randomuser.me/api/portraits/men/1.jpg"
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ const CorpoDocenteContent = () => {
       especialidade: "Arte Contemporânea, Curadoria",
       email: "maria.santos@fafih.edu.br",
       categoria: "doutor",
-      foto: "https://i.imgur.com/placeholder2.jpg"
+      foto: "https://randomuser.me/api/portraits/women/2.jpg"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const CorpoDocenteContent = () => {
       especialidade: "Psicologia Junguiana, Imaginário",
       email: "joao.oliveira@fafih.edu.br",
       categoria: "mestre",
-      foto: "https://i.imgur.com/placeholder3.jpg"
+      foto: "https://randomuser.me/api/portraits/men/3.jpg"
     },
     {
       id: 4,
@@ -42,7 +42,7 @@ const CorpoDocenteContent = () => {
       especialidade: "Literatura e Imaginário, Mitocrítica",
       email: "ana.costa@fafih.edu.br",
       categoria: "doutor",
-      foto: "https://i.imgur.com/placeholder4.jpg"
+      foto: "https://randomuser.me/api/portraits/women/4.jpg"
     },
     {
       id: 5,
@@ -52,7 +52,7 @@ const CorpoDocenteContent = () => {
       especialidade: "Arte Medieval, Iconografia",
       email: "roberto.mendes@fafih.edu.br",
       categoria: "doutor",
-      foto: "https://i.imgur.com/placeholder5.jpg"
+      foto: "https://randomuser.me/api/portraits/men/5.jpg"
     },
     {
       id: 6,
@@ -62,7 +62,7 @@ const CorpoDocenteContent = () => {
       especialidade: "Pedagogia Waldorf, Arte-Educação",
       email: "claudia.ferreira@fafih.edu.br",
       categoria: "mestre",
-      foto: "https://i.imgur.com/placeholder6.jpg"
+      foto: "https://randomuser.me/api/portraits/women/6.jpg"
     }
   ];
 

@@ -66,6 +66,7 @@ const Header = () => {
             <li className={openDropdown === 'cursos' ? 'open' : ''}>
               <a href="/#cursos" onClick={() => toggleDropdown('cursos')}>Cursos</a>
               <ul className="dropdown-menu">
+                <li><Link to="/escolha-cursos">Todos</Link></li>
                 <li><a href="/?filter=graduacao#cursos">Graduação</a></li>
                 <li><a href="/?filter=especializacao#cursos">Pós-Graduação</a></li>
                 <li><a href="/?filter=extensao#cursos">Curta e Média Duração</a></li>

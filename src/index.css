@@ -997,6 +997,491 @@ footer {
 
 .tab-content h3 {
   font-size: 1.4rem;
+
+/* Escolha de Cursos - E-commerce Styles */
+.escolha-intro {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 900px;
+  margin: -2rem auto 4rem auto;
+  color: #444;
+}
+
+.filtros-container {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow);
+}
+
+.filtros-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 200px;
+}
+
+.filtro-grupo label {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+.filtro-select {
+  padding: 0.8rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.resultados-info {
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+}
+
+.cursos-grid-ecommerce {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.curso-card-ecommerce {
+  background: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.curso-card-ecommerce:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.curso-card-ecommerce.destaque {
+  border: 3px solid #FFD700;
+}
+
+.badge-destaque {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+.curso-imagem {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.curso-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.curso-card-ecommerce:hover .curso-imagem img {
+  transform: scale(1.05);
+}
+
+.overlay-info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.modalidade {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.curso-content {
+  padding: 1.5rem;
+}
+
+.curso-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.3;
+}
+
+.curso-tipo {
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.curso-info-basica {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-item .label {
+  font-weight: 600;
+  color: #666;
+}
+
+.info-item .valor {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.curso-vagas {
+  margin: 1.5rem 0;
+}
+
+.vagas-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vagas-disponiveis {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #e9ecef;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  transition: width 0.3s ease;
+}
+
+.curso-preco {
+  margin: 1.5rem 0;
+  text-align: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.preco-original {
+  font-size: 0.9rem;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.preco-desconto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin: 0.5rem 0;
+}
+
+.valor-desconto {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.porcentagem-desconto {
+  background: #dc3545;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.preco-parcelado {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.curso-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.btn-detalhes {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid var(--secondary-color);
+  background: transparent;
+  color: var(--secondary-color);
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-detalhes:hover {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.btn-matricular {
+  flex: 2;
+  padding: 0.8rem;
+  border: none;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-matricular:hover {
+  background: #1a365d;
+  transform: translateY(-2px);
+}
+
+.btn-matricular:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: 15px;
+  max-width: 800px;
+  max-height: 90vh;
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  color: var(--primary-color);
+}
+
+.modal-header {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.modal-title h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+}
+
+.coordenador {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-section {
+  margin-bottom: 2rem;
+}
+
+.modal-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.modal-section h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.modal-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.info-coluna ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-coluna li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-section ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-footer {
+  padding: 2rem;
+  border-top: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.preco-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.valor-original {
+  font-size: 1rem;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.valor-promocional {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.btn-matricular-modal {
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-matricular-modal:hover {
+  background: #1a365d;
+}
+
+.btn-matricular-modal:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filtros-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filtro-grupo {
+    min-width: auto;
+  }
+
+  .cursos-grid-ecommerce {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .modal-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
   margin-top: 2rem;
 }
 

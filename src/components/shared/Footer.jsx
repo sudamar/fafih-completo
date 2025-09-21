@@ -1,8 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const [showModal, setShowModal] = useState(false);
+  const [updatedDate, setUpdatedDate] = useState('');
+
+  useEffect(() => {
+    const today = new Date();
+    const currentMonth = today.getMonth() + 1; // 1-12
+    const currentYear = today.getFullYear();
+
+    let semesterStartMonth;
+    let semesterStartYear = currentYear;
+
+    if (currentMonth >= 2 && currentMonth <= 7) {
+      // 1st semester (Feb-Jul), starts in February
+      semesterStartMonth = 2;
+    } else {
+      // 2nd semester (Aug-Jan), starts in August
+      semesterStartMonth = 8;
+      if (currentMonth === 1) {
+        // If it's January, the semester started in the previous year
+        semesterStartYear = currentYear - 1;
+      }
+    }
+
+    const generatedDate = new Date(semesterStartYear, semesterStartMonth - 1, 1);
+
+    const formattedDate = generatedDate.toLocaleDateString('pt-BR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    });
+
+    setUpdatedDate(formattedDate);
+  }, []);
 
   const openModal = (e) => {
     e.preventDefault();
@@ -125,7 +157,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>Credenciada EaD pela Portaria Ministerial nº 579, de 25/06/2024, DOU nº 122, de 27/06/2024, seção 1, p. 63.</p>
           <p>Mantida pelo IJEP - Instituto Junguiano de Ensino e Pesquisa</p>
-          <p>Página atualizada em 12 de setembro de 2025.</p>
+          <p>Página atualizada em {updatedDate}.</p>
           <p>© 2025 FAFIH - Faculdade de Artes, Filosofia e do Imaginário Humano. Todos os direitos reservados.</p>
         </div>
       </footer>

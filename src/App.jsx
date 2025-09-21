@@ -21,6 +21,7 @@ import OuvidoriaPage from './pages/OuvidoriaPage';
 import NucleoApoioDocentePage from './pages/NucleoApoioDocentePage';
 import PolosPage from './pages/PolosPage';
 import RegulamentosPage from './pages/RegulamentosPage';
+import EscolhaCursosPage from './pages/EscolhaCursosPage';
 
 function App() {
   useEffect(() => {
@@ -80,6 +81,7 @@ function App() {
           <Route path="/nucleo-apoio-docente" element={<NucleoApoioDocentePage />} />
           <Route path="/polos" element={<PolosPage />} />
           <Route path="/regulamentos" element={<RegulamentosPage />} />
+          <Route path="/escolha-cursos" element={<EscolhaCursosPage />} />
         </Routes>
         <Footer />
         <CookieConsent />
