@@ -1,10 +1,46 @@
+import React from 'react';
+import CheckBox from '../ui/checkbox';
+
+const FilterGroup = ({ title, items, selectedItems, onFilterChange }) => (
+  <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">
+    <h4 className="font-semibold text-gray-700 text-sm mb-3">{title}</h4>
+    <div className="flex items-center gap-x-4 flex-wrap">
+      {items.map(item => (
+        <div key={item} className="flex items-center">
+          <CheckBox
+            checked={selectedItems.includes(item)}
+            onClick={() => onFilterChange(item)}
+            size={16}
+          />
+          <label
+            htmlFor={item}
+            className="ml-2 text-sm text-gray-600 cursor-pointer whitespace-nowrap"
+            onClick={() => onFilterChange(item)}
+          >
+            {item}
+          </label>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 const FiltroCursos = ({ filters, setFilters, categories, modalities }) => {
-  const handleCheckboxChange = (filterType, value) => {
-    setFilters(prevFilters => {
-      const newValues = prevFilters[filterType].includes(value)
-        ? prevFilters[filterType].filter(v => v !== value)
-        : [...prevFilters[filterType], value];
-      return { ...prevFilters, [filterType]: newValues };
+  const handleCategoryChange = (category) => {
+    setFilters(prev => {
+      const newCategories = prev.categories.includes(category)
+        ? prev.categories.filter(c => c !== category)
+        : [...prev.categories, category];
+      return { ...prev, categories: newCategories };
+    });
+  };
+
+  const handleModalityChange = (modality) => {
+    setFilters(prev => {
+      const newModalities = prev.modalities.includes(modality)
+        ? prev.modalities.filter(m => m !== modality)
+        : [...prev.modalities, modality];
+      return { ...prev, modalities: newModalities };
     });
   };
 
@@ -13,50 +49,29 @@ const FiltroCursos = ({ filters, setFilters, categories, modalities }) => {
   }
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md" style={{border: '1px solid #eee'}}>
-      <h3 className="text-xl font-bold mb-4" style={{color: 'var(--primary-color)'}}>Filtre por</h3>
-      
-      <div className="form-group">
-        <h4 className="font-semibold mb-2" style={{color: 'var(--primary-color)'}}>Categoria</h4>
-        {categories.map(cat => (
-          <div key={cat} className="flex items-center my-2">
-            <input
-              type="checkbox"
-              id={cat}
-              value={cat}
-              checked={filters.categories.includes(cat)}
-              onChange={() => handleCheckboxChange('categories', cat)}
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-            <label htmlFor={cat} className="ml-3 text-sm text-gray-600">{cat}</label>
-          </div>
-        ))}
+    <div className="bg-white p-6 rounded-xl shadow-sm mb-8 border border-gray-100">
+      <div className="flex flex-col lg:flex-row gap-6 lg:items-start">
+        <FilterGroup
+          title="CATEGORIA"
+          items={categories}
+          selectedItems={filters.categories}
+          onFilterChange={handleCategoryChange}
+        />
+        <FilterGroup
+          title="MODALIDADE"
+          items={modalities}
+          selectedItems={filters.modalities}
+          onFilterChange={handleModalityChange}
+        />
+        <div className="flex lg:items-center lg:mt-8">
+          <button
+              onClick={clearFilters}
+              className="px-4 py-2 text-gray-500 border border-gray-300 rounded-lg hover:bg-gray-50 hover:text-gray-700 transition-all duration-200 text-sm font-medium"
+          >
+              Limpar Filtros
+          </button>
+        </div>
       </div>
-
-      <div className="form-group mt-6">
-        <h4 className="font-semibold mb-2" style={{color: 'var(--primary-color)'}}>Modalidade</h4>
-        {modalities.map(mod => (
-          <div key={mod} className="flex items-center my-2">
-            <input
-              type="checkbox"
-              id={mod}
-              value={mod}
-              checked={filters.modalities.includes(mod)}
-              onChange={() => handleCheckboxChange('modalities', mod)}
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-            />
-            <label htmlFor={mod} className="ml-3 text-sm text-gray-600">{mod}</label>
-          </div>
-        ))}
-      </div>
-
-       <button 
-        onClick={clearFilters}
-        className="w-full mt-6 btn-page-action btn-secondary"
-        style={{fontSize: '0.9rem', padding: '0.8rem'}}
-      >
-        Limpar Filtros
-      </button>
     </div>
   );
 };

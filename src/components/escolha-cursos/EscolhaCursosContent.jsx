@@ -1,6 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import CursoCard from './CursoCard';
-import FiltroCursos from './FiltroCursos';
 
 const coursesData = [
   {
@@ -93,69 +92,73 @@ const coursesData = [
   }
 ];
 
-const categories = ['Pós-Graduação', 'Curta Duração', 'Formação', 'Eventos'];
-const modalities = ['Online', 'Presencial', 'Híbrido'];
-
 const EscolhaCursosContent = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filters, setFilters] = useState({
-    categories: [],
-    modalities: [],
-  });
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filterButtons = [
+    { filter: 'all', label: 'Todos os Cursos' },
+    { filter: 'graduacao', label: 'Graduação' },
+    { filter: 'especializacao', label: 'Pós-Graduação' },
+    { filter: 'extensao', label: 'Curta Duração' },
+    { filter: 'formacao', label: 'Formação' },
+    { filter: 'eventos', label: 'Eventos' }
+  ];
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlFilter = urlParams.get('filter');
+    if (urlFilter && filterButtons.some(btn => btn.filter === urlFilter)) {
+      setActiveFilter(urlFilter);
+    }
+  }, []);
 
   const filteredCourses = useMemo(() => {
     return coursesData.filter(course => {
-      const categoryMatch = filters.categories.length === 0 || filters.categories.includes(course.categoryLabel);
-      const modalityMatch = filters.modalities.length === 0 || filters.modalities.includes(course.modalidade);
-      const searchMatch = searchTerm === '' ||
-        course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        course.description.toLowerCase().includes(searchTerm.toLowerCase());
-      return categoryMatch && modalityMatch && searchMatch;
+      // Filtro principal por categoria
+      const mainCategoryMatch = activeFilter === 'all' || course.category === activeFilter;
+      return mainCategoryMatch;
     });
-  }, [searchTerm, filters]);
+  }, [activeFilter]);
 
   return (
     <section className="page-section">
       <div className="container">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2>Nossos Cursos</h2>
           <p className="page-intro" style={{fontSize: '1.1rem', marginTop: '-2rem'}}>Encontre a formação ideal para impulsionar sua carreira e expandir seus conhecimentos.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8">
-          <aside className="md:w-1/4">
-            <FiltroCursos 
-                filters={filters} 
-                setFilters={setFilters} 
-                categories={categories}
-                modalities={modalities}
-            />
-          </aside>
-
-          <div className="md:w-3/4">
-            <div className="mb-6">
-                <input
-                    type="text"
-                    placeholder="Buscar por nome ou palavra-chave..."
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300"
-                    value={searchTerm}
-                    onChange={e => setSearchTerm(e.target.value)}
-                />
-            </div>
-            <div className="cursos-grid">
-              {filteredCourses.map(course => (
-                <CursoCard key={course.id} curso={course} />
-              ))}
-            </div>
-
-            {filteredCourses.length === 0 && (
-              <div className="text-center py-20 bg-white rounded-lg shadow-md mt-8">
-                <p className="text-2xl font-semibold text-gray-700">Nenhum curso encontrado</p>
-                <p className="text-gray-500 mt-2">Tente ajustar seus filtros ou termos de busca.</p>
-              </div>
-            )}
-          </div>
+        <div className="curso-filters mb-6">
+          {filterButtons.map(button => (
+            <button
+              key={button.filter}
+              className={activeFilter === button.filter ? 'active' : ''}
+              onClick={() => setActiveFilter(button.filter)}
+            >
+              {button.label}
+            </button>
+          ))}
         </div>
+
+        {/* <FiltroCursos
+            filters={filters}
+            setFilters={setFilters}
+            categories={categories}
+            modalities={modalities}
+        /> */}
+
+        <div className="cursos-grid">
+          {filteredCourses.map(course => (
+            <CursoCard key={course.id} curso={course} />
+          ))}
+        </div>
+
+        {filteredCourses.length === 0 && (
+          <div className="text-center py-20 bg-white rounded-lg shadow-md mt-8">
+            <p className="text-2xl font-semibold text-gray-700">Nenhum curso encontrado</p>
+            <p className="text-gray-500 mt-2">Tente ajustar seus filtros.</p>
+          </div>
+        )}
       </div>
     </section>
   );
