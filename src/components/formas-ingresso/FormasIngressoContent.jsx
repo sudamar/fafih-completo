@@ -1,39 +1,62 @@
+const formasIngresso = [
+  {
+    titulo: 'Vestibular',
+    descricao:
+      'Realize uma redação e uma prova com 15 questões de Matemática e Língua Portuguesa. Não cobramos taxa de inscrição e o resultado sai na hora.',
+    botaoTexto: 'Saiba Mais e Inscreva-se',
+    link: '#',
+  },
+  {
+    titulo: 'ENEM',
+    descricao:
+      'Utilize sua nota do ENEM e ingresse sem novo vestibular. Uma forma prática de aproveitar seu desempenho e garantir sua vaga.',
+    botaoTexto: 'Consulte as Condições',
+    link: '#',
+  },
+  {
+    titulo: 'Transferência Externa',
+    descricao:
+      'Continue sua graduação conosco. Solicite a transferência e aproveite disciplinas já cursadas, mediante análise curricular.',
+    botaoTexto: 'Veja o Edital',
+    link: '#',
+  },
+  {
+    titulo: 'Portador de Diploma',
+    descricao:
+      'Já possui uma graduação? Inicie uma nova jornada eliminando matérias equivalentes (sujeito à análise acadêmica e disponibilidade de vagas).',
+    botaoTexto: 'Inicie sua Solicitação',
+    link: '#',
+  },
+];
+
+const pageActions = [
+  {
+    texto: 'Voltar',
+    href: '/',
+    variant: 'secondary',
+  },
+  {
+    texto: 'Edital do Processo Seletivo',
+    href: '#',
+    variant: 'secondary',
+  },
+  {
+    texto: 'Inscreva-se Agora',
+    href: '#',
+    variant: 'primary',
+  },
+];
+
 const FormasIngressoContent = () => {
-  const formasIngresso = [
-    {
-      titulo: "Vestibular",
-      descricao: "Realize uma redação e uma prova com 15 questões de Matemática e Língua Portuguesa. Uma forma clássica de avaliar suas habilidades e garantir sua vaga. Não tem taxa de inscrição e o resultado é imediato.",
-      botaoTexto: "Saiba Mais e Inscreva-se",
-      link: "#"
-    },
-    {
-      titulo: "ENEM",
-      descricao: "Utilize sua nota do Exame Nacional do Ensino Médio (ENEM) para ingressar em nossos cursos sem fazer vestibular. Uma maneira prática de aproveitar seu desempenho nessa avaliação.",
-      botaoTexto: "Consulte as Condições",
-      link: "#"
-    },
-    {
-      titulo: "Transferência Externa",
-      descricao: "Já está cursando em outra instituição e deseja fazer parte da FAFIH? Solicite a transferência e continue seus estudos conosco, aproveitando as disciplinas já cursadas (sujeito à análise curricular).",
-      botaoTexto: "Veja o Edital",
-      link: "#"
-    },
-    {
-      titulo: "Portador de Diploma (Segunda Graduação)",
-      descricao: "Já possui um diploma de nível superior e quer fazer uma nova graduação? Aqui, você pode ingressar em um novo curso de graduação sem a necessidade de um novo vestibular e ainda elimina as disciplinas que já estudou no curso anterior (sujeito à análise curricular e vagas).",
-      botaoTexto: "Inicie sua Solicitação",
-      link: "#"
-    }
-  ];
 
   return (
     <section className="page-section">
       <div className="container">
         <h1>Formas de Ingresso</h1>
-
-        <div className="conheca-intro">
-          <p>Descubra os caminhos para se tornar um aluno da FAFIH e iniciar sua jornada de transformação através do conhecimento.</p>
-        </div>
+        <p className="page-intro">
+          Descubra os caminhos para se tornar um aluno da FAFIH e iniciar sua jornada de transformação
+          através do conhecimento.
+        </p>
 
         <div className="ingresso-grid">
           {formasIngresso.map((forma, index) => (
@@ -46,7 +69,11 @@ const FormasIngressoContent = () => {
         </div>
 
         <div className="page-actions">
-          <a href="/" className="btn-page-action btn-secondary">Voltar</a>
+          {pageActions.map((acao) => (
+            <a key={acao.texto} href={acao.href} className={`btn-page-action btn-${acao.variant}`}>
+              {acao.texto}
+            </a>
+          ))}
         </div>
       </div>
     </section>

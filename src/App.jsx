@@ -23,7 +23,7 @@ import PolosPage from './pages/PolosPage';
 import RegulamentosPage from './pages/RegulamentosPage';
 import EscolhaCursosPage from './pages/EscolhaCursosPage';
 import CursoDetalhesPage from './pages/CursoDetalhesPage';
-import Modelo2Page from './pages/Modelo2Page';
+import CursoDetalhadoPage from './pages/CursoDetalhadoPage';
 
 function App() {
   useEffect(() => {
@@ -85,7 +85,8 @@ function App() {
           <Route path="/regulamentos" element={<RegulamentosPage />} />
           <Route path="/escolha-cursos" element={<EscolhaCursosPage />} />
           <Route path="/curso-detalhes/:id" element={<CursoDetalhesPage />} />
-          <Route path="/modelo2" element={<Modelo2Page />} />
+          <Route path="/curso-detalhado" element={<CursoDetalhadoPage />} />
+          <Route path="/curso-detalhado/:id" element={<CursoDetalhadoPage />} />
         </Routes>
         <Footer />
         <CookieConsent />
