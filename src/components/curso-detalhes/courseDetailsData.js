@@ -26,7 +26,8 @@ export const courseDetailsMap = {
     },
     category: 'especializacao',
     categoryLabel: 'Pós-Graduação',
-    price: 2890.00,
+    price: 3890.00,
+    precoMatricula: 300.00,
     originalPrice: null,
     modalidade: 'Presencial',
     duration: '18 meses',
@@ -35,6 +36,20 @@ export const courseDetailsMap = {
     maxStudents: 'Máx. 25 alunos',
     certificate: 'Reconhecida MEC',
     monthlyPrice: 'R$ 160,56/mês',
+    justificativa: [
+      'Atende à crescente procura por especialização na Psicologia Analítica junguiana com sólida base teórica e prática supervisionada.',
+      'Integra conceitos de inconsciente coletivo, arquétipos e individuação à atuação clínica contemporânea.',
+      'Oferece ambiente de estudo e pesquisa alinhado às demandas atuais de cuidado em saúde mental e autoconhecimento.'
+    ],
+    objetivos: [
+      'Aprofundar a compreensão dos fundamentos da teoria analítica de C. G. Jung.',
+      'Aplicar métodos e técnicas da Psicologia Analítica na prática profissional.',
+      'Desenvolver competências para análise de sonhos, supervisão clínica e intervenção simbólica.'
+    ],
+    publico: [
+      'Psicólogos, psiquiatras e profissionais da saúde mental que desejam especialização em Psicologia Analítica.',
+      'Educadores, terapeutas e pesquisadores interessados em abordagens simbólicas e junguianas do psiquismo.'
+    ],
     highlights: [
       {
         icon: 'fas fa-brain',
@@ -150,8 +165,9 @@ export const courseDetailsMap = {
     },
     category: 'especializacao',
     categoryLabel: 'Pós-Graduação',
-    price: 2200.00,
-    originalPrice: null,
+    price: 6200.00,
+    precoMatricula: 300.00,
+    originalPrice: 10000.00,
     modalidade: 'Presencial',
     duration: '18 meses',
     workload: '360h',
@@ -159,6 +175,20 @@ export const courseDetailsMap = {
     maxStudents: 'Máx. 25 alunos',
     certificate: 'Reconhecida MEC',
     monthlyPrice: 'R$ 122,22/mês',
+    justificativa: [
+      'Responde à necessidade de profissionais capazes de integrar dimensões psíquicas e corporais no cuidado em saúde.',
+      'Articula conhecimentos de medicina psicossomática, neuropsicoimunologia e práticas clínicas supervisionadas.',
+      'Oferece abordagens atualizadas para tratamentos holísticos e humanizados.'
+    ],
+    objetivos: [
+      'Compreender os fundamentos teóricos e históricos da medicina psicossomática.',
+      'Relacionar sistemas psíquicos, neuroendócrinos e imunológicos em situações clínicas.',
+      'Aplicar técnicas de intervenção psicossomática em contextos clínicos supervisionados.'
+    ],
+    publico: [
+      'Profissionais da saúde, psicoterapeutas e educadores interessados em abordagens mente-corpo.',
+      'Graduados das áreas de humanas e biológicas que buscam formação complementar em psicossomática.'
+    ],
     highlights: [
       {
         icon: 'fas fa-heart',
@@ -230,11 +260,12 @@ export const courseDetailsMap = {
   3: {
     id: 3,
     title: 'Arteterapia e Expressões Criativas',
-    subtitle: 'Desperte a criatividade como ferramenta terapêutica',
-    description: 'Capacite-se para despertar e utilizar a criatividade como uma poderosa ferramenta terapêutica.',
+    subtitle: 'Curso presencial com turmas no RJ, Brasília e São Paulo',
+    description: 'Formação filiada à SOBRARTE que usa as expressões criativas como recurso terapêutico e clínico.',
     fullDescription: [
-      'O curso de Arteterapia e Expressões Criativas oferece uma formação completa no uso das artes como instrumento terapêutico. Através de metodologias inovadoras, os participantes aprendem a facilitar processos de cura e autoconhecimento através da expressão artística.',
-      'Com uma abordagem prático-vivencial, o programa combina teoria, prática e experiência pessoal, preparando profissionais para atuar em diferentes contextos clínicos e educacionais.'
+      'O curso de Arteterapia e Expressões Criativas capacita profissionais a despertar a potência inventiva de indivíduos e grupos, transformando-a em intervenções terapêuticas efetivas em contextos clínicos, educacionais, organizacionais e comunitários.',
+      'Com abordagem transdisciplinar, integra fundamentos da psicologia analítica, das terapias expressivas e das artes para promover processos de cura biopsicossocial e desenvolvimento simbólico.',
+      'As vivências percorrem distintas formas de expressão – desenho, colagem, pintura, modelagem, música e corpo – além de práticas iniciáticas que favorecem estados ampliados de consciência e experiências numinosas.'
     ],
     image: 'https://i.imgur.com/iVpnrwc.png',
     hero: {
@@ -245,61 +276,180 @@ export const courseDetailsMap = {
     },
     category: 'especializacao',
     categoryLabel: 'Pós-Graduação',
-    price: 2800.00,
-    originalPrice: null,
-    modalidade: 'Híbrido',
-    duration: '18 meses',
+    price: 6360.00,
+    precoMatricula: 300.00,
+    originalPrice: 12000.00,
+    modalidade: 'Presencial',
+    duration: '24 meses',
     workload: '360h',
-    startDate: 'Março 2024',
-    maxStudents: 'Máx. 20 alunos',
-    certificate: 'Reconhecida MEC',
-    monthlyPrice: 'R$ 155,56/mês',
+    startDate: 'RJ: 11/04/2026 · Brasília: 14/03/2026 · São Paulo: 30/08/2025',
+    maxStudents: 'Turmas presenciais reduzidas',
+    certificate: 'Filiado à SOBRARTE',
+    monthlyPrice: 'Matrícula R$ 360 + 24x de R$ 663,57',
+    justificativa: [
+      'O curso forma especialistas em Psicologia Analítica ao difundir teorias, práticas e pesquisas de C. G. Jung e sucessores, em aulas presenciais com debates e supervisão.',
+      'Supre a demanda por conhecimento profundo da Psicologia Junguiana ao oferecer formação acessível a profissionais das áreas de saúde, humanas e biológicas.',
+      'Promove integração entre arte, psicologia, educação e espiritualidade como caminhos terapêuticos para acolher sintomas psicoafetivos e psicossomáticos.'
+    ],
+    objetivos: [
+      'Ampliar conhecimentos teóricos e práticos da Psicologia Analítica.',
+      'Aplicar procedimentos e fundamentos junguianos com ética e responsabilidade.',
+      'Estimular a pesquisa teórico-prática em Psicologia Analítica e arteterapia.',
+      'Situar-se criticamente frente aos paradigmas pessoais e profissionais.'
+    ],
+    publico: [
+      'Profissionais graduados nas áreas de saúde, humanas e biológicas interessados em Psicologia Analítica.',
+      'Terapeutas, educadores e artistas que desejam integrar expressões criativas a processos de cuidado.'
+    ],
     highlights: [
       {
+        icon: 'fas fa-map-marker-alt',
+        title: 'Turmas 2025/2026',
+        description: 'Encontros presenciais no Rio de Janeiro, Brasília e São Paulo',
+        bgColor: 'bg-blue-50',
+        iconColor: 'bg-blue-500'
+      },
+      {
         icon: 'fas fa-palette',
-        title: 'Expressão Criativa',
-        description: 'Desenvolvimento da criatividade como ferramenta terapêutica',
+        title: 'Percurso Criativo',
+        description: 'Vivências expressivas, oficinas e supervisão clínica em arteterapia',
         bgColor: 'bg-yellow-50',
         iconColor: 'bg-yellow-500'
       },
       {
-        icon: 'fas fa-users',
-        title: 'Prática Supervisionada',
-        description: 'Ateliês práticos com supervisão especializada',
+        icon: 'fas fa-award',
+        title: 'Filiado à SOBRARTE',
+        description: 'Curso reconhecido pela Sociedade Brasileira de Arteterapia',
         bgColor: 'bg-green-50',
         iconColor: 'bg-green-500'
-      },
-      {
-        icon: 'fas fa-certificate',
-        title: 'Certificação',
-        description: 'Certificado reconhecido pelo MEC',
-        bgColor: 'bg-purple-50',
-        iconColor: 'bg-purple-500'
       }
     ],
     curriculum: [
       {
         number: 1,
-        title: 'Fundamentos da Arteterapia',
-        description: '60h - História, teoria e aplicações da arteterapia'
+        title: 'Fundamentos das Terapias Artísticas',
+        hours: '45h',
+        summary: 'Origens da arteterapia, fundamentos junguianos, criatividade e ética profissional.',
+        ementa: [
+          'Histórico da arteterapia e diferenciações conceituais',
+          'Criatividade, processo criador e materiais simbólicos',
+          'Transferência, contratransferência e ética em arteterapia',
+          'O pensamento de Nise da Silveira e referências junguianas'
+        ],
+        objetivos: [
+          'Compreender os fundamentos históricos e teóricos da Arteterapia',
+          'Relacionar a Psicologia Analítica de C. G. Jung às práticas expressivas',
+          'Reconhecer critérios éticos e clínicos para atuação arteterapêutica'
+        ],
+        bibliografia: {
+          descricao: 'Bibliografia básica',
+          referencias: [
+            'SILVEIRA, Nise da. Imagens do Inconsciente. Rio de Janeiro: Imago, 1978.',
+            'JUNG, C. G. O Homem e seus Símbolos. Rio de Janeiro: Nova Fronteira, 1964.',
+            'KRAMER, Edith. Arteterapia: Teoria e Prática. Porto Alegre: Artes Médicas, 2001.'
+          ]
+        }
       },
       {
         number: 2,
-        title: 'Técnicas Expressivas',
-        description: '80h - Pintura, escultura, colagem e outras modalidades'
+        title: 'Teorias e Técnicas Expressivas',
+        hours: '45h',
+        summary: 'Práticas com desenho, colagem, pintura e modelagem sob a lente junguiana.',
+        ementa: [
+          'Técnicas de desenho e percepção visual',
+          'Colagem, narrativa imagética e simbolismo',
+          'Pintura como expressão emocional e processo catártico',
+          'Modelagem e construção de objetos simbólicos'
+        ],
+        objetivos: [
+          'Vivenciar recursos expressivos variados e suas leituras simbólicas',
+          'Planejar atividades arteterapêuticas alinhadas à teoria analítica',
+          'Desenvolver sensibilidade para conteúdos afetivos nas produções plásticas'
+        ],
+        bibliografia: {
+          descricao: 'Referências principais',
+          referencias: [
+            'OSTROWER, Fayga. Criatividade e Processos de Criação. Petrópolis: Vozes, 2007.',
+            'NACHMANOVITCH, Stephen. Ser Criativo. São Paulo: Summus, 1993.',
+            'WITHMONT, Edward. A Busca do Símbolo. São Paulo: Cultrix, 1995.'
+          ]
+        }
       },
       {
         number: 3,
-        title: 'Psicologia da Arte',
-        description: '45h - Aspectos psicológicos da criação artística'
+        title: 'Metodologias de Oficinas',
+        hours: '60h',
+        summary: 'Planejamento de vivências, escolha de materiais e condução de grupos.',
+        ementa: [
+          'Estruturação de oficinas e roteiros terapêuticos',
+          'Seleção de materiais e ambientação simbólica',
+          'Gestão de grupos, escuta ativa e manejo de emergências',
+          'Documentação de processos e avaliação qualitativa'
+        ],
+        objetivos: [
+          'Elaborar oficinas arteterapêuticas coerentes com objetivos terapêuticos',
+          'Ampliar repertório de materiais expressivos e seus usos clínicos',
+          'Desenvolver critérios de avaliação e registro de processos'
+        ],
+        bibliografia: {
+          descricao: 'Leituras recomendadas',
+          referencias: [
+            'URRUTIGARAY, Maria Cristina. Arteterapia: A transformação pessoal pelas imagens. Rio de Janeiro: WAK, 2003.',
+            'TEIXEIRA, Lygia (org.). Oficinas Terapêuticas: Criatividade e Saúde. São Paulo: Summus, 2010.'
+          ]
+        }
       },
       {
         number: 4,
-        title: 'Ateliê Terapêutico',
-        description: '75h - Prática supervisionada em arteterapia'
+        title: 'Ateliê Terapêutico Supervisionado',
+        hours: '120h',
+        summary: 'Prática clínica supervisionada, elaboração de casos e supervisão em grupo.',
+        ementa: [
+          'Atendimentos clínicos supervisionados',
+          'Estudos de caso e apresentação em seminários',
+          'Supervisão em grupo e devolutiva individual',
+          'Ética, contrato terapêutico e autocuidado do terapeuta'
+        ],
+        objetivos: [
+          'Consolidar habilidades clínicas por meio de prática supervisionada',
+          'Refletir sobre postura ética e manejo simbólico em atendimentos',
+          'Produzir relatórios e sínteses dos processos acompanhados'
+        ],
+        bibliografia: {
+          descricao: 'Aprofundamento clínico',
+          referencias: [
+            'EDINGER, Edward F. Ego e Arquétipo. São Paulo: Cultrix, 1989.',
+            'HILLMAN, James. Estudos de Psicologia Arquetípica. Rio de Janeiro: Achiamé, 1981.'
+          ]
+        }
+      },
+      {
+        number: 5,
+        title: 'Atividades Complementares',
+        hours: '220h',
+        summary: 'Participação em atendimentos, supervisões e eventos científicos do IJEP.',
+        ementa: [
+          'Atendimentos clínicos extramuros e supervisões adicionais',
+          'Participação no Congresso Junguiano do IJEP',
+          'Registro e validação de horas complementares'
+        ],
+        objetivos: [
+          'Incentivar aprofundamento prático e integração com a comunidade científica',
+          'Computar as horas clínicas e acadêmicas exigidas para certificação'
+        ],
+        bibliografia: {
+          descricao: 'Referências complementares indicadas nas supervisões',
+          referencias: []
+        }
       }
     ],
     professors: [
+      {
+        name: 'Prof. Dr. Waldemar Magaldi Filho',
+        title: 'Coordenador Geral · Psicólogo, Doutor em Ciências da Religião',
+        experience: 'Especialista em Psicologia Analítica, Psicossomática e Arteterapia; fundador do IJEP',
+        image: 'https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg'
+      },
       {
         name: 'Prof. Dra. Ana Paula Maluf',
         title: 'Arteterapeuta e Psicóloga',
@@ -316,9 +466,9 @@ export const courseDetailsMap = {
       }
     ],
     contact: {
-      phone: '(11) 3333-4444',
+      phone: '(11) 5535-4695',
       whatsapp: '(11) 99999-8888',
-      email: 'contato@fafih.edu.br'
+      email: 'wmagaldi@ijep.com.br'
     },
     breadcrumb: ['Início', 'Pós-Graduação', 'Arteterapia e Expressões Criativas']
   },
@@ -340,8 +490,9 @@ export const courseDetailsMap = {
     },
     category: 'extensao',
     categoryLabel: 'Curta Duração',
-    price: 850.00,
-    originalPrice: null,
+    price: 5850.00,
+    precoMatricula: 600.00,
+    originalPrice: 7000.00,
     modalidade: 'Online',
     duration: '3 meses',
     workload: '60h',
@@ -349,6 +500,20 @@ export const courseDetailsMap = {
     maxStudents: 'Máx. 40 alunos',
     certificate: 'Certificado de Participação',
     monthlyPrice: 'R$ 283,33/mês',
+    justificativa: [
+      'Estudo aprofundado dos Livros Negros e do Livro Vermelho de C. G. Jung, contextualizando sua importância para a psicologia analítica.',
+      'Oferece leitura comentada, debates e reflexão simbólica sobre os textos fundamentais do processo criativo jungiano.',
+      'Favorece a ampliação do repertório clínico e cultural de profissionais e estudiosos da psicologia analítica.'
+    ],
+    objetivos: [
+      'Analisar os temas centrais presentes nos manuscritos de Jung.',
+      'Relacionar passagens dos textos com a prática clínica e estudos simbólicos.',
+      'Estimular leituras críticas e pesquisa acadêmica sobre as obras junguianas.'
+    ],
+    publico: [
+      'Analistas, psicólogos e alunos de cursos junguianos que buscam aprofundar o estudo das obras de Jung.',
+      'Pesquisadores e interessados em história da psicologia, simbolismo e espiritualidade.'
+    ],
     highlights: [
       {
         icon: 'fas fa-book',
@@ -430,7 +595,8 @@ export const courseDetailsMap = {
     },
     category: 'extensao',
     categoryLabel: 'Curta Duração',
-    price: 950.00,
+    price: 4950.00,
+    precoMatricula: 300.00,
     originalPrice: null,
     modalidade: 'Presencial',
     duration: '2 meses',
@@ -439,6 +605,20 @@ export const courseDetailsMap = {
     maxStudents: 'Máx. 15 alunos',
     certificate: 'Certificado de Participação',
     monthlyPrice: 'R$ 475,00/mês',
+    justificativa: [
+      'Oficina imersiva que une arteterapia e análise de sonhos para favorecer processos de autoconhecimento.',
+      'Promove vivências expressivas que traduzem conteúdos oníricos em materiais artísticos e simbólicos.',
+      'Integra teorias junguianas e práticas de arteterapia conduzidas por especialistas.'
+    ],
+    objetivos: [
+      'Estimular o uso de imagens oníricas como recurso terapêutico.',
+      'Desenvolver repertório de técnicas expressivas aplicadas a sonhos.',
+      'Capacitar participantes a conduzir oficinas e atendimentos com foco em arteterapia e sonhos.'
+    ],
+    publico: [
+      'Arteterapeutas, psicólogos, educadores e profissionais da saúde interessados em trabalhar com sonhos.',
+      'Pessoas em busca de processos pessoais de criação e interpretação simbólica.'
+    ],
     highlights: [
       {
         icon: 'fas fa-moon',
@@ -526,7 +706,8 @@ export const courseDetailsMap = {
     },
     category: 'extensao',
     categoryLabel: 'Curta Duração',
-    price: 790.00,
+    price: 3790.00,
+    precoMatricula: 300.00,
     originalPrice: null,
     modalidade: 'Online',
     duration: '3 meses',
@@ -535,6 +716,20 @@ export const courseDetailsMap = {
     maxStudents: 'Máx. 35 alunos',
     certificate: 'Certificado de Participação',
     monthlyPrice: 'R$ 263,33/mês',
+    justificativa: [
+      'Explora a evolução da consciência humana da era de Áries à perspectiva aquariana à luz da psicologia analítica.',
+      'Integra estudos de mitologia, religião comparada e simbolismo nas obras de Jung.',
+      'Propõe debates sobre transformações culturais contemporâneas e suas implicações psíquicas.'
+    ],
+    objetivos: [
+      'Compreender a obra Aion e suas conexões com o livro de Jó.',
+      'Relacionar símbolos arquetípicos às mudanças históricas e espirituais.',
+      'Ampliar a leitura junguiana sobre transformação da consciência e novos paradigmas.'
+    ],
+    publico: [
+      'Estudiosos da psicologia analítica, teologia, filosofia e áreas afins.',
+      'Profissionais e interessados em espiritualidade, mitologia e simbolismo.'
+    ],
     highlights: [
       {
         icon: 'fas fa-history',
@@ -623,6 +818,7 @@ export const courseDetailsMap = {
     category: 'formacao',
     categoryLabel: 'Formação',
     price: 12000.00,
+    precoMatricula: 900.00,
     originalPrice: null,
     modalidade: 'Presencial',
     duration: '4 anos',
@@ -631,6 +827,20 @@ export const courseDetailsMap = {
     maxStudents: 'Máx. 8 candidatos',
     certificate: 'Certificado de Analista Junguiano',
     monthlyPrice: 'R$ 250,00/mês',
+    justificativa: [
+      'Programa exclusivo de formação para analistas junguianos, destinado a egressos do curso de Psicologia Junguiana do IJEP.',
+      'Oferece percurso completo com análise pessoal obrigatória, supervisão clínica intensiva e participação institucional.',
+      'Garante alinhamento com os critérios de certificação e ética do IJEP.'
+    ],
+    objetivos: [
+      'Formar analistas junguianos aptos a atuar com excelência clínica.',
+      'Garantir aprofundamento teórico, vivencial e supervisionado nos pilares da Psicologia Analítica.',
+      'Promover inserção institucional e compromisso ético com a comunidade IJEP.'
+    ],
+    publico: [
+      'Ex-alunos do curso de Psicologia Junguiana do IJEP habilitados a ingressar na formação didática.',
+      'Profissionais com experiência clínica que buscam certificação oficial como analistas junguianos.'
+    ],
     highlights: [
       {
         icon: 'fas fa-graduation-cap',
@@ -716,7 +926,8 @@ export const courseDetailsMap = {
     },
     category: 'eventos',
     categoryLabel: 'Eventos',
-    price: 450.00,
+    price: 4450.00,
+    precoMatricula: 300.00,
     originalPrice: null,
     modalidade: 'Online',
     duration: '3 dias',
@@ -725,6 +936,20 @@ export const courseDetailsMap = {
     maxStudents: 'Inscrições ilimitadas',
     certificate: 'Certificado de Participação',
     monthlyPrice: 'Pagamento único',
+    justificativa: [
+      'Evento científico que reúne pesquisadores e profissionais da psicologia analítica em âmbito nacional e internacional.',
+      'Promove atualização, networking e divulgação de pesquisas na área junguiana.',
+      'Oferece programação diversificada com palestras, mesas redondas e comunicações livres.'
+    ],
+    objetivos: [
+      'Disseminar produções científicas e práticas inovadoras em psicologia analítica.',
+      'Conectar profissionais e estudantes em torno de debates atuais.',
+      'Incentivar a participação em redes de pesquisa e formação continuada.'
+    ],
+    publico: [
+      'Analistas, psicólogos, estudantes e interessados em psicologia analítica e áreas correlatas.',
+      'Pesquisadores e instituições que buscam apresentar trabalhos e projetos junguianos.'
+    ],
     highlights: [
       {
         icon: 'fas fa-globe',

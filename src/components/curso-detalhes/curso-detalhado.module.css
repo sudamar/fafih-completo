@@ -246,6 +246,50 @@
   color: #5d6f8a;
 }
 
+.textBlock {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: #44546b;
+}
+
+.textBlock h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1b2a4a;
+}
+
+.textBlock p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.bulletList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.bulletList li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.98rem;
+  color: #41506b;
+}
+
+.bulletList li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #05b18b;
+  font-weight: 700;
+}
+
 .contactCard {
   padding: 32px;
   display: flex;
@@ -372,6 +416,52 @@
   color: #566580;
 }
 
+.testimonialsCard {
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 18px 32px rgba(21, 35, 67, 0.12);
+  padding: 32px;
+}
+
+.testimonialsList {
+  display: grid;
+  gap: 18px;
+}
+
+.testimonialItem {
+  background: rgba(244, 247, 255, 0.85);
+  border-radius: 16px;
+  border-left: 5px solid #05b18b;
+  padding: 18px 22px;
+  box-shadow: 0 12px 24px rgba(17, 36, 82, 0.12);
+}
+
+.testimonialText {
+  font-size: 0.98rem;
+  color: #44546b;
+  line-height: 1.6;
+}
+
+.testimonialFooter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.testimonialAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonialAuthor {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2f53;
+}
+
 .curriculumList {
   display: flex;
   flex-direction: column;
@@ -381,11 +471,8 @@
 .curriculumItem {
   border-radius: 16px;
   border: 1px solid #e1e7f0;
-  padding: 18px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  padding: 0;
+  overflow: hidden;
   transition: border 0.2s ease, box-shadow 0.2s ease;
   background: #ffffff;
 }
@@ -395,10 +482,28 @@
   box-shadow: 0 14px 28px rgba(33, 5, 208, 0.08);
 }
 
+.curriculumHeader {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  cursor: pointer;
+}
+
+.curriculumHeader:focus-visible {
+  outline: 2px solid #2105d0;
+  outline-offset: 2px;
+}
+
 .curriculumMain {
   display: flex;
   align-items: center;
   gap: 16px;
+  text-align: left;
 }
 
 .curriculumNumber {
@@ -420,7 +525,8 @@
   color: #1f2f53;
 }
 
-.curriculumTexts p {
+.curriculumSummary {
+  display: block;
   font-size: 0.9rem;
   color: #5b6a82;
   margin-top: 6px;
@@ -429,6 +535,58 @@
 .curriculumArrow {
   color: #9aa5ba;
   font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.curriculumArrowOpen {
+  transform: rotate(180deg);
+}
+
+.curriculumContent {
+  display: none;
+  padding: 0 20px 18px;
+  font-size: 0.92rem;
+  color: #516070;
+  line-height: 1.6;
+}
+
+.curriculumContentOpen {
+  display: block;
+}
+
+.curriculumHours {
+  font-weight: 600;
+  color: #2105d0;
+  margin-bottom: 10px;
+}
+
+.curriculumSummaryText {
+  margin-bottom: 12px;
+}
+
+.curriculumSection {
+  margin-top: 16px;
+}
+
+.curriculumSection h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1b2a4a;
+  margin-bottom: 8px;
+}
+
+.curriculumListDetailed {
+  list-style: disc;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.curriculumBibliographyNote {
+  margin-bottom: 8px;
+  font-style: italic;
+  color: #59657c;
 }
 
 .facultyGrid {
@@ -504,6 +662,29 @@
 .sidebarPrice strong {
   font-size: 2rem;
   color: #2105d0;
+}
+
+.investmentList {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #31405b;
+}
+
+.investmentList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.investmentList li::before {
+  content: '\2022';
+  color: #05b18b;
+  font-weight: 700;
 }
 
 .sidebarMeta {

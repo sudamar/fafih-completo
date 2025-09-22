@@ -68,7 +68,7 @@ const Header = () => {
               <ul className="dropdown-menu">
                 <li><Link to="/escolha-cursos">Todos</Link></li>
                 <li><a href="/?filter=graduacao#cursos">Graduação</a></li>
-                <li><a href="/?filter=especializacao#cursos">Pós-Graduação</a></li>
+                <li><Link to="/escolha-cursos?filter=especializacao">Pós-Graduação</Link></li>
                 <li><a href="/?filter=extensao#cursos">Curta e Média Duração</a></li>
                 <li><a href="/?filter=eventos#cursos">Eventos</a></li>
                 <li><Link to="/curso-detalhado">Modelo de Curso</Link></li>

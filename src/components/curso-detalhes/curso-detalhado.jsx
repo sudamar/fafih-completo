@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from './curso-detalhado.module.css';
 import { getCourseDetails } from './courseDetailsData';
@@ -25,6 +25,11 @@ const highlightIconMap = {
 
 const defaultHighlightBackground = 'linear-gradient(145deg, #eef2ff, #e3e9ff)';
 const defaultHighlightIconBackground = 'linear-gradient(135deg, #4a68ff, #3e4ddf)';
+
+const testimonialBorderMap = {
+  'border-primary': '#2105D0',
+  'border-secondary': '#05B18B',
+};
 
 const contactHelpers = {
   phone: 'Seg. a Sex., 9h às 18h',
@@ -179,6 +184,24 @@ const CursoDetalhado = ({ courseId }) => {
       ? [course.description]
       : [];
 
+  const justificationParagraphs = Array.isArray(course.justificativa)
+    ? course.justificativa
+    : course.justificativa
+      ? [course.justificativa]
+      : [];
+
+  const objectivesList = Array.isArray(course.objetivos)
+    ? course.objetivos
+    : course.objetivos
+      ? [course.objetivos]
+      : [];
+
+  const audienceList = Array.isArray(course.publico)
+    ? course.publico
+    : course.publico
+      ? [course.publico]
+      : [];
+
   const highlightCards = (course.highlights ?? []).map((card) => ({
     icon: card.icon,
     title: card.title,
@@ -187,14 +210,25 @@ const CursoDetalhado = ({ courseId }) => {
     iconBackground: highlightIconMap[card.iconColor] ?? defaultHighlightIconBackground,
   }));
 
+  const price = formatPrice(course.price);
+  const precoMatricula = formatPrice(course.precoMatricula);
+  const originalPrice = formatPrice(course.originalPrice);
+  const monthlyPrice = course.monthlyPrice ?? null;
+  const heroLabel = course.hero?.alt ?? `Apresentação do curso ${course.title}`;
+
+  const heroType = course.hero?.type ?? 'image';
+  const heroSource = course.hero?.source || '';
+  const heroFallback = course.hero?.fallbackImage || course.image || '';
+
   const curriculumItems = course.curriculum ?? [];
   const facultyMembers = course.professors ?? [];
+  const testimonials = course.testimonials ?? [];
+  const promocaoPrice =  originalPrice + " por " + price;  
 
   const enrollmentInfo = [
-    { icon: 'fas fa-calendar', label: 'Início', value: course.startDate },
+    { icon: 'fas fa-clock', label: 'De', value: promocaoPrice },
     { icon: 'fas fa-clock', label: 'Duração', value: course.duration },
     { icon: 'fas fa-map-marker-alt', label: 'Modalidade', value: course.modalidade },
-    { icon: 'fas fa-users', label: 'Turma', value: course.maxStudents },
     { icon: 'fas fa-certificate', label: 'Certificação', value: course.certificate },
     { icon: 'fas fa-book', label: 'Carga Horária', value: course.workload },
   ].filter((item) => item.value);
@@ -212,13 +246,48 @@ const CursoDetalhado = ({ courseId }) => {
       tint: contactTint[channel.type] ?? 'rgba(33, 5, 208, 0.12)',
     }));
 
-  const price = formatPrice(course.price);
-  const monthlyPrice = course.monthlyPrice ?? null;
-  const heroLabel = course.hero?.alt ?? `Apresentação do curso ${course.title}`;
+  
+  const investmentLines = (() => {
+    const lines = [];
 
-  const heroType = course.hero?.type ?? 'image';
-  const heroSource = course.hero?.source || '';
-  const heroFallback = course.hero?.fallbackImage || course.image || '';
+    if (typeof monthlyPrice === 'string' && monthlyPrice.includes('+')) {
+      monthlyPrice
+        .split('+')
+        .map((part) => part.trim())
+        .filter(Boolean)
+        .forEach((part) => lines.push(part));
+    } else if (monthlyPrice) {
+      lines.push(monthlyPrice);
+    }
+
+    if (price) {
+      const formattedPrice = price;
+      const hasMatriculaLine = lines.some((line) => line.toLowerCase().includes('matr'));
+      if (hasMatriculaLine) {
+        if (!lines.some((line) => line.includes(formattedPrice))) {
+          lines.unshift(`Matrícula ${formattedPrice}`);
+        }
+      } else if (!lines.some((line) => line.includes(formattedPrice))) {
+        lines.unshift(`Investimento ${formattedPrice}`);
+      }
+    }
+
+    return lines;
+  })();
+
+  const [openCurriculum, setOpenCurriculum] = useState([]);
+
+  useEffect(() => {
+    setOpenCurriculum(curriculumItems.map(() => false));
+  }, [course.id, curriculumItems.length]);
+
+  const toggleCurriculum = (index) => {
+    setOpenCurriculum((prev) => {
+      const next = [...prev];
+      next[index] = !next[index];
+      return next;
+    });
+  };
 
   return (
     <section className={styles.container}>
@@ -303,46 +372,157 @@ const CursoDetalhado = ({ courseId }) => {
                 ))}
               </div>
 
-              {highlightCards.length > 0 && (
-                <div className={styles.highlightGrid}>
-                  {highlightCards.map((card) => (
-                    <div
-                      key={card.title}
-                      className={styles.highlightCard}
-                      style={{ background: card.background }}
+            {highlightCards.length > 0 && (
+              <div className={styles.highlightGrid}>
+                {highlightCards.map((card) => (
+                  <div
+                    key={card.title}
+                    className={styles.highlightCard}
+                    style={{ background: card.background }}
+                  >
+                    <span
+                      className={styles.highlightIcon}
+                      style={{ background: card.iconBackground }}
                     >
-                      <span
-                        className={styles.highlightIcon}
-                        style={{ background: card.iconBackground }}
-                      >
-                        <i aria-hidden className={card.icon} />
-                      </span>
-                      <h3 className={styles.highlightTitle}>{card.title}</h3>
-                      <p className={styles.highlightText}>{card.description}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </article>
+                      <i aria-hidden className={card.icon} />
+                    </span>
+                    <h3 className={styles.highlightTitle}>{card.title}</h3>
+                    <p className={styles.highlightText}>{card.description}</p>
+                  </div>
+                ))}
+              </div>
+            )}
 
-            {curriculumItems.length > 0 && (
-              <article className={`${styles.card} ${styles.innerCard}`}>
-                <header className={styles.sectionHeader}>
+            {justificationParagraphs.length > 0 && (
+              <section className={styles.textBlock}>
+                <h3>Por que este curso?</h3>
+                {justificationParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </section>
+            )}
+
+            {objectivesList.length > 0 && (
+              <section className={styles.textBlock}>
+                <h3>Objetivos</h3>
+                <ul className={styles.bulletList}>
+                  {objectivesList.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {audienceList.length > 0 && (
+              <section className={styles.textBlock}>
+                <h3>Para quem é</h3>
+                <ul className={styles.bulletList}>
+                  {audienceList.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </article>
+
+          {curriculumItems.length > 0 && (
+            <article className={`${styles.card} ${styles.innerCard}`}>
+              <header className={styles.sectionHeader}>
                   <h2 className={styles.sectionTitle}>Grade Curricular</h2>
                 </header>
                 <div className={styles.curriculumList}>
-                  {curriculumItems.map((item) => (
-                    <div key={item.number} className={styles.curriculumItem}>
-                      <div className={styles.curriculumMain}>
-                        <span className={styles.curriculumNumber}>{item.number}</span>
-                        <div className={styles.curriculumTexts}>
-                          <h3>{item.title}</h3>
-                          <p>{item.description}</p>
+                  {curriculumItems.map((item, index) => {
+                    const hours = item.hours || item.horas || '';
+                    const summary = item.summary || (() => {
+                      const text = item.description || '';
+                      return text.includes('-') ? text.split('-').slice(1).join('-').trim() : text;
+                    })();
+                    const ementaList = Array.isArray(item.ementa)
+                      ? item.ementa
+                      : item.ementa
+                        ? [item.ementa]
+                        : [];
+                    const objetivosCurriculo = Array.isArray(item.objetivos)
+                      ? item.objetivos
+                      : item.objetivos
+                        ? [item.objetivos]
+                        : [];
+                    const bibliografia = item.bibliografia?.referencias ?? [];
+                    const bibliografiaDescricao = item.bibliografia?.descricao ?? '';
+
+                    return (
+                      <div key={item.number} className={styles.curriculumItem}>
+                        <button
+                          type="button"
+                          className={styles.curriculumHeader}
+                          onClick={() => toggleCurriculum(index)}
+                          aria-expanded={openCurriculum[index] ?? false}
+                        >
+                          <div className={styles.curriculumMain}>
+                            <span className={styles.curriculumNumber}>{item.number}</span>
+                            <div className={styles.curriculumTexts}>
+                              <h3>{item.title}</h3>
+                              {summary && (
+                                <span className={styles.curriculumSummary}>{summary}</span>
+                              )}
+                            </div>
+                          </div>
+                          <span
+                            className={`${styles.curriculumArrow} ${
+                              openCurriculum[index] ? styles.curriculumArrowOpen : ''
+                            }`}
+                          >
+                            <i aria-hidden className="fas fa-chevron-down" />
+                          </span>
+                        </button>
+                        <div
+                          className={`${styles.curriculumContent} ${
+                            openCurriculum[index] ? styles.curriculumContentOpen : ''
+                          }`}
+                        >
+                          {hours && (
+                            <p className={styles.curriculumHours}>
+                              <strong>Carga horária:</strong> {hours}
+                            </p>
+                          )}
+                          {summary && <p className={styles.curriculumSummaryText}>{summary}</p>}
+                          {ementaList.length > 0 && (
+                            <div className={styles.curriculumSection}>
+                              <h4>Ementa</h4>
+                              <ul className={styles.curriculumListDetailed}>
+                                {ementaList.map((topic) => (
+                                  <li key={topic}>{topic}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                          {objetivosCurriculo.length > 0 && (
+                            <div className={styles.curriculumSection}>
+                              <h4>Objetivos</h4>
+                              <ul className={styles.curriculumListDetailed}>
+                                {objetivosCurriculo.map((goal) => (
+                                  <li key={goal}>{goal}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+                          {bibliografia.length > 0 && (
+                            <div className={styles.curriculumSection}>
+                              <h4>Bibliografia</h4>
+                              {bibliografiaDescricao && (
+                                <p className={styles.curriculumBibliographyNote}>{bibliografiaDescricao}</p>
+                              )}
+                              <ul className={styles.curriculumListDetailed}>
+                                {bibliografia.map((ref) => (
+                                  <li key={ref}>{ref}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
                         </div>
                       </div>
-                      <i aria-hidden className={`fas fa-chevron-down ${styles.curriculumArrow}`} />
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </article>
             )}
@@ -413,15 +593,53 @@ const CursoDetalhado = ({ courseId }) => {
                 </div>
               </section>
             )}
+
+            {testimonials.length > 0 && (
+              <section className={styles.testimonialsCard}>
+                <header className={styles.sectionHeader}>
+                  <h2 className={styles.sectionTitle}>Depoimentos</h2>
+                </header>
+                <div className={styles.testimonialsList}>
+                  {testimonials.map((testimonial) => (
+                    <blockquote
+                      key={testimonial.author}
+                      className={styles.testimonialItem}
+                      style={{ borderLeftColor: testimonialBorderMap[testimonial.borderColor] ?? '#05B18B' }}
+                    >
+                      <p className={styles.testimonialText}>{testimonial.text}</p>
+                      <footer className={styles.testimonialFooter}>
+                        {testimonial.image && (
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.author}
+                            className={styles.testimonialAvatar}
+                            loading="lazy"
+                          />
+                        )}
+                        <span className={styles.testimonialAuthor}>{testimonial.author}</span>
+                      </footer>
+                    </blockquote>
+                  ))}
+                </div>
+              </section>
+            )}
           </div>
 
           <aside className={styles.sidebar}>
             <section className={styles.sidebarCard}>
               <div className={styles.sidebarPrice}>
-                {price && <strong>{price}</strong>}
-                {price && <span>À vista ou em até 18x</span>}
-                {monthlyPrice && <small>{monthlyPrice}</small>}
+                {precoMatricula && <strong>{precoMatricula}</strong>}
+                {course.categoryLabel && <span>{course.categoryLabel}</span>}
+                {course.modalidade && <small>{course.modalidade}</small>}
               </div>
+
+              {/* {investmentLines.length > 0 && (
+                <ul className={styles.investmentList}>
+                  <li className={styles.originalPrice}>
+                    <span>De:</span> <s>{originalPrice}</s> <span>Por:</span> <s>{price}</s>
+                  </li>
+                </ul>
+              )} */}
 
               {enrollmentInfo.length > 0 && (
                 <div className={styles.sidebarMeta}>
