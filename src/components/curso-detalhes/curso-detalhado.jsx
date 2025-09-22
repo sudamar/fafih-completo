@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import styles from './curso-detalhado.module.css';
 import { getCourseDetails } from './courseDetailsData';
 
@@ -127,33 +127,7 @@ const CursoDetalhado = ({ courseId }) => {
   );
 
   if (!course) {
-    return (
-      <section className={styles.notFoundSection}>
-        <div className={styles.notFoundCard}>
-          <div className={styles.notFoundMedia}>
-            <div className={styles.notFoundIconWrapper} aria-hidden="true">
-              <span className={styles.notFoundIcon}>404</span>
-            </div>
-          </div>
-          <div className={styles.notFoundContent}>
-            <span className={styles.notFoundTag}>Erro 404</span>
-            <h1 className={styles.notFoundTitle}>Curso não encontrado</h1>
-            <p className={styles.notFoundDescription}>
-              O conteúdo que você procura não está disponível ou o endereço digitado está incorreto.
-              Explore outros cursos ou volte para a página inicial.
-            </p>
-            <div className={styles.notFoundActions}>
-              <a href="/escolha-cursos" className={styles.notFoundPrimary}>
-                Ver outros cursos
-              </a>
-              <a href="/" className={styles.notFoundSecondary}>
-                Voltar para o início
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
+    return <Navigate to="/404" replace state={{ from: resolvedId }} />;
   }
 
   const breadcrumbItems = useMemo(() => {
