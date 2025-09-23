@@ -1,0 +1,352 @@
+[
+  {
+    "id": 1,
+    "slug": "waldemar-magaldi-filho",
+    "name": "Doutor Waldemar Magaldi Filho",
+    "title": "Coordenador dos cursos, Membro Didáta do IJEP, Fundador do Instituto",
+    "bio": [
+      "Psicólogo. Especialista em Homeopatia; Psicologia Junguiana, Psicossomática, Arteterapia, DAC/DQ e MDR.",
+      "Mestre em Ciências da Religião - PUCSP. Doutor em Ciências da Religião - UMESP.",
+      "Coordenador dos cursos de PSICOTERAPIA JUNGUIANA, PSICOSSOMÁTICA, ARTETERAPIA E EXPRESSÕES CRIATIVAS e PSICOTERAPIA INTEGRATIVA TRANSPESSOAL."
+    ],
+    "qualifications": [
+      "Doutor em Ciências da Religião - UMESP",
+      "Mestre em Ciências da Religião - PUCSP",
+      "Especialista em Homeopatia",
+      "Especialista em Psicologia Junguiana",
+      "Especialista em Psicossomática",
+      "Especialista em Arteterapia",
+      "Especialista em DAC/DQ e MDR"
+    ],
+    "contact": {
+      "phone": "(11) 5535-4695",
+      "email": "wmagaldi@ijep.com.br"
+    },
+    "publications": [
+      {
+        "id": 1,
+        "title": "DINHEIRO, SAÚDE E SAGRADO",
+        "publisher": "Ed. Eleva Cultural",
+        "type": "book",
+        "cover": "/assets/images/livros/dinheiro-saude-sagrado.jpg"
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Coordenador"
+      },
+      {
+        "id": 2,
+        "title": "Psicossomática",
+        "role": "Coordenador"
+      },
+      {
+        "id": 3,
+        "title": "Arteterapia e Expressões Criativas",
+        "role": "Coordenador"
+      }
+    ],
+    "specialties": [
+      "Psicologia Junguiana",
+      "Psicossomática",
+      "Arteterapia",
+      "Homeopatia",
+      "Ciências da Religião"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "simone-magaldi",
+    "name": "Doutora E. Simone D. Magaldi",
+    "title": "Membro Didata, Diretora e Fundadora do IJEP",
+    "bio": [
+      "Pedagoga, Filósofa, analista - Especialista em Psicologia Junguiana pela UNAERP.",
+      "Mestre em Ciências da Religião- PUCSP. Doutora em Ciências da Religião- UMESP."
+    ],
+    "qualifications": [
+      "Doutora em Ciências da Religião - UMESP",
+      "Mestre em Ciências da Religião - PUCSP",
+      "Especialista em Psicologia Junguiana - UNAERP",
+      "Pedagoga",
+      "Filósofa"
+    ],
+    "contact": {
+      "phone": "(11) 5535-4695",
+      "email": "simonemagaldi@ijep.com.br"
+    },
+    "publications": [
+      {
+        "id": 2,
+        "title": "ORDEM E CAOS: Uma visão transdisciplinar",
+        "publisher": "Ed. Eleva Cultural",
+        "type": "book",
+        "cover": "/assets/images/livros/ordem-e-caos.jpg"
+      },
+      {
+        "id": 3,
+        "title": "PITÁGORAS, O Mestre de Samos",
+        "publisher": "Ed. Eleva Cultural",
+        "type": "book",
+        "cover": "/assets/images/livros/pitagoras-mestre-samos.jpg"
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Diretora"
+      }
+    ],
+    "specialties": [
+      "Psicologia Junguiana",
+      "Pedagogia",
+      "Filosofia",
+      "Ciências da Religião"
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "lilian-wurzba",
+    "name": "Doutora Lilian Wurzba",
+    "title": "Membro Didata do IJEP",
+    "bio": [
+      "Psicóloga, Especialista em Psicologia Analítica, Mestre e Doutora em Ciências da Religião pela PUC/SP."
+    ],
+    "qualifications": [
+      "Doutora em Ciências da Religião - PUC/SP",
+      "Mestre em Ciências da Religião - PUC/SP",
+      "Especialista em Psicologia Analítica",
+      "Psicóloga"
+    ],
+    "contact": {
+      "phone": "(11) 5051-6891",
+      "email": "laliwi@uol.com.br",
+      "address": "Consultório: Al. Iraé 620, cj. 93 - Moema - SP."
+    },
+    "publications": [
+      {
+        "id": 4,
+        "title": "Natureza Irreal ou Fantástica Realidade?",
+        "publisher": "Ed. Eleva Cultural",
+        "type": "book",
+        "cover": "/assets/images/livros/natureza-irreal.jpg"
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Professora"
+      }
+    ],
+    "specialties": [
+      "Psicologia Analítica",
+      "Ciências da Religião",
+      "Psicologia Junguiana"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "maria-cristina-guarnieri",
+    "name": "Doutora Maria Cristina M. Guarnieri",
+    "title": "Membro Didata",
+    "bio": [
+      "Psicóloga, Especialista em Psicologia Junguiana, Mestre e Doutora em Ciências da Religião - PUC-SP"
+    ],
+    "qualifications": [
+      "Doutora em Ciências da Religião - PUC-SP",
+      "Mestre em Ciências da Religião - PUC-SP",
+      "Especialista em Psicologia Junguiana",
+      "Psicóloga"
+    ],
+    "contact": {
+      "phone": "(11) 3085-7973 / 98966-0359",
+      "email": "crisguarnieri@uol.com.br"
+    },
+    "publications": [],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Professora"
+      }
+    ],
+    "specialties": [
+      "Psicologia Junguiana",
+      "Ciências da Religião"
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "leonardo-torres",
+    "name": "Doutor Leonardo Torres",
+    "title": "Membro Analista Didata em Formação pelo IJEP",
+    "bio": [
+      "Doutor e Mestre em Comunicação e Cultura pela UNIP/SP. Especialista em Psicologia Junguiana e Psicossomática pelo IJEP."
+    ],
+    "qualifications": [
+      "Doutor em Comunicação e Cultura - UNIP/SP",
+      "Mestre em Comunicação e Cultura - UNIP/SP",
+      "Especialista em Psicologia Junguiana - IJEP",
+      "Especialista em Psicossomática - IJEP"
+    ],
+    "contact": {
+      "phone": "54 99331-0389",
+      "email": "leosouzatorres@gmail.com"
+    },
+    "publications": [
+      {
+        "id": 5,
+        "title": "Contágio Psíquico: a loucura das massas e suas reverberações na mídia",
+        "publisher": "Ed. Eleva Cultural",
+        "type": "book",
+        "cover": "/assets/images/livros/contagio-psiquico.jpg"
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Professor"
+      },
+      {
+        "id": 2,
+        "title": "Psicossomática",
+        "role": "Professor"
+      }
+    ],
+    "specialties": [
+      "Psicologia Junguiana",
+      "Psicossomática",
+      "Comunicação e Cultura"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "jose-luiz-balestrini",
+    "name": "Doutor José Luiz Balestrini",
+    "title": "Analista didáta em formação do IJEP",
+    "bio": [
+      "Psicólogo, Especialista em Psicologia Junguiana (IJEP), Especialista em Psicossomática (IJEP), Mestre e Doutorando em Comunicação e Cultura (UNIP), Especialista em Medicina Tradicional Chinesa (SEEB, SATOSP), Mestre de Kung Fu, Doutor Honoris Causa em Filosofia das Artes Marciais (FIOGA)."
+    ],
+    "qualifications": [
+      "Doutorando em Comunicação e Cultura - UNIP",
+      "Mestre em Comunicação e Cultura - UNIP",
+      "Especialista em Psicologia Junguiana - IJEP",
+      "Especialista em Psicossomática - IJEP",
+      "Especialista em Medicina Tradicional Chinesa",
+      "Doutor Honoris Causa em Filosofia das Artes Marciais - FIOGA",
+      "Mestre de Kung Fu",
+      "Psicólogo"
+    ],
+    "contact": {
+      "phone": "11 98207 7766",
+      "email": "balestrini@lungfu.com.br"
+    },
+    "publications": [
+      {
+        "id": 6,
+        "title": "é tudo Verdade: Histórias Reais Sobre a Existência Humana",
+        "publisher": "Ed. Eleva Cultural",
+        "type": "book",
+        "cover": "/assets/images/livros/e-tudo-verdade.jpg"
+      }
+    ],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Professor"
+      },
+      {
+        "id": 2,
+        "title": "Psicossomática",
+        "role": "Professor"
+      }
+    ],
+    "specialties": [
+      "Psicologia Junguiana",
+      "Psicossomática",
+      "Medicina Tradicional Chinesa",
+      "Artes Marciais",
+      "Comunicação e Cultura"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "oswaldo-cudizio",
+    "name": "Mestre Oswaldo Cudizio",
+    "title": "Professor do IJEP",
+    "bio": [
+      "Médico, Especialista em Pediatria e Homeopatia, Mestre e Doutorando em Psicossomática."
+    ],
+    "qualifications": [
+      "Doutorando em Psicossomática",
+      "Mestre em Psicossomática",
+      "Especialista em Pediatria",
+      "Especialista em Homeopatia",
+      "Médico"
+    ],
+    "contact": {
+      "phone": "(11) 3872 1911 / 6973-1092",
+      "email": "ocudizio@uol.com.br",
+      "address": "Consultório: Rua Caiubi 1563 Sumaré / R. Vol. Da Pátria 2041 Cj 305/306 Santana"
+    },
+    "publications": [],
+    "courses": [
+      {
+        "id": 2,
+        "title": "Psicossomática",
+        "role": "Professor"
+      }
+    ],
+    "specialties": [
+      "Psicossomática",
+      "Pediatria",
+      "Homeopatia",
+      "Medicina"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "ajax-perez-salvador",
+    "name": "Mestre Ajax Pérez Salvador",
+    "title": "Analista Didata do IJEP, Membro Didata do IJEP",
+    "bio": [
+      "Médico Psiquiatra e Psicoterapeuta. Especialista em Saúde Pública, Mestre em Saúde Mental -- USP, Ex-preceptor de Residência Médica Psiquiátrica 8ª COREM PMSP."
+    ],
+    "qualifications": [
+      "Mestre em Saúde Mental - USP",
+      "Especialista em Saúde Pública",
+      "Médico Psiquiatra",
+      "Psicoterapeuta",
+      "Ex-preceptor de Residência Médica Psiquiátrica"
+    ],
+    "contact": {
+      "phone": "(11) 91365956",
+      "email": "apersal@uol.com.br",
+      "address": "Consultório: Av. Pedroso de Morais 2199 - Alto de Pinheiros"
+    },
+    "publications": [],
+    "courses": [
+      {
+        "id": 1,
+        "title": "Pós-Graduação em Psicologia Junguiana",
+        "role": "Professor"
+      },
+      {
+        "id": 2,
+        "title": "Psicossomática",
+        "role": "Professor"
+      }
+    ],
+    "specialties": [
+      "Psiquiatria",
+      "Psicoterapia",
+      "Saúde Mental",
+      "Saúde Pública"
+    ]
+  }
+]

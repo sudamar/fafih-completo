@@ -1,0 +1,138 @@
+/* Card Component Styles */
+.card {
+  background-color: var(--card-bg);
+  border: var(--border-width-1) solid #e9ecef;
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+/* Variants */
+.default {
+  background-color: var(--card-bg);
+}
+
+.primary {
+  background-color: #f0f7ff;
+  border-color: var(--fafih-primary);
+}
+
+.secondary {
+  background-color: #f4f8fb;
+  border-color: var(--fafih-secondary);
+}
+
+.outline {
+  background-color: transparent;
+  border-color: var(--border-secondary);
+}
+
+.ghost {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Padding Variants */
+.padding-none {
+  padding: 0;
+}
+
+.padding-sm {
+  padding: var(--space-3);
+}
+
+.padding-md {
+  padding: var(--space-4);
+}
+
+.padding-lg {
+  padding: var(--space-6);
+}
+
+.padding-xl {
+  padding: var(--space-8);
+}
+
+/* Shadow Variants */
+.shadow-none {
+  box-shadow: none;
+}
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Hover Effect */
+.hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--fafih-secondary);
+}
+
+/* Card Sections */
+.header {
+  padding: var(--space-4) var(--space-4) 0 var(--space-4);
+  border-bottom: var(--border-width-1) solid var(--border-primary);
+  margin-bottom: var(--space-4);
+}
+
+.header:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: var(--space-4);
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  padding: 0 var(--space-4) var(--space-4) var(--space-4);
+  border-top: var(--border-width-1) solid var(--border-primary);
+  margin-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.footer:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: var(--space-4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .padding-lg {
+    padding: var(--space-4);
+  }
+
+  .padding-xl {
+    padding: var(--space-6);
+  }
+
+  .header {
+    padding: var(--space-3) var(--space-3) 0 var(--space-3);
+  }
+
+  .footer {
+    padding: 0 var(--space-3) var(--space-3) var(--space-3);
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+  }
+}

@@ -1,0 +1,96 @@
+/* Badge Component Styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  white-space: nowrap;
+
+  border: var(--border-width-1) solid transparent;
+  transition: all var(--transition-fast);
+}
+
+/* Variants */
+.default {
+  background-color: #f1f5f9;
+  color: var(--fafih-text);
+  border-color: #e9ecef;
+}
+
+.primary {
+  background-color: #f0f7ff;
+  color: var(--fafih-primary);
+  border-color: var(--fafih-primary);
+}
+
+.secondary {
+  background-color: #f4f8fb;
+  color: var(--fafih-secondary);
+  border-color: var(--fafih-secondary);
+}
+
+.success {
+  background-color: var(--color-success-50);
+  color: var(--color-success-600);
+  border-color: var(--color-success-500);
+}
+
+.warning {
+  background-color: var(--color-warning-50);
+  color: var(--color-warning-600);
+  border-color: var(--color-warning-500);
+}
+
+.error {
+  background-color: var(--color-error-50);
+  color: var(--color-error-600);
+  border-color: var(--color-error-500);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--fafih-primary);
+  border-color: var(--fafih-primary);
+}
+
+/* Sizes */
+.xs {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+  min-height: 16px;
+}
+
+.sm {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-base);
+  min-height: 20px;
+}
+
+.md {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+  min-height: 24px;
+}
+
+.lg {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-lg);
+  min-height: 32px;
+}
+
+/* Rounded Modifier */
+.rounded {
+  border-radius: var(--radius-full);
+}
+
+/* Hover Effects (for interactive badges) */
+.badge:hover {
+  opacity: 0.8;
+}

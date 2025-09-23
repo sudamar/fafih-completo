@@ -1,0 +1,88 @@
+/* Global Styles - FAFIH (Extensão dos estilos originais) */
+@import './tokens.css';
+
+/* IMPORTANTE: Este arquivo estende os estilos originais em index.css
+ * Não sobrescreve o design existente da FAFIH
+ * Apenas adiciona tokens e utilitários para novos componentes
+ */
+
+/* Utilitários para novos componentes (escopo limitado para não afetar FAFIH) */
+
+/* Classes específicas para novos componentes UI */
+.ui-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.ui-container-sm {
+  max-width: var(--container-sm);
+}
+
+.ui-container-md {
+  max-width: var(--container-md);
+}
+
+.ui-container-lg {
+  max-width: var(--container-lg);
+}
+
+.ui-container-xl {
+  max-width: var(--container-xl);
+}
+
+.ui-container-2xl {
+  max-width: var(--container-2xl);
+}
+
+/* Utility Classes para novos componentes */
+.ui-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ui-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Utilities para novos componentes */
+.ui-focus-visible:focus {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* Loading States para novos componentes */
+.ui-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.ui-skeleton {
+  background: linear-gradient(90deg, var(--color-neutral-200) 25%, var(--color-neutral-100) 50%, var(--color-neutral-200) 75%);
+  background-size: 200% 100%;
+  animation: ui-skeleton-loading 1.5s infinite;
+}
+
+@keyframes ui-skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

@@ -1,0 +1,142 @@
+/* Integração entre estilos FAFIH originais e nova arquitetura */
+
+/* Importa os design tokens para uso nos novos componentes */
+@import './tokens.css';
+@import './globals.css';
+
+/* Mapeamento de variáveis originais para tokens */
+:root {
+  /* Mapeamento das variáveis FAFIH originais para os novos tokens */
+  --primary-color: var(--color-primary-800); /* #0A2342 */
+  --secondary-color: var(--color-secondary-500); /* #2C678F */
+  --background-color: var(--color-neutral-50); /* #F4F4F9 */
+  --text-color: var(--color-neutral-700); /* #333 */
+  --card-bg: #FFFFFF;
+  --shadow: var(--shadow-md);
+  --gradient: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000);
+  --footer-blue: #1d4397;
+  --card-green-dark: #006400;
+  --linkedin-color: #0077B5;
+  --instagram-color: #E1306C;
+  --youtube-color: #FF0000;
+  --tiktok-color: #000000;
+
+  /* Aliases para compatibilidade */
+  --fafih-primary: var(--color-primary-800);
+  --fafih-secondary: var(--color-secondary-500);
+  --fafih-background: var(--color-neutral-50);
+  --fafih-text: var(--color-neutral-700);
+}
+
+/* Estilos específicos para componentes da nova arquitetura */
+.new-architecture {
+  /* Namespace para novos componentes para evitar conflitos */
+}
+
+.new-architecture * {
+  /* Reset específico para novos componentes */
+  box-sizing: border-box;
+}
+
+/* Classes helper para novos componentes usando tokens */
+.text-primary-new { color: var(--color-primary-600); }
+.text-secondary-new { color: var(--color-secondary-500); }
+.bg-primary-new { background-color: var(--color-primary-600); }
+.bg-secondary-new { background-color: var(--color-secondary-500); }
+.border-primary-new { border-color: var(--color-primary-600); }
+.border-secondary-new { border-color: var(--color-secondary-500); }
+
+/* Spacing helpers */
+.p-1-new { padding: var(--space-1); }
+.p-2-new { padding: var(--space-2); }
+.p-3-new { padding: var(--space-3); }
+.p-4-new { padding: var(--space-4); }
+.p-6-new { padding: var(--space-6); }
+.p-8-new { padding: var(--space-8); }
+
+.m-1-new { margin: var(--space-1); }
+.m-2-new { margin: var(--space-2); }
+.m-3-new { margin: var(--space-3); }
+.m-4-new { margin: var(--space-4); }
+.m-6-new { margin: var(--space-6); }
+.m-8-new { margin: var(--space-8); }
+
+/* Border radius helpers */
+.rounded-sm-new { border-radius: var(--radius-sm); }
+.rounded-new { border-radius: var(--radius-base); }
+.rounded-md-new { border-radius: var(--radius-md); }
+.rounded-lg-new { border-radius: var(--radius-lg); }
+.rounded-xl-new { border-radius: var(--radius-xl); }
+.rounded-full-new { border-radius: var(--radius-full); }
+
+/* Shadow helpers */
+.shadow-sm-new { box-shadow: var(--shadow-sm); }
+.shadow-new { box-shadow: var(--shadow-base); }
+.shadow-md-new { box-shadow: var(--shadow-md); }
+.shadow-lg-new { box-shadow: var(--shadow-lg); }
+.shadow-xl-new { box-shadow: var(--shadow-xl); }
+
+/* Typography helpers para novos componentes */
+.font-primary-new { font-family: var(--font-family-primary); }
+.font-secondary-new { font-family: var(--font-family-secondary); }
+
+.text-xs-new { font-size: var(--font-size-xs); }
+.text-sm-new { font-size: var(--font-size-sm); }
+.text-base-new { font-size: var(--font-size-base); }
+.text-lg-new { font-size: var(--font-size-lg); }
+.text-xl-new { font-size: var(--font-size-xl); }
+.text-2xl-new { font-size: var(--font-size-2xl); }
+.text-3xl-new { font-size: var(--font-size-3xl); }
+
+.font-light-new { font-weight: var(--font-weight-light); }
+.font-normal-new { font-weight: var(--font-weight-normal); }
+.font-medium-new { font-weight: var(--font-weight-medium); }
+.font-semibold-new { font-weight: var(--font-weight-semibold); }
+.font-bold-new { font-weight: var(--font-weight-bold); }
+
+/* Transitions */
+.transition-new { transition: all var(--transition-base); }
+.transition-fast-new { transition: all var(--transition-fast); }
+.transition-slow-new { transition: all var(--transition-slow); }
+
+/* Display helpers */
+.flex-new { display: flex; }
+.grid-new { display: grid; }
+.block-new { display: block; }
+.inline-block-new { display: inline-block; }
+.hidden-new { display: none; }
+
+/* Flex helpers */
+.items-center-new { align-items: center; }
+.items-start-new { align-items: flex-start; }
+.items-end-new { align-items: flex-end; }
+.justify-center-new { justify-content: center; }
+.justify-between-new { justify-content: space-between; }
+.justify-start-new { justify-content: flex-start; }
+.justify-end-new { justify-content: flex-end; }
+
+.flex-col-new { flex-direction: column; }
+.flex-row-new { flex-direction: row; }
+.flex-wrap-new { flex-wrap: wrap; }
+.flex-nowrap-new { flex-wrap: nowrap; }
+
+/* Gap helpers */
+.gap-1-new { gap: var(--space-1); }
+.gap-2-new { gap: var(--space-2); }
+.gap-3-new { gap: var(--space-3); }
+.gap-4-new { gap: var(--space-4); }
+.gap-6-new { gap: var(--space-6); }
+.gap-8-new { gap: var(--space-8); }
+
+/* Width helpers */
+.w-full-new { width: 100%; }
+.w-auto-new { width: auto; }
+.max-w-sm-new { max-width: var(--container-sm); }
+.max-w-md-new { max-width: var(--container-md); }
+.max-w-lg-new { max-width: var(--container-lg); }
+.max-w-xl-new { max-width: var(--container-xl); }
+
+/* Hover effects para novos componentes */
+.hover-scale-new:hover { transform: scale(1.05); }
+.hover-shadow-new:hover { box-shadow: var(--shadow-lg); }
+.hover-opacity-new:hover { opacity: 0.8; }

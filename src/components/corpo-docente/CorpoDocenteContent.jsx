@@ -9,7 +9,8 @@ const CorpoDocenteContent = () => {
       nome: "Dr. Carlos Eduardo Silva",
       area: "Filosofia",
       formacao: "Doutor em Filosofia pela USP",
-      especialidade: "Filosofia Contemporânea, Epistemologia",
+      bio: "Especialista em Filosofia Contemporânea e Epistemologia, com mais de 15 anos de experiência no ensino superior. Desenvolveu pesquisas pioneiras sobre fenomenologia e hermenêutica, publicando diversos artigos em revistas indexadas. Atua como consultor em projetos interdisciplinares que conectam filosofia e práticas educativas, contribuindo para uma formação humanística integral.",
+      telefone: "(11) 3456-7890",
       email: "carlos.silva@fafih.edu.br",
       categoria: "doutor",
       foto: "https://randomuser.me/api/portraits/men/1.jpg"
@@ -19,7 +20,8 @@ const CorpoDocenteContent = () => {
       nome: "Dra. Maria Fernanda Santos",
       area: "Artes Visuais",
       formacao: "Doutora em Artes pela UNICAMP",
-      especialidade: "Arte Contemporânea, Curadoria",
+      bio: "Artista visual e curadora com reconhecimento nacional, especializada em Arte Contemporânea e processos curatoriais. Sua pesquisa explora as intersecções entre arte, tecnologia e sociedade. Organizou mais de 20 exposições e possui obras em acervos importantes. Dedica-se à formação de novos artistas e à democratização do acesso à arte.",
+      telefone: "(11) 3456-7891",
       email: "maria.santos@fafih.edu.br",
       categoria: "doutor",
       foto: "https://randomuser.me/api/portraits/women/2.jpg"
@@ -29,7 +31,8 @@ const CorpoDocenteContent = () => {
       nome: "Ms. João Paulo Oliveira",
       area: "Psicologia Analítica",
       formacao: "Mestre em Psicologia pelo IJEP",
-      especialidade: "Psicologia Junguiana, Imaginário",
+      bio: "Psicólogo junguiano com formação especializada em Imaginário e Simbolismo. Desenvolve trabalhos terapêuticos e de pesquisa focados na integração da psique através de abordagens criativas. Membro ativo de grupos de estudos em Psicologia Analítica e facilitador de oficinas sobre desenvolvimento pessoal e autoconhecimento.",
+      telefone: "(11) 3456-7892",
       email: "joao.oliveira@fafih.edu.br",
       categoria: "mestre",
       foto: "https://randomuser.me/api/portraits/men/3.jpg"
@@ -39,7 +42,8 @@ const CorpoDocenteContent = () => {
       nome: "Dra. Ana Beatriz Costa",
       area: "Literatura",
       formacao: "Doutora em Literatura Comparada pela UERJ",
-      especialidade: "Literatura e Imaginário, Mitocrítica",
+      bio: "Pesquisadora em Literatura e Imaginário, com foco em Mitocrítica e análises simbólicas de textos literários. Autora de livros sobre literatura contemporânea e coordenadora de projetos de extensão em letramento literário. Sua abordagem interdisciplinar conecta literatura, antropologia e estudos culturais.",
+      telefone: "(11) 3456-7893",
       email: "ana.costa@fafih.edu.br",
       categoria: "doutor",
       foto: "https://randomuser.me/api/portraits/women/4.jpg"
@@ -49,7 +53,8 @@ const CorpoDocenteContent = () => {
       nome: "Dr. Roberto Mendes",
       area: "História da Arte",
       formacao: "Doutor em História da Arte pela PUC-SP",
-      especialidade: "Arte Medieval, Iconografia",
+      bio: "Historiador da arte especializado em Arte Medieval e Iconografia, com pesquisas sobre simbolismo religioso e cultura visual. Consultor de museus e instituições culturais, desenvolve projetos de educação patrimonial. Suas análises iconográficas contribuem para a compreensão da arte como linguagem simbólica universal.",
+      telefone: "(11) 3456-7894",
       email: "roberto.mendes@fafih.edu.br",
       categoria: "doutor",
       foto: "https://randomuser.me/api/portraits/men/5.jpg"
@@ -59,7 +64,8 @@ const CorpoDocenteContent = () => {
       nome: "Ms. Claudia Ferreira",
       area: "Educação",
       formacao: "Mestre em Educação pela UNICAMP",
-      especialidade: "Pedagogia Waldorf, Arte-Educação",
+      bio: "Educadora especializada em Pedagogia Waldorf e Arte-Educação, com ampla experiência em metodologias ativas e educação integral. Desenvolve projetos inovadores que integram arte, natureza e desenvolvimento humano. Formadora de professores e consultora em transformação de espaços educativos para uma aprendizagem mais significativa.",
+      telefone: "(11) 3456-7895",
       email: "claudia.ferreira@fafih.edu.br",
       categoria: "mestre",
       foto: "https://randomuser.me/api/portraits/women/6.jpg"
@@ -105,19 +111,34 @@ const CorpoDocenteContent = () => {
 
         <div className="professores-grid">
           {filteredProfessores.map(professor => (
-            <div key={professor.id} className="professor-card">
-              <div className="professor-foto">
-                <img src={professor.foto} alt={professor.nome} />
+            <div key={professor.id} className="professor-card-redesigned">
+              <div className="professor-header">
+                <div className="professor-foto-redesigned">
+                  <img src={professor.foto} alt={professor.nome} />
+                </div>
+                <div className="professor-nome-area">
+                  <h3>{professor.nome}</h3>
+                  <p className="professor-area">{professor.area}</p>
+                </div>
               </div>
-              <div className="professor-info">
-                <h3>{professor.nome}</h3>
-                <p className="professor-area">{professor.area}</p>
-                <p className="professor-formacao">{professor.formacao}</p>
-                <p className="professor-especialidade"><strong>Especialidades:</strong> {professor.especialidade}</p>
-                <div className="professor-contato">
-                  <a href={`mailto:${professor.email}`} className="btn-contato">
-                    Contato
-                  </a>
+              <div className="professor-info-redesigned">
+                <div className="professor-content">
+                  <p className="professor-formacao">{professor.formacao}</p>
+                  <p className="professor-bio">{professor.bio}</p>
+                </div>
+                <div className="professor-contato-info">
+                  <div className="contato-item">
+                    <span className="contato-label">📞</span>
+                    <a href={`tel:${professor.telefone}`} className="contato-link">
+                      {professor.telefone}
+                    </a>
+                  </div>
+                  <div className="contato-item">
+                    <span className="contato-label">✉️</span>
+                    <a href={`mailto:${professor.email}`} className="contato-link">
+                      {professor.email}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -221,6 +242,160 @@ const CorpoDocenteContent = () => {
           </ul>
         </div>
       </div>
+
+      {/* CSS Customizado para o novo layout */}
+      <style jsx>{`
+        .professores-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+          margin-bottom: 3rem;
+          align-items: stretch;
+        }
+        .professor-card-redesigned {
+          background-color: var(--card-bg);
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: var(--shadow);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          padding: 1.5rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          height: 100%;
+          min-height: 450px;
+        }
+
+        .professor-card-redesigned:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .professor-header {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .professor-foto-redesigned {
+          flex: 0 0 auto;
+          width: 80px;
+          height: 80px;
+        }
+
+        .professor-foto-redesigned img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid var(--secondary-color);
+        }
+
+        .professor-nome-area {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-height: 80px;
+        }
+
+        .professor-nome-area h3 {
+          color: var(--primary-color);
+          font-family: 'Montserrat', sans-serif;
+          margin: 0 0 0.5rem 0;
+          font-size: 1.2rem;
+          line-height: 1.3;
+        }
+
+        .professor-nome-area .professor-area {
+          color: var(--secondary-color);
+          font-weight: 700;
+          font-size: 1rem;
+          margin: 0;
+        }
+
+        .professor-info-redesigned {
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+          flex: 1;
+          justify-content: space-between;
+        }
+
+        .professor-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+
+        .professor-info-redesigned .professor-formacao {
+          font-style: italic;
+          color: #666;
+          margin: 0;
+          font-size: 0.9rem;
+        }
+
+        .professor-info-redesigned .professor-bio {
+          margin: 0;
+          font-size: 0.9rem;
+          color: #444;
+          line-height: 1.5;
+          text-align: justify;
+        }
+
+        .professor-contato-info {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          margin-top: auto;
+          padding-top: 0.8rem;
+          border-top: 1px solid #e9ecef;
+          flex-shrink: 0;
+        }
+
+        .contato-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .contato-label {
+          font-size: 1rem;
+          flex-shrink: 0;
+        }
+
+        .contato-link {
+          color: var(--secondary-color);
+          text-decoration: none;
+          font-size: 0.9rem;
+          transition: color 0.3s ease;
+        }
+
+        .contato-link:hover {
+          color: var(--primary-color);
+          text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 480px) {
+          .professor-header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+
+          .professor-foto-redesigned {
+            width: 100px;
+            height: 100px;
+          }
+
+          .professor-nome-area {
+            min-height: auto;
+            align-items: center;
+          }
+        }
+      `}</style>
     </section>
   );
 };
