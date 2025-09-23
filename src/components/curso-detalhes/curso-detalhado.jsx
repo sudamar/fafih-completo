@@ -548,9 +548,6 @@ const CursoDetalhado = ({ courseId }) => {
               </article>
             )}
             
-            <header className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Corpo Docente</h2>
-            </header>
             <FacultyMembers facultyMembers={courseFacultyMembers} />
 
             {testimonials.length > 0 && (

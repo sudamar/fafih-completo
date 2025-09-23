@@ -1,4 +1,5 @@
 import styles from './faculty-members.module.css';
+import courseStyles from '../curso-detalhes/curso-detalhado.module.css';
 
 // Versão simples - apenas nome, foto, cargo e botão individual "Veja mais"
 export function FacultyMembersSimple({ facultyMembers }) {
@@ -90,7 +91,10 @@ export function FacultyMembers({ facultyMembers }) {
   };
 
   return (
-    <article className={styles.facultyCard}>
+    <article className={`${courseStyles.card} ${courseStyles.innerCard}`}>
+      <header className={courseStyles.sectionHeader}>
+        <h2 className={courseStyles.sectionTitle}>Corpo Docente</h2>
+      </header>
       <div className={styles.facultyGrid}>
         {facultyMembers.map((member, index) => (
           <div key={index} className={styles.facultyMember}>
