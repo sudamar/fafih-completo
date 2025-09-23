@@ -77,7 +77,7 @@ const Header = () => {
                 <li><a href="polos.html">Polos</a></li>
               </ul>
             </li>
-            <li><a href="iniciacao-cientifica.html">Iniciação Científica</a></li>
+            <li><a href="iniciacao-cientifica">Iniciação Científica</a></li>
             <li><Link to="/extensao">Extensão</Link></li>
             <li><a href="https://ijep.com.br/login-aluno" target="_blank" rel="noopener noreferrer">Portal do Aluno</a></li>
             <li className={openDropdown === 'contato' ? 'open' : ''}>

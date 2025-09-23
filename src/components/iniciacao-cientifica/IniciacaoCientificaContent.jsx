@@ -1,3 +1,5 @@
+import './IniciacaoCientifica.css';
+
 const IniciacaoCientificaContent = () => {
   const programas = [
     {
