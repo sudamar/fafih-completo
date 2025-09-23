@@ -26,10 +26,7 @@ export function FacultyMembersSimple({ facultyMembers }) {
 
   return (
     <article className={styles.facultyCard}>
-      <header className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>Corpo Docente</h2>
-      </header>
-      <div className={styles.facultyGridSimple}>
+      <div className={styles.facultyGridSimple}> 
         {limitedMembers.map((member, index) => (
           <div key={index} className={styles.facultyMemberSimple}>
             <div className={styles.facultyAvatarWrapper}>
@@ -47,7 +44,7 @@ export function FacultyMembersSimple({ facultyMembers }) {
                 href={`/professor/${generateProfessorId(member.name, index)}`}
                 className={styles.professorLink}
               >
-                Veja mais
+                Saiba mais
               </a>
             </div>
           </div>
@@ -75,11 +72,25 @@ export function FacultyMembers({ facultyMembers }) {
     return `https://api.dicebear.com/7.x/avataaars/svg?seed=${avatarSeed}&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf&size=200`;
   };
 
+  // Função para gerar ID único do professor baseado no nome
+  const generateProfessorId = (name, index) => {
+    return name.toLowerCase()
+      .replace(/[^a-z0-9\s]/g, '') // Remove caracteres especiais
+      .replace(/\s+/g, '-') // Substitui espaços por hífens
+      .replace(/^(doutor|doutora|mestre|especialista)\s*/, '') // Remove títulos
+      || `professor-${index}`; // Fallback para index se nome for inválido
+  };
+
+  // Função para limitar descrição a 200 caracteres
+  const limitDescription = (description) => {
+    if (!description) return '';
+    return description.length > 200
+      ? description.substring(0, 200) + '...'
+      : description;
+  };
+
   return (
     <article className={styles.facultyCard}>
-      <header className={styles.sectionHeader}>
-        <h2 className={styles.sectionTitle}>Corpo Docente</h2>
-      </header>
       <div className={styles.facultyGrid}>
         {facultyMembers.map((member, index) => (
           <div key={index} className={styles.facultyMember}>
@@ -94,29 +105,13 @@ export function FacultyMembers({ facultyMembers }) {
             <div className={styles.facultyInfo}>
               <h3 className={styles.facultyName}>{member.name}</h3>
               <p className={styles.facultyTitle}>{member.title}</p>
-              <p className={styles.facultyDescription}>{member.description}</p>
-              {member.address && (
-                <p className={styles.facultyAddress}>{member.address}</p>
-              )}
-              <div className={styles.facultyContact}>
-                {member.phone && (
-                  <div className={styles.contactItem}>
-                    <span className={styles.contactLabel}>Telefone:</span>
-                    <span className={styles.contactValue}>{member.phone}</span>
-                  </div>
-                )}
-                {member.email && (
-                  <div className={styles.contactItem}>
-                    <span className={styles.contactLabel}>Email:</span>
-                    <a
-                      href={`mailto:${member.email}`}
-                      className={styles.contactValue}
-                    >
-                      {member.email}
-                    </a>
-                  </div>
-                )}
-              </div>
+              <p className={styles.facultyDescription}>{limitDescription(member.description)}</p>
+              <a
+                href={`/professor/${generateProfessorId(member.name, index)}`}
+                className={styles.professorLink}
+              >
+                Saiba mais
+              </a>
             </div>
           </div>
         ))}
