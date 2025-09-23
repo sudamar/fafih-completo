@@ -1,7 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import CursoCard from './CursoCard';
-import { FacultyMembersSimple } from '../ui/faculty-members';
-import { facultyMembers } from '../curso-detalhes/facultyData';
+
 
 const coursesData = [
   {
@@ -162,10 +161,7 @@ const EscolhaCursosContent = () => {
           </div>
         )}
 
-        {/* Seção do Corpo Docente - Versão Simples */}
-        <div className="mt-16">
-          <FacultyMembersSimple facultyMembers={facultyMembers} />
-        </div>
+
       </div>
     </section>
   );
