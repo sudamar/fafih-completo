@@ -67,10 +67,10 @@ const Header = () => {
               <a href="/#cursos" onClick={() => toggleDropdown('cursos')}>Cursos</a>
               <ul className="dropdown-menu">
                 <li><Link to="/escolha-cursos">Todos</Link></li>
-                <li><a href="/?filter=graduacao#cursos">Graduação</a></li>
+                <li><a href="/escolha-cursos?filter=graduacao">Graduação</a></li>
                 <li><Link to="/escolha-cursos?filter=especializacao">Pós-Graduação</Link></li>
-                <li><a href="/?filter=extensao#cursos">Curta e Média Duração</a></li>
-                <li><a href="/?filter=eventos#cursos">Eventos</a></li>
+                <li><Link to="/escolha-cursos?filter=cursos">Curta e Média Duração</Link></li>
+                <li><Link to="/escolha-cursos?filter=eventos">Eventos</Link></li>
                 <li><Link to="/curso-detalhado">Modelo de Curso</Link></li>
                 <li><a href="formas-de-ingresso.html">Formas de Ingresso</a></li>
                 <li><a href="regulamentos.html">Regulamentos</a></li>
