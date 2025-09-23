@@ -2,6 +2,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import styles from './curso-detalhado.module.css';
 import { getCourseDetails } from './courseDetailsData';
+import { Testimonials } from '../ui/testimonials';
+import { FacultyMembers } from '../ui/faculty-members';
+import { facultyMembers } from './facultyData';
 
 const highlightBackgroundMap = {
   'bg-blue-50': 'linear-gradient(145deg, #e9f1ff, #d8e7ff)',
@@ -25,11 +28,6 @@ const highlightIconMap = {
 
 const defaultHighlightBackground = 'linear-gradient(145deg, #eef2ff, #e3e9ff)';
 const defaultHighlightIconBackground = 'linear-gradient(135deg, #4a68ff, #3e4ddf)';
-
-const testimonialBorderMap = {
-  'border-primary': '#2105D0',
-  'border-secondary': '#05B18B',
-};
 
 const contactHelpers = {
   phone: 'Seg. a Sex., 9h às 18h',
@@ -187,7 +185,6 @@ const CursoDetalhado = ({ courseId }) => {
   const price = formatPrice(course.price);
   const precoMatricula = formatPrice(course.precoMatricula);
   const originalPrice = formatPrice(course.originalPrice);
-  const monthlyPrice = course.monthlyPrice ?? null;
   const heroLabel = course.hero?.alt ?? `Apresentação do curso ${course.title}`;
 
   const heroType = course.hero?.type ?? 'image';
@@ -195,7 +192,8 @@ const CursoDetalhado = ({ courseId }) => {
   const heroFallback = course.hero?.fallbackImage || course.image || '';
 
   const curriculumItems = course.curriculum ?? [];
-  const facultyMembers = course.professors ?? [];
+  // Using global faculty members from facultyData
+  const courseFacultyMembers = facultyMembers;
   const testimonials = course.testimonials ?? [];
   const promocaoPrice =  originalPrice + " por " + price;  
 
@@ -220,34 +218,6 @@ const CursoDetalhado = ({ courseId }) => {
       tint: contactTint[channel.type] ?? 'rgba(33, 5, 208, 0.12)',
     }));
 
-  
-  const investmentLines = (() => {
-    const lines = [];
-
-    if (typeof monthlyPrice === 'string' && monthlyPrice.includes('+')) {
-      monthlyPrice
-        .split('+')
-        .map((part) => part.trim())
-        .filter(Boolean)
-        .forEach((part) => lines.push(part));
-    } else if (monthlyPrice) {
-      lines.push(monthlyPrice);
-    }
-
-    if (price) {
-      const formattedPrice = price;
-      const hasMatriculaLine = lines.some((line) => line.toLowerCase().includes('matr'));
-      if (hasMatriculaLine) {
-        if (!lines.some((line) => line.includes(formattedPrice))) {
-          lines.unshift(`Matrícula ${formattedPrice}`);
-        }
-      } else if (!lines.some((line) => line.includes(formattedPrice))) {
-        lines.unshift(`Investimento ${formattedPrice}`);
-      }
-    }
-
-    return lines;
-  })();
 
   const [openCurriculum, setOpenCurriculum] = useState([]);
 
@@ -366,10 +336,16 @@ const CursoDetalhado = ({ courseId }) => {
                 ))}
               </div>
             )}
+          </article>
+
+          <article className={`${styles.card} ${styles.innerCard}`}>
+            <header className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Demais Informações</h2>
+            </header>
 
             {justificationParagraphs.length > 0 && (
               <section className={styles.textBlock}>
-                <h3>Por que este curso?</h3>
+                <h3>Justificativa</h3>
                 {justificationParagraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -390,11 +366,11 @@ const CursoDetalhado = ({ courseId }) => {
             {audienceList.length > 0 && (
               <section className={styles.textBlock}>
                 <h3>Para quem é</h3>
-                <ul className={styles.bulletList}>
-                  {audienceList.map((item) => (
-                    <li key={item}>{item}</li>
+                <div>
+                  {audienceList.map((item, index) => (
+                    <p key={index}>{item}</p>
                   ))}
-                </ul>
+                </div>
               </section>
             )}
           </article>
@@ -421,8 +397,8 @@ const CursoDetalhado = ({ courseId }) => {
                       : item.objetivos
                         ? [item.objetivos]
                         : [];
-                    const bibliografia = item.bibliografia?.referencias ?? [];
-                    const bibliografiaDescricao = item.bibliografia?.descricao ?? '';
+                    const bibliografia = item.bibliography || [];
+                    const bibliografiaDescricao = '';
 
                     return (
                       <div key={item.number} className={styles.curriculumItem}>
@@ -433,7 +409,14 @@ const CursoDetalhado = ({ courseId }) => {
                           aria-expanded={openCurriculum[index] ?? false}
                         >
                           <div className={styles.curriculumMain}>
-                            <span className={styles.curriculumNumber}>{item.number}</span>
+                            <span
+                              className={`${styles.curriculumToggleSymbol} ${
+                                openCurriculum[index] ? styles.curriculumToggleOpen : ''
+                              }`}
+                              aria-hidden="true"
+                            >
+                              {openCurriculum[index] ? '−' : '+'}
+                            </span>
                             <div className={styles.curriculumTexts}>
                               <h3>{item.title}</h3>
                               {summary && (
@@ -441,13 +424,6 @@ const CursoDetalhado = ({ courseId }) => {
                               )}
                             </div>
                           </div>
-                          <span
-                            className={`${styles.curriculumArrow} ${
-                              openCurriculum[index] ? styles.curriculumArrowOpen : ''
-                            }`}
-                          >
-                            <i aria-hidden className="fas fa-chevron-down" />
-                          </span>
                         </button>
                         <div
                           className={`${styles.curriculumContent} ${
@@ -501,31 +477,87 @@ const CursoDetalhado = ({ courseId }) => {
               </article>
             )}
 
-            {facultyMembers.length > 0 && (
+            {course.cargahoraria && (
               <article className={`${styles.card} ${styles.innerCard}`}>
                 <header className={styles.sectionHeader}>
-                  <h2 className={styles.sectionTitle}>Corpo Docente</h2>
+                  <h2 className={styles.sectionTitle}>Carga Horária</h2>
                 </header>
-                <div className={styles.facultyGrid}>
-                  {facultyMembers.map((member) => (
-                    <div key={member.name} className={styles.facultyCard}>
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className={styles.facultyAvatar}
-                        loading="lazy"
-                      />
-                      <div>
-                        <p className={styles.facultyName}>{member.name}</p>
-                        <p className={styles.facultyTitle}>{member.title}</p>
-                        {member.experience && (
-                          <p className={styles.facultyExperience}>{member.experience}</p>
-                        )}
-                      </div>
+                <div className={styles.workloadContent}>
+                  {course.cargahoraria.texto && course.cargahoraria.texto.length > 0 && (
+                    <div className={styles.workloadDescription}>
+                      {course.cargahoraria.texto.map((paragraph, index) => (
+                        <p key={index}>{paragraph}</p>
+                      ))}
                     </div>
-                  ))}
+                  )}
+
+                  {course.cargahoraria.atividades && course.cargahoraria.atividades.length > 0 && (
+                    <div className={styles.workloadTable}>
+                      <h3>Distribuição da Carga Horária</h3>
+                      <div className={styles.workloadGrid}>
+                        {course.cargahoraria.atividades.map((item, index) => (
+                          <div
+                            key={index}
+                            className={`${styles.workloadItem} ${item.descricao.includes('Total') ? styles.workloadTotal : ''}`}
+                          >
+                            <span className={styles.workloadActivity}>{item.descricao}</span>
+                            <span className={styles.workloadHours}>{item.carga}h</span>
+                          </div>
+                        ))}
+                      </div>
+                      {course.cargahoraria.observacao && (
+                        <p className={styles.workloadNote}>{course.cargahoraria.observacao}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
               </article>
+            )}
+
+            {course.avaliacao && course.avaliacao.length > 0 && (
+              <article className={`${styles.card} ${styles.innerCard}`}>
+                <header className={styles.sectionHeader}>
+                  <h2 className={styles.sectionTitle}>Avaliação e Certificação</h2>
+                </header>
+                <div className={styles.evaluationContent}>
+                  <ul className={styles.evaluationList}>
+                    {course.avaliacao.map((item, index) => (
+                      <li key={index} className={styles.evaluationItem}>
+                        <span className={styles.evaluationIcon}>
+                          <i className="fas fa-check-circle" aria-hidden="true" />
+                        </span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            )}
+
+            {course.coordenacao && (
+              <article className={`${styles.card} ${styles.innerCard}`}>
+                <header className={styles.sectionHeader}>
+                  <h2 className={styles.sectionTitle}>Coordenação</h2>
+                </header>
+                <div className={styles.coordinationCard}>
+                  <div className={styles.coordinationInfo}>
+                    <h3 className={styles.coordinationName}>{course.coordenacao.professor}</h3>
+                    <p className={styles.coordinationDescription}>{course.coordenacao.descricao}</p>
+                  </div>
+                </div>
+              </article>
+            )}
+
+            <FacultyMembers facultyMembers={courseFacultyMembers} />
+
+            {testimonials.length > 0 && (
+              <Testimonials testimonials={testimonials.map(testimonial => ({
+                image: testimonial.image || 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                text: testimonial.text,
+                name: testimonial.author,
+                username: `@${testimonial.author.toLowerCase().replace(/\s+/g, '')}`,
+                social: 'https://i.imgur.com/VRtqhGC.png'
+              }))} />
             )}
 
             {supportChannels.length > 0 && (
@@ -567,42 +599,26 @@ const CursoDetalhado = ({ courseId }) => {
                 </div>
               </section>
             )}
-
-            {testimonials.length > 0 && (
-              <section className={styles.testimonialsCard}>
-                <header className={styles.sectionHeader}>
-                  <h2 className={styles.sectionTitle}>Depoimentos</h2>
-                </header>
-                <div className={styles.testimonialsList}>
-                  {testimonials.map((testimonial) => (
-                    <blockquote
-                      key={testimonial.author}
-                      className={styles.testimonialItem}
-                      style={{ borderLeftColor: testimonialBorderMap[testimonial.borderColor] ?? '#05B18B' }}
-                    >
-                      <p className={styles.testimonialText}>{testimonial.text}</p>
-                      <footer className={styles.testimonialFooter}>
-                        {testimonial.image && (
-                          <img
-                            src={testimonial.image}
-                            alt={testimonial.author}
-                            className={styles.testimonialAvatar}
-                            loading="lazy"
-                          />
-                        )}
-                        <span className={styles.testimonialAuthor}>{testimonial.author}</span>
-                      </footer>
-                    </blockquote>
-                  ))}
-                </div>
-              </section>
-            )}
           </div>
 
           <aside className={styles.sidebar}>
             <section className={styles.sidebarCard}>
               <div className={styles.sidebarPrice}>
-                {precoMatricula && <strong>{precoMatricula}</strong>}
+                {precoMatricula && (
+                  <>
+                    <small className={styles.priceLabel}>
+                      {(() => {
+                        const durationMatch = course.duration?.match(/(\d+)/);
+                        if (durationMatch) {
+                          const months = parseInt(durationMatch[1]) + 1;
+                          return `${months}x`;
+                        }
+                        return 'Matrícula';
+                      })()}
+                    </small>
+                    <strong>{precoMatricula}</strong>
+                  </>
+                )}
                 {course.categoryLabel && <span>{course.categoryLabel}</span>}
                 {course.modalidade && <small>{course.modalidade}</small>}
               </div>

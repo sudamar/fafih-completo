@@ -417,49 +417,104 @@
 }
 
 .testimonialsCard {
-  background: #ffffff;
-  border-radius: 22px;
-  box-shadow: 0 18px 32px rgba(21, 35, 67, 0.12);
-  padding: 32px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafe 100%);
+  border-radius: 24px;
+  box-shadow: 0 24px 48px rgba(21, 35, 67, 0.08);
+  padding: 40px;
+  border: 1px solid rgba(5, 177, 139, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonialsCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2105d0 0%, #05b18b 100%);
 }
 
 .testimonialsList {
   display: grid;
-  gap: 18px;
+  gap: 24px;
+  margin-top: 8px;
 }
 
 .testimonialItem {
-  background: rgba(244, 247, 255, 0.85);
-  border-radius: 16px;
-  border-left: 5px solid #05b18b;
-  padding: 18px 22px;
-  box-shadow: 0 12px 24px rgba(17, 36, 82, 0.12);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 8px 32px rgba(33, 5, 208, 0.08);
+  border: 1px solid rgba(5, 177, 139, 0.1);
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.testimonialItem::before {
+  content: '"';
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: rgba(5, 177, 139, 0.15);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.testimonialItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(33, 5, 208, 0.12);
+  border-color: rgba(5, 177, 139, 0.2);
 }
 
 .testimonialText {
-  font-size: 0.98rem;
-  color: #44546b;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+  font-style: italic;
+  font-weight: 400;
 }
 
 .testimonialFooter {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-top: 14px;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(5, 177, 139, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .testimonialAvatar {
-  width: 42px;
-  height: 42px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   object-fit: cover;
+  border: 3px solid rgba(5, 177, 139, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .testimonialAuthor {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #1f2f53;
+  color: #1a202c;
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonialAuthor::after {
+  content: 'Ex-aluno FAFIH';
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #718096;
+  margin-top: 2px;
 }
 
 .curriculumList {
@@ -506,7 +561,7 @@
   text-align: left;
 }
 
-.curriculumNumber {
+.curriculumToggleSymbol {
   width: 44px;
   height: 44px;
   display: grid;
@@ -515,8 +570,12 @@
   color: #ffffff;
   font-weight: 700;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 1.4rem;
   box-shadow: 0 10px 20px rgba(33, 5, 208, 0.35);
+}
+
+.curriculumToggleOpen {
+  background: #05b18b;
 }
 
 .curriculumTexts h3 {
@@ -530,16 +589,6 @@
   font-size: 0.9rem;
   color: #5b6a82;
   margin-top: 6px;
-}
-
-.curriculumArrow {
-  color: #9aa5ba;
-  font-size: 0.75rem;
-  transition: transform 0.2s ease;
-}
-
-.curriculumArrowOpen {
-  transform: rotate(180deg);
 }
 
 .curriculumContent {
@@ -662,6 +711,15 @@
 .sidebarPrice strong {
   font-size: 2rem;
   color: #2105d0;
+}
+
+.priceLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
 }
 
 .investmentList {
@@ -957,4 +1015,125 @@
     height: 150px;
     font-size: 2.5rem;
   }
+}
+
+/* Coordenação */
+.coordinationCard {
+  padding: 1.5rem 0;
+}
+
+.coordinationInfo {
+  text-align: left;
+}
+
+.coordinationName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2105d0;
+  margin-bottom: 0.75rem;
+}
+
+.coordinationDescription {
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Carga Horária */
+.workloadContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.workloadDescription p {
+  margin-bottom: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.workloadDescription p:last-child {
+  margin-bottom: 0;
+}
+
+.workloadTable h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2f53;
+  margin-bottom: 1rem;
+}
+
+.workloadGrid {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.workloadItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.workloadItem:last-child {
+  border-bottom: none;
+}
+
+.workloadTotal {
+  font-weight: 700;
+  background: rgba(33, 5, 208, 0.05);
+  margin: 0.5rem -1.5rem -1.5rem;
+  padding: 1rem 1.5rem 0.75rem;
+  border-radius: 0 0 12px 12px;
+  border-bottom: none !important;
+}
+
+.workloadActivity {
+  color: #1f2f53;
+  font-weight: 500;
+}
+
+.workloadHours {
+  color: #2105d0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.workloadNote {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Avaliação */
+.evaluationContent {
+  padding: 0.5rem 0;
+}
+
+.evaluationList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.evaluationItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.evaluationIcon {
+  color: #05b18b;
+  font-size: 1.1rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
 }
