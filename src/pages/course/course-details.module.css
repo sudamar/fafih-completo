@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 3rem 4vw 4.5rem;
+  }
+}
+
+.mainGrid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}
+
+.mainColumn {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.sideColumn {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.supportBox {
+  padding: 1.6rem;
+  border-radius: 20px;
+  background: linear-gradient(130deg, rgba(5, 177, 139, 0.12), rgba(5, 177, 139, 0.05));
+  border: 1px solid rgba(5, 177, 139, 0.25);
+  color: #0a1f44;
+  line-height: 1.6;
+}
+
+.supportBox > h3 {
+  margin: 0 0 0.75rem;
+}
+
+.state {
+  padding: 6rem 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+  place-items: center;
+  text-align: center;
+  color: #0a1f44;
+}
+
+.state > h2 {
+  margin: 0;
+}
+
+.state > button,
+.state a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: #05b18b;
+  color: #041024;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.state p {
+  margin: 0;
+  max-width: 480px;
+  color: #42526b;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 4px solid rgba(5, 177, 139, 0.2);
+  border-top-color: #05b18b;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

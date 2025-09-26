@@ -1,0 +1,70 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(145deg, #08142c, #12254f);
+  color: #f2f6ff;
+  border-radius: 24px;
+}
+
+.section > header > h2 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.section > header > p {
+  margin: 0.75rem 0 0;
+  color: rgba(242, 246, 255, 0.75);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.75rem;
+  border-radius: 18px;
+  background: rgba(5, 177, 139, 0.12);
+  border: 1px solid rgba(114, 237, 210, 0.24);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.quoteMark {
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(114, 237, 210, 0.45);
+}
+
+.content {
+  margin: 0;
+  color: rgba(242, 246, 255, 0.92);
+  line-height: 1.6;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(242, 246, 255, 0.8);
+}
+
+.footer > div > strong {
+  display: block;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.footer > div > span {
+  font-size: 0.85rem;
+}
+
+.rating {
+  font-size: 1.1rem;
+  color: #ffd166;
+}

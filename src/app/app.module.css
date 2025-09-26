@@ -1,0 +1,14 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #f0f4fb;
+}
+
+.main {
+  flex: 1;
+}
+
+.main > *:first-child {
+  margin-top: 0;
+}

@@ -1,0 +1,71 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  padding: 2.5rem 1.5rem;
+  background: #f7f9fc;
+  border-radius: 24px;
+}
+
+.section > header > h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #0a1f44;
+}
+
+.section > header > p {
+  margin: 0.65rem 0 0;
+  color: #4b5a72;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  gap: 0.75rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(15, 32, 68, 0.08);
+  padding: 1.25rem;
+}
+
+.card > img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.content {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.content > strong {
+  color: #14294e;
+}
+
+.content > span {
+  color: #4a5a72;
+  font-size: 0.9rem;
+}
+
+.content > small {
+  color: #05b18b;
+  font-weight: 600;
+}
+
+.content > a {
+  color: #0d1d3d;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.content > a:hover {
+  text-decoration: underline;
+}
