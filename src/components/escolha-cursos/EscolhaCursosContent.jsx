@@ -1,100 +1,10 @@
 import { useState, useMemo, useEffect } from 'react';
 import CursoCard from './CursoCard';
-
-
-const coursesData = [
-  {
-    id: 1,
-    category: 'especializacao',
-    image: 'https://i.imgur.com/STdPJA5.png',
-    title: 'Psicologia Junguiana',
-    description: 'Uma jornada de autoconhecimento e capacitação profissional baseada na obra de C.G. Jung.',
-    link: 'curso-psicologia-junguiana.html',
-    categoryLabel: 'Pós-Graduação',
-    price: 2500.00,
-    modalidade: 'Online'
-  },
-  {
-    id: 2,
-    category: 'especializacao',
-    image: 'https://i.imgur.com/cTs1Zdf.png',
-    title: 'Psicossomática',
-    description: 'Explore a integração entre corpo, alma e espírito com uma abordagem holística e humanista.',
-    link: 'curso-psicossomatica.html',
-    categoryLabel: 'Pós-Graduação',
-    price: 2200.00,
-    modalidade: 'Presencial'
-  },
-  {
-    id: 3,
-    category: 'especializacao',
-    image: 'https://i.imgur.com/iVpnrwc.png',
-    title: 'Arteterapia e Expressões Criativas',
-    description: 'Capacite-se para despertar e utilizar a criatividade como uma poderosa ferramenta terapêutica.',
-    link: 'curso-arteterapia.html',
-    categoryLabel: 'Pós-Graduação',
-    price: 2800.00,
-    modalidade: 'Híbrido'
-  },
-  {
-    id: 4,
-    category: 'extensao',
-    image: 'https://i.imgur.com/qwiCmA6.jpeg',
-    title: 'Livros Negros e Livro Vermelho',
-    description: 'De volta com mais uma edição do Curso sobre Os Livros Negros e Liber Novus, com a professora Lilian Wurzba.',
-    link: 'curso-livros-negros.html',
-    categoryLabel: 'Curta Duração',
-    price: 850.00,
-    modalidade: 'Online'
-  },
-  {
-    id: 5,
-    category: 'extensao',
-    image: 'https://i.imgur.com/AnnChjx.png',
-    title: 'Sonhando Através da Arteterapia',
-    description: 'Oficina Imersiva Arteterapia e Sonhos com as professoras Ana Paula Maluf e Bárbara Pessanha.',
-    link: 'curso-sonhando-arteterapia.html',
-    categoryLabel: 'Curta Duração',
-    price: 950.00,
-    modalidade: 'Presencial'
-  },
-  {
-    id: 6,
-    category: 'extensao',
-    image: 'https://i.imgur.com/REzhmRK.jpeg',
-    title: 'De Aion a Jó',
-    description: 'Do Javismo da Antiga Era de Áries à Revolução Aquariana do Mundo que Deseja Nascer.',
-    link: 'curso-aion-jo.html',
-    categoryLabel: 'Curta Duração',
-    price: 790.00,
-    modalidade: 'Online'
-  },
-  {
-    id: 7,
-    category: 'formacao',
-    image: 'https://i.imgur.com/lXkjLLG.png',
-    title: 'Formação de Membros Analistas Junguianos',
-    description: 'Filiação e Formação de Analistas. Somente para Ex-Alunos do Curso de Psicologia Junguiana do IJEP.',
-    link: 'curso-formacao-analistas.html',
-    categoryLabel: 'Formação',
-    price: 12000.00,
-    modalidade: 'Presencial'
-  },
-  {
-    id: 8,
-    category: 'eventos',
-    image: 'https://i.imgur.com/M3vP6UT.png',
-    title: 'Congressos Junguianos do IJEP',
-    description: 'Adquira ou saiba mais deste e dos demais Congressos Junguianos do IJEP.',
-    link: 'eventos-congressos-junguianos.html',
-    categoryLabel: 'Eventos',
-    price: 450.00,
-    modalidade: 'Online'
-  }
-];
+import { listCourseCards } from '../../services/courseCatalog.js';
 
 const EscolhaCursosContent = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const coursesData = useMemo(() => listCourseCards(), []);
 
   const filterButtons = [
     { filter: 'all', label: 'Todos os Cursos' },
@@ -119,7 +29,7 @@ const EscolhaCursosContent = () => {
       const mainCategoryMatch = activeFilter === 'all' || course.category === activeFilter;
       return mainCategoryMatch;
     });
-  }, [activeFilter]);
+  }, [activeFilter, coursesData]);
 
   return (
     <section className="page-section">
