@@ -1,0 +1,274 @@
+[
+  {
+    "id": 1,
+    "slug": "pos-graduacao-psicologia-junguiana",
+    "title": "Pós-Graduação em Psicologia Junguiana",
+    "subtitle": "Formação especializada em Psicologia Analítica de Carl Gustav Jung",
+    "description": "Uma jornada de autoconhecimento e capacitação profissional baseada na obra de C.G. Jung.",
+    "fullDescription": [
+      "A Pós-Graduação em Psicologia Junguiana oferece uma formação aprofundada na teoria e prática da Psicologia Analítica desenvolvida por Carl Gustav Jung. Este programa é destinado a profissionais da área da saúde mental que desejam se especializar nesta abordagem terapêutica única e transformadora.",
+      "O curso aborda conceitos fundamentais como inconsciente coletivo, arquétipos, individuação, tipos psicológicos e análise de sonhos, proporcionando uma compreensão integral da psique humana segundo a perspectiva junguiana."
+    ],
+    "image": "https://storage.googleapis.com/uxpilot-auth.appspot.com/e30c4d6bd3-d8d26c9e64de72469123.png",
+    "hero": {
+      "type": "video",
+      "source": "/assets/videos/video-curso-1.mp4",
+      "alt": "Apresentação do curso Pós-Graduação em Psicologia Junguiana",
+      "fallbackImage": "https://storage.googleapis.com/uxpilot-auth.appspot.com/e30c4d6bd3-d8d26c9e64de72469123.png"
+    },
+    "category": "especializacao",
+    "categoryLabel": "Pós-Graduação",
+    "price": 3890.00,
+    "precoMatricula": 300.00,
+    "originalPrice": 6000.00,
+    "modalidade": "Presencial",
+    "duration": "18 meses",
+    "workload": "360h",
+    "startDate": "Março 2024",
+    "maxStudents": "Máx. 25 alunos",
+    "certificate": "Reconhecida MEC",
+    "monthlyPrice": "R$ 160,56/mês",
+    "justificativa": [
+      "Esse curso que titula e forma especialistas em Psicologia Junguiana visa difundir as teorias, práticas e pesquisas da Psicoterapia Analítica de Carl Gustav Jung e de seus sucessores, cujas obras estão sendo alvo de grande interesse na atualidade.",
+      "Objetivamos oferecer este conhecimento através de aulas expositivas e presenciais, com apostilas ou referências bibliográficas, seguidas de debates e atividades práticas supervisionadas.",
+      "Este curso vem suprir tanto a demanda de um conhecimento mais profundo sobre a Psicologia Junguiana, também chamada de Psicologia Analítica ou Análise Junguiana, na formação profissional."
+    ],
+    "objetivos": [
+      "Aprofundar a compreensão dos fundamentos da teoria analítica de C. G. Jung.",
+      "Aplicar métodos e técnicas da Psicologia Analítica na prática profissional.",
+      "Desenvolver competências para análise de sonhos, supervisão clínica e intervenção simbólica."
+    ],
+    "publico": [
+      "O curso destina-se aos portadores de diploma do ensino superior, provenientes de instituições públicas ou privadas, preferencialmente atuantes nas áreas de humanas e da saúde.",
+      "Este curso oferece conhecimentos suplementares e titulação àqueles que já têm experiência prática na psicoterapia clínica."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-brain",
+        "title": "Abordagem Profunda",
+        "description": "Estudo aprofundado da teoria junguiana e suas aplicações práticas",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Corpo Docente",
+        "description": "Professores especialistas e analistas junguianos certificados",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      },
+      {
+        "icon": "fas fa-certificate",
+        "title": "Certificação",
+        "description": "Certificado reconhecido pelo MEC e entidades especializadas",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "O Modelo Junguiano da Psique",
+        "hours": 45,
+        "ementa": "Aspectos fundamentais e biográficos da vida e obra de Jung, incluindo a visão de homem, mundo e Deus que permeia a sua obra.",
+        "objetivos": "Fundamentar os alunos para que os conceitos básicos da Psicologia Analítica sejam bem consolidados."
+      },
+      {
+        "number": 2,
+        "title": "Fundamentos de Psicologia Analítica",
+        "hours": 45,
+        "ementa": "Conceitos de arquétipos, persona, sombra, anima e animus na teoria junguiana.",
+        "objetivos": "Desenvolver compreensão prática dos principais conceitos da Psicologia Analítica."
+      },
+      {
+        "number": 3,
+        "title": "Análise de Sonhos",
+        "hours": 30,
+        "ementa": "Métodos e técnicas de interpretação de sonhos segundo a abordagem junguiana.",
+        "objetivos": "Capacitar para o trabalho terapêutico com material onírico."
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato@fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Pós-Graduação", "Psicologia Junguiana"]
+  },
+  {
+    "id": 2,
+    "slug": "curso-psicossomatica",
+    "title": "Psicossomática",
+    "subtitle": "Integração entre corpo, alma e espírito",
+    "description": "Explore a integração entre corpo, alma e espírito com uma abordagem holística e humanista.",
+    "fullDescription": [
+      "O curso de Psicossomática oferece uma abordagem integrada para compreender as relações entre os aspectos psicológicos e físicos da saúde.",
+      "Com metodologia prático-teórica, o curso aborda desde os fundamentos da medicina psicossomática até técnicas avançadas de intervenção."
+    ],
+    "image": "https://i.imgur.com/cTs1Zdf.png",
+    "hero": {
+      "type": "video",
+      "source": "/assets/videos/video-curso-2.mp4",
+      "alt": "Ambiente representativo do curso Psicossomática",
+      "fallbackImage": "https://i.imgur.com/cTs1Zdf.png"
+    },
+    "category": "especializacao",
+    "categoryLabel": "Pós-Graduação",
+    "price": 6200.00,
+    "precoMatricula": 300.00,
+    "originalPrice": 10000.00,
+    "modalidade": "Presencial",
+    "duration": "18 meses",
+    "workload": "360h",
+    "startDate": "Março 2024",
+    "maxStudents": "Máx. 25 alunos",
+    "certificate": "Reconhecida MEC",
+    "monthlyPrice": "R$ 122,22/mês",
+    "justificativa": [
+      "Responde à necessidade de profissionais capazes de integrar dimensões psíquicas e corporais no cuidado em saúde.",
+      "Articula conhecimentos de medicina psicossomática, neuropsicoimunologia e práticas clínicas supervisionadas."
+    ],
+    "objetivos": [
+      "Compreender os fundamentos teóricos e históricos da medicina psicossomática.",
+      "Relacionar sistemas psíquicos, neuroendócrinos e imunológicos em situações clínicas.",
+      "Aplicar técnicas de intervenção psicossomática em contextos clínicos supervisionados."
+    ],
+    "publico": [
+      "Profissionais da saúde, psicoterapeutas e educadores interessados em abordagens mente-corpo.",
+      "Graduados das áreas de humanas e biológicas que buscam formação complementar em psicossomática."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-heart-pulse",
+        "title": "Abordagem Holística",
+        "description": "Integração completa entre corpo, mente e espírito",
+        "bgColor": "bg-red-50",
+        "iconColor": "bg-red-500"
+      },
+      {
+        "icon": "fas fa-microscope",
+        "title": "Base Científica",
+        "description": "Fundamentação em neuropsicoimunologia e medicina integrativa",
+        "bgColor": "bg-blue-50",
+        "iconColor": "bg-blue-500"
+      },
+      {
+        "icon": "fas fa-hands-helping",
+        "title": "Prática Supervisionada",
+        "description": "Estágios e práticas clínicas acompanhadas",
+        "bgColor": "bg-green-50",
+        "iconColor": "bg-green-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "Fundamentos da Psicossomática",
+        "hours": 45,
+        "ementa": "História e conceitos fundamentais da medicina psicossomática.",
+        "objetivos": "Estabelecer base teórica sólida em psicossomática."
+      },
+      {
+        "number": 2,
+        "title": "Neuropsicoimunologia",
+        "hours": 45,
+        "ementa": "Interações entre sistema nervoso, psique e sistema imunológico.",
+        "objetivos": "Compreender as bases biológicas da integração mente-corpo."
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato@fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Pós-Graduação", "Psicossomática"]
+  },
+  {
+    "id": 3,
+    "slug": "curso-arteterapia",
+    "title": "Arteterapia",
+    "subtitle": "Arte como instrumento terapêutico e de desenvolvimento humano",
+    "description": "Desenvolva habilidades para usar a arte como ferramenta de cura e transformação pessoal.",
+    "fullDescription": [
+      "O curso de Arteterapia forma profissionais capazes de utilizar a expressão artística como instrumento terapêutico.",
+      "Combinando conhecimentos teóricos com prática supervisionada, o programa aborda diferentes modalidades artísticas aplicadas ao contexto terapêutico."
+    ],
+    "image": "https://i.imgur.com/XaBcDef.png",
+    "hero": {
+      "type": "video",
+      "source": "/assets/videos/video-curso-3.mp4",
+      "alt": "Sessão de arteterapia em andamento",
+      "fallbackImage": "https://i.imgur.com/XaBcDef.png"
+    },
+    "category": "extensao",
+    "categoryLabel": "Extensão",
+    "price": 2450.00,
+    "precoMatricula": 200.00,
+    "originalPrice": 3500.00,
+    "modalidade": "Presencial",
+    "duration": "12 meses",
+    "workload": "240h",
+    "startDate": "Abril 2024",
+    "maxStudents": "Máx. 20 alunos",
+    "certificate": "Certificado de Extensão",
+    "monthlyPrice": "R$ 187,50/mês",
+    "justificativa": [
+      "A arteterapia é uma modalidade terapêutica em crescimento que utiliza o processo criativo como ferramenta de cura.",
+      "Oferece formação especializada para profissionais interessados em técnicas expressivas e criativas."
+    ],
+    "objetivos": [
+      "Dominar técnicas de arteterapia para diferentes contextos e públicos.",
+      "Desenvolver habilidades para facilitar processos criativos terapêuticos.",
+      "Integrar arte e psicologia de forma ética e profissional."
+    ],
+    "publico": [
+      "Psicólogos, terapeutas ocupacionais, arte-educadores e profissionais da saúde.",
+      "Artistas e educadores interessados em aplicações terapêuticas da arte."
+    ],
+    "highlights": [
+      {
+        "icon": "fas fa-palette",
+        "title": "Prática Criativa",
+        "description": "Vivência prática com diferentes modalidades artísticas",
+        "bgColor": "bg-purple-50",
+        "iconColor": "bg-purple-500"
+      },
+      {
+        "icon": "fas fa-user-friends",
+        "title": "Abordagem Humanística",
+        "description": "Foco no desenvolvimento humano integral",
+        "bgColor": "bg-orange-50",
+        "iconColor": "bg-orange-500"
+      },
+      {
+        "icon": "fas fa-lightbulb",
+        "title": "Técnicas Inovadoras",
+        "description": "Metodologias atualizadas em arteterapia",
+        "bgColor": "bg-yellow-50",
+        "iconColor": "bg-yellow-500"
+      }
+    ],
+    "curriculum": [
+      {
+        "number": 1,
+        "title": "Fundamentos da Arteterapia",
+        "hours": 40,
+        "ementa": "História, conceitos e princípios básicos da arteterapia.",
+        "objetivos": "Estabelecer fundamentação teórica em arteterapia."
+      },
+      {
+        "number": 2,
+        "title": "Técnicas Expressivas",
+        "hours": 60,
+        "ementa": "Práticas com diferentes materiais e modalidades artísticas.",
+        "objetivos": "Desenvolver repertório técnico diversificado."
+      }
+    ],
+    "contact": {
+      "phone": "(11) 3333-4444",
+      "whatsapp": "(11) 99999-8888",
+      "email": "contato@fafih.edu.br"
+    },
+    "breadcrumb": ["Início", "Extensão", "Arteterapia"]
+  }
+]

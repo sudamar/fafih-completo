@@ -1,0 +1,202 @@
+/**
+ * Error Boundary Styles
+ * Compatível com design FAFIH existente
+ */
+
+.error-boundary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 2rem;
+  background-color: var(--fafih-background, #F4F4F9);
+}
+
+.error-boundary-content {
+  max-width: 500px;
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #E5E7EB;
+}
+
+.error-boundary-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: grayscale(0.3);
+}
+
+.error-boundary-title {
+  color: var(--fafih-primary, #0A2342);
+  font-family: var(--font-family-primary, 'Montserrat', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.error-boundary-message {
+  color: #6B7280;
+  font-family: var(--font-family-secondary, 'Lato', sans-serif);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+}
+
+.error-boundary-details {
+  text-align: left;
+  margin: 1.5rem 0;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  background: #F9FAFB;
+}
+
+.error-boundary-details summary {
+  padding: 0.75rem;
+  background: #F3F4F6;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--fafih-primary, #0A2342);
+  border-radius: 4px 4px 0 0;
+}
+
+.error-boundary-details summary:hover {
+  background: #E5E7EB;
+}
+
+.error-boundary-stack {
+  padding: 1rem;
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #374151;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.error-boundary-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2rem 0 1rem 0;
+}
+
+.error-boundary-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-family-secondary, 'Lato', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+}
+
+.error-boundary-button-retry {
+  background: var(--fafih-secondary, #2C678F);
+  color: white;
+}
+
+.error-boundary-button-retry:hover {
+  background: #1E4A66;
+  transform: translateY(-1px);
+}
+
+.error-boundary-button-retry:active {
+  transform: translateY(0);
+}
+
+.error-boundary-button-reload {
+  background: #E5E7EB;
+  color: var(--fafih-primary, #0A2342);
+  border: 1px solid #D1D5DB;
+}
+
+.error-boundary-button-reload:hover {
+  background: #D1D5DB;
+  transform: translateY(-1px);
+}
+
+.error-boundary-button-reload:active {
+  transform: translateY(0);
+}
+
+.error-boundary-help {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  margin: 1rem 0 0 0;
+  font-style: italic;
+}
+
+/* Responsivo */
+@media (max-width: 640px) {
+  .error-boundary {
+    padding: 1rem;
+    min-height: 250px;
+  }
+
+  .error-boundary-content {
+    padding: 1.5rem;
+  }
+
+  .error-boundary-title {
+    font-size: 1.25rem;
+  }
+
+  .error-boundary-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .error-boundary-button {
+    width: 100%;
+  }
+}
+
+/* Estados específicos */
+.error-boundary-content[data-retry-exceeded="true"] .error-boundary-button-retry {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-boundary-content[data-retry-exceeded="true"] .error-boundary-button-retry:hover {
+  transform: none;
+  background: var(--fafih-secondary, #2C678F);
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-boundary-content {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Integração com tema FAFIH */
+.new-architecture .error-boundary {
+  background-color: var(--color-background-subtle);
+}
+
+.new-architecture .error-boundary-title {
+  color: var(--color-primary-800);
+}
+
+.new-architecture .error-boundary-button-retry {
+  background: var(--color-secondary-600);
+}
+
+.new-architecture .error-boundary-button-retry:hover {
+  background: var(--color-secondary-700);
+}
