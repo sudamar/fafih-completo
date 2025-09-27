@@ -62,37 +62,39 @@ const PolosContent = () => {
         <div className="info-cards">
           {polos.map((polo) => (
             <div className="info-card" key={polo.name}>
-              <h3>{polo.name}</h3>
-              <div className="polo-info">
-                <p>
-                  <strong>Endereço:</strong> {polo.address}
-                </p>
-                <a
-                  href={getMapsUrl(polo.address)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="map-button"
-                >
-                  Ver no mapa
-                </a>
-                <p>
-                  <strong>Telefone:</strong> {polo.phone}
-                </p>
-                <p>
-                  <strong>E-mail:</strong> {polo.email}
-                </p>
-                <p>
-                  <strong>Coordenador:</strong> {polo.coordinator}
-                </p>
+              <div>
+                <h3>{polo.name}</h3>
+                <div className="polo-info">
+                  <p>
+                    <strong>Endereço:</strong> {polo.address}
+                  </p>
+                  <p>
+                    <strong>Telefone:</strong> {polo.phone}
+                  </p>
+                  <p>
+                    <strong>E-mail:</strong> {polo.email}
+                  </p>
+                  <p>
+                    <strong>Coordenador:</strong> {polo.coordinator}
+                  </p>
+                </div>
+                <div className="polo-cursos">
+                  <h4>Cursos Oferecidos:</h4>
+                  <ul>
+                    {polo.courses.map((course) => (
+                      <li key={course}>{course}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="polo-cursos">
-                <h4>Cursos Oferecidos:</h4>
-                <ul>
-                  {polo.courses.map((course) => (
-                    <li key={course}>{course}</li>
-                  ))}
-                </ul>
-              </div>
+              <a
+                href={getMapsUrl(polo.address)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="map-button"
+              >
+                Ver no mapa
+              </a>
             </div>
           ))}
         </div>
@@ -126,6 +128,12 @@ const PolosContent = () => {
       </div>
 
       <style jsx>{`
+        .info-card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
         .polo-info {
           margin-bottom: 1.5rem;
         }
@@ -136,14 +144,15 @@ const PolosContent = () => {
         }
 
         .map-button {
-          display: inline-block;
+          display: block;
           background-color: var(--primary-color);
           color: white;
-          padding: 0.5rem 1rem;
+          padding: 0.75rem 1rem;
           border-radius: 4px;
           text-decoration: none;
-          margin-top: 0.5rem;
-          font-size: 0.9rem;
+          margin-top: 1rem;
+          font-size: 1rem;
+          text-align: center;
           transition: background-color 0.3s;
         }
 
