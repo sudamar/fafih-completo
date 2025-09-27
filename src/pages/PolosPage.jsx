@@ -2,9 +2,11 @@ import PolosContent from '@/components/polos/PolosContent';
 
 const PolosPage = () => {
   return (
-    <main>
-      <PolosContent />
-    </main>
+    <div className="bg-gray-50">
+      <main>
+        <PolosContent />
+      </main>
+    </div>
   );
 };
 

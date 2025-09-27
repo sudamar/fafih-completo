@@ -74,7 +74,7 @@ const Header = () => {
                 <li><Link to="/curso-detalhado">Modelo de Curso</Link></li>
                 <li><a href="formas-de-ingresso.html">Formas de Ingresso</a></li>
                 <li><a href="regulamentos.html">Regulamentos</a></li>
-                <li><a href="polos.html">Polos</a></li>
+                <li><a href="polos">Polos</a></li>
               </ul>
             </li>
             <li><Link to="/iniciacao-cientifica">Iniciação Científica</Link></li>

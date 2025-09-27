@@ -87,7 +87,7 @@ const Footer = () => {
               <li><a href="/?filter=eventos#cursos">Eventos</a></li>
               <li><a href="formas-de-ingresso.html">Formas de Ingresso</a></li>
               <li><a href="regulamentos.html">Regulamentos</a></li>
-              <li><a href="polos.html">Polos</a></li>
+              <li><Link to="/polos">Polos</Link></li>
             </ul>
           </div>
           <div className="footer-col">
