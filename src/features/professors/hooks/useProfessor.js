@@ -11,7 +11,7 @@
  */
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import professorService from '@/services/professorService.js';
+import professorService from '@/features/professors/services/professorService.js';
 
 /**
  * Hook para gerenciar dados de um professor específico

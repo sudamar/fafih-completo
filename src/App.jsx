@@ -15,7 +15,6 @@ import ProfessorPage from '@/pages/ProfessorPage';
 import CpaPage from '@/pages/cpa/CpaPage';
 import FormasIngressoPage from '@/pages/FormasIngressoPage';
 import IniciacaoCientificaPage from '@/pages/iniciacao/IniciacaoCientificaPage';
-// import MembrosAnalistasPage from '@/pages/MembrosAnalistasPage';
 import NoticiasCartaAbertaPage from '@/pages/NoticiasCartaAbertaPage';
 import NoticiasCursosPage from '@/pages/NoticiasCursosPage';
 import OuvidoriaPage from '@/pages/contato/OuvidoriaPage'

@@ -1,14 +1,54 @@
 import { useMemo, useState } from 'react';
-import { listProfessorsSummary } from '@/services/professorCatalog.js';
+import { useProfessors } from '@/features/professors/hooks/useProfessors';
 
 const CorpoDocenteContent = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
 
-  const professores = useMemo(() => listProfessorsSummary(), []);
+  const {
+    professors: professores,
+    loading,
+    error
+  } = useProfessors({ degree: activeFilter === 'todos' ? undefined : activeFilter });
 
-  const filteredProfessores = activeFilter === 'todos'
-    ? professores
-    : professores.filter(prof => prof.categoria === activeFilter);
+  const filteredProfessores = useMemo(() => {
+    if (!professores) return [];
+    return activeFilter === 'todos'
+      ? professores
+      : professores.filter(prof => prof.categoria === activeFilter);
+  }, [activeFilter, professores]);
+
+  // Loading state
+  if (loading) {
+    return (
+      <section className="page-section">
+        <div className="container">
+          <div className="section-header">
+            <h1 className="page-title">Corpo Docente</h1>
+          </div>
+          <div className="text-center">
+            <p>Carregando professores...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <section className="page-section">
+        <div className="container">
+          <div className="section-header">
+            <h1 className="page-title">Corpo Docente</h1>
+          </div>
+          <div className="text-center">
+            <h2>Erro ao carregar professores</h2>
+            <p>{error.message}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="page-section">

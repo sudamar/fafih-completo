@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
-import { getCourseDetails } from '@/components/curso-detalhes/courseDetailsData';
+import { Navigate, useParams, useNavigate } from 'react-router-dom';
+import { getCourseDetails } from '@/services/courseCatalog.js';
+import { useProfessors } from '@/features/professors/hooks/useProfessors';
 import { Testimonials } from '@/components/ui/testimonials';
 import { FacultyMembers } from '@/components/ui/faculty-members';
-import { listFacultyHighlights } from '@/services/professorCatalog.js';
 import styles from '@/components/curso-detalhes/curso-detalhado.module.css';
 
 const highlightBackgroundMap = {
@@ -115,18 +115,34 @@ const formatPrice = (price) => {
 
 const CourseDetailsPage = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const courseId = params?.id;
   const hasExplicitId = courseId !== undefined && courseId !== null;
   const resolvedId = hasExplicitId ? courseId : '1';
 
-  const course = useMemo(
-    () => getCourseDetails(resolvedId, { fallback: !hasExplicitId }),
-    [resolvedId, hasExplicitId]
-  );
-
-  const courseFacultyMembers = useMemo(() => listFacultyHighlights(), []);
-
+  const [course, setCourse] = useState(null);
+  const [courseLoading, setCourseLoading] = useState(true);
+  const [courseError, setCourseError] = useState(null);
   const [openCurriculum, setOpenCurriculum] = useState([]);
+
+  const {
+    professors: courseFacultyMembers,
+    loading: facultyLoading
+  } = useProfessors({ limit: 8 });
+
+  useEffect(() => {
+    console.log('🔍 CourseDetailsPage: Loading course with ID:', resolvedId);
+    try {
+      const courseData = getCourseDetails(resolvedId);
+      console.log('📚 CourseDetailsPage: Course data:', courseData);
+      setCourse(courseData);
+      setCourseLoading(false);
+    } catch (error) {
+      console.error('❌ CourseDetailsPage: Error loading course:', error);
+      setCourseError(error.message);
+      setCourseLoading(false);
+    }
+  }, [resolvedId]);
 
   useEffect(() => {
     if (course?.title) {
@@ -148,11 +164,14 @@ const CourseDetailsPage = () => {
     });
   };
 
-  if (!course) {
-    return <Navigate to="/404" replace state={{ from: resolvedId }} />;
-  }
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
+  // Todos os useMemo devem estar aqui, antes de qualquer return condicional
   const breadcrumbItems = useMemo(() => {
+    if (!course) return [];
+
     const crumbs = course.breadcrumb ?? [];
     if (!crumbs.length) {
       return [
@@ -168,77 +187,133 @@ const CourseDetailsPage = () => {
     }));
   }, [course]);
 
-  const heroBadges = [
-    course.categoryLabel && { label: course.categoryLabel, color: '#05B18B' },
-    course.duration && { label: course.duration, color: '#2105D0' },
-    course.modalidade && { label: course.modalidade, color: '#1b2a4a' },
-  ].filter(Boolean);
+  const heroBadges = useMemo(() => {
+    if (!course) return [];
 
-  const overviewParagraphs = course.fullDescription?.length
-    ? course.fullDescription
-    : course.description
-      ? [course.description]
-      : [];
+    return [
+      course.categoryLabel && { label: course.categoryLabel, color: '#05B18B' },
+      course.duration && { label: course.duration, color: '#2105D0' },
+      course.modalidade && { label: course.modalidade, color: '#1b2a4a' },
+    ].filter(Boolean);
+  }, [course]);
 
-  const justificationParagraphs = Array.isArray(course.justificativa)
-    ? course.justificativa
-    : course.justificativa
-      ? [course.justificativa]
-      : [];
+  const overviewParagraphs = useMemo(() => {
+    if (!course) return [];
 
-  const objectivesList = Array.isArray(course.objetivos)
-    ? course.objetivos
-    : course.objetivos
-      ? [course.objetivos]
-      : [];
+    return course.fullDescription?.length
+      ? course.fullDescription
+      : course.description
+        ? [course.description]
+        : [];
+  }, [course]);
 
-  const audienceList = Array.isArray(course.publico)
-    ? course.publico
-    : course.publico
-      ? [course.publico]
-      : [];
+  const justificationParagraphs = useMemo(() => {
+    if (!course) return [];
 
-  const highlightCards = (course.highlights ?? []).map((card) => ({
-    icon: card.icon,
-    title: card.title,
-    description: card.description,
-    background: highlightBackgroundMap[card.bgColor] ?? defaultHighlightBackground,
-    iconBackground: highlightIconMap[card.iconColor] ?? defaultHighlightIconBackground,
-  }));
+    return Array.isArray(course.justificativa)
+      ? course.justificativa
+      : course.justificativa
+        ? [course.justificativa]
+        : [];
+  }, [course]);
 
-  const price = formatPrice(course.price);
-  const precoMatricula = formatPrice(course.precoMatricula);
-  const originalPrice = formatPrice(course.originalPrice);
-  const heroLabel = course.hero?.alt ?? `Apresentação do curso ${course.title}`;
+  const objectivesList = useMemo(() => {
+    if (!course) return [];
 
-  const heroType = course.hero?.type ?? 'image';
-  const heroSource = course.hero?.source || '';
-  const heroFallback = course.hero?.fallbackImage || course.image || '';
+    return Array.isArray(course.objetivos)
+      ? course.objetivos
+      : course.objetivos
+        ? [course.objetivos]
+        : [];
+  }, [course]);
 
-  const curriculumItems = course.curriculum ?? [];
-  const testimonials = course.testimonials ?? [];
-  const promocaoPrice = originalPrice + " por " + price;
+  const audienceList = useMemo(() => {
+    if (!course) return [];
 
-  const enrollmentInfo = [
-    { icon: 'fas fa-clock', label: 'De', value: promocaoPrice },
-    { icon: 'fas fa-clock', label: 'Duração', value: course.duration },
-    { icon: 'fas fa-map-marker-alt', label: 'Modalidade', value: course.modalidade },
-    { icon: 'fas fa-certificate', label: 'Certificação', value: course.certificate },
-    { icon: 'fas fa-book', label: 'Carga Horária', value: course.workload },
-  ].filter((item) => item.value);
+    return Array.isArray(course.publico)
+      ? course.publico
+      : course.publico
+        ? [course.publico]
+        : [];
+  }, [course]);
 
-  const supportChannels = [
-    course.contact?.phone && { type: 'phone', title: 'Central de Atendimento', value: course.contact.phone },
-    course.contact?.whatsapp && { type: 'whatsapp', title: 'Coordenação pelo WhatsApp', value: course.contact.whatsapp },
-    course.contact?.email && { type: 'email', title: 'E-mail da Secretaria', value: course.contact.email },
-  ]
-    .filter(Boolean)
-    .map((channel) => ({
-      ...channel,
-      helper: contactHelpers[channel.type] ?? null,
-      accent: contactAccent[channel.type] ?? '#2105d0',
-      tint: contactTint[channel.type] ?? 'rgba(33, 5, 208, 0.12)',
+  const highlightCards = useMemo(() => {
+    if (!course) return [];
+
+    return (course.highlights ?? []).map((card) => ({
+      icon: card.icon,
+      title: card.title,
+      description: card.description,
+      background: highlightBackgroundMap[card.bgColor] ?? defaultHighlightBackground,
+      iconBackground: highlightIconMap[card.iconColor] ?? defaultHighlightIconBackground,
     }));
+  }, [course]);
+
+  const price = useMemo(() => formatPrice(course?.price), [course?.price]);
+  const precoMatricula = useMemo(() => formatPrice(course?.precoMatricula), [course?.precoMatricula]);
+  const originalPrice = useMemo(() => formatPrice(course?.originalPrice), [course?.originalPrice]);
+
+  const heroLabel = useMemo(() => course?.hero?.alt ?? `Apresentação do curso ${course?.title || ''}`, [course]);
+  const heroType = useMemo(() => course?.hero?.type ?? 'image', [course]);
+  const heroSource = useMemo(() => course?.hero?.source || '', [course]);
+  const heroFallback = useMemo(() => course?.hero?.fallbackImage || course?.image || '', [course]);
+
+  const curriculumItems = useMemo(() => course?.curriculum ?? [], [course]);
+  const testimonials = useMemo(() => course?.testimonials ?? [], [course]);
+  const promocaoPrice = useMemo(() => originalPrice + " por " + price, [originalPrice, price]);
+
+  const enrollmentInfo = useMemo(() => {
+    if (!course) return [];
+
+    return [
+      { icon: 'fas fa-clock', label: 'De', value: promocaoPrice },
+      { icon: 'fas fa-clock', label: 'Duração', value: course.duration },
+      { icon: 'fas fa-map-marker-alt', label: 'Modalidade', value: course.modalidade },
+      { icon: 'fas fa-certificate', label: 'Certificação', value: course.certificate },
+      { icon: 'fas fa-book', label: 'Carga Horária', value: course.workload },
+    ].filter((item) => item.value);
+  }, [course, promocaoPrice]);
+
+  const supportChannels = useMemo(() => {
+    if (!course) return [];
+
+    return [
+      course.contact?.phone && { type: 'phone', title: 'Central de Atendimento', value: course.contact.phone },
+      course.contact?.whatsapp && { type: 'whatsapp', title: 'Coordenação pelo WhatsApp', value: course.contact.whatsapp },
+      course.contact?.email && { type: 'email', title: 'E-mail da Secretaria', value: course.contact.email },
+    ]
+      .filter(Boolean)
+      .map((channel) => ({
+        ...channel,
+        helper: contactHelpers[channel.type] ?? null,
+        accent: contactAccent[channel.type] ?? '#2105d0',
+        tint: contactTint[channel.type] ?? 'rgba(33, 5, 208, 0.12)',
+      }));
+  }, [course]);
+
+  // Loading state
+  if (courseLoading) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <p>Carregando curso...</p>
+      </div>
+    );
+  }
+
+  // Error state
+  if (courseError) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <h2>Erro ao carregar curso</h2>
+        <p>{courseError}</p>
+      </div>
+    );
+  }
+
+  // Not found state
+  if (!courseLoading && !course) {
+    return <Navigate to="/404" replace state={{ from: resolvedId }} />;
+  }
 
   return (
     <section className={styles.container}>
@@ -627,7 +702,7 @@ const CourseDetailsPage = () => {
                   </>
                 )}
                 {course.categoryLabel && <span>{course.categoryLabel}</span>}
-                {course.modalidade && <small>{course.modalidade}</small>}
+                {/* {course.modalidade && <small>{course.modalidade}</small>} */}
               </div>
 
               {enrollmentInfo.length > 0 && (
@@ -649,6 +724,9 @@ const CourseDetailsPage = () => {
                 </button>
                 <button type="button" className={styles.secondaryButton}>
                   Download da Ementa
+                </button>
+                <button type="button" className={styles.secondaryButton} onClick={handleGoBack}>
+                  ← Voltar
                 </button>
               </div>
             </section>

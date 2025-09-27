@@ -27,7 +27,7 @@ const CourseSummary = ({ course }) => {
   return (
     <section className={styles.summary} data-testid="course-summary">
       <header className={styles.header}>
-        <h2>Sobre o curso</h2>
+        <h2>Sobre o cursooooooo</h2>
         <p>
           Conheça os principais diferenciais, objetivos e público da formação{course.categoryLabel ? ` ${course.categoryLabel.toLowerCase()}` : ''}.
         </p>

@@ -11,7 +11,7 @@ const CursoCard = ({ curso }) => {
         <h3>{curso.title}</h3>
         <p className="curso-card-desc">{curso.description}</p>
         <div className="curso-card-actions">
-          <Link to={`/curso-detalhes/${curso.id}`}>Saiba Mais</Link>
+          <Link to={`/curso-detalhes/${curso.slug || curso.id}`}>Saiba Mais</Link>
         </div>
       </div>
     </div>

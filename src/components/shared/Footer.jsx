@@ -100,7 +100,7 @@ const Footer = () => {
               <li><a href="membros-analistas.html">Membros Analistas</a></li>
               <li><a href="nucleo-apoio-docente.html">Núcleo de Apoio e Desenvolvimento Docente</a></li>
               <li><a href="portal-do-docente.html">Portal do Docente</a></li>
-              <li><a href="servicos-comunidade.html">Serviços para a Comunidade</a></li>
+              <li><Link to="/servico-para-comunidade">Serviços para a Comunidade</Link></li>
             </ul>
           </div>
           <div className="footer-col">

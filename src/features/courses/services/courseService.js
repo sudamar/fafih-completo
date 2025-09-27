@@ -10,7 +10,7 @@
  */
 
 // Importa dados diretamente do JSON
-import coursesData from '@/data/courses.json' assert { type: 'json' };
+import coursesData from '@/data/courses.json';
 
 /**
  * Cache simples em memória
@@ -161,7 +161,8 @@ class CourseService {
 
     console.log(`🆔 Getting course by ID: ${id}`);
 
-    const course = this.data.find(c => c.id === parseInt(id));
+    const numericId = parseInt(id, 10);
+    const course = this.data.find(c => c.id === numericId);
 
     if (course) {
       console.log(`✅ Found course: ${course.title}`);
@@ -169,7 +170,7 @@ class CourseService {
       return course;
     }
 
-    console.warn(`⚠️ Course not found with ID: ${id}`);
+    console.warn(`⚠️ Course not found with ID: ${id}. Available courses:`, this.data.length);
     return null;
   }
 

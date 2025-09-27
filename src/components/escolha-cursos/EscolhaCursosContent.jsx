@@ -4,6 +4,7 @@ import { listCourseCards } from '@/services/courseCatalog.js';
 
 const EscolhaCursosContent = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+
   const coursesData = useMemo(() => listCourseCards(), []);
 
   const filterButtons = [
@@ -24,11 +25,9 @@ const EscolhaCursosContent = () => {
   }, []);
 
   const filteredCourses = useMemo(() => {
-    return coursesData.filter(course => {
-      // Filtro principal por categoria
-      const mainCategoryMatch = activeFilter === 'all' || course.category === activeFilter;
-      return mainCategoryMatch;
-    });
+    return activeFilter === 'all'
+      ? coursesData
+      : coursesData.filter(course => course.category === activeFilter);
   }, [activeFilter, coursesData]);
 
   return (
