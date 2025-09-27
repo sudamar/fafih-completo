@@ -17,13 +17,31 @@ const heroSourceMap = {
   '/assets/videos/video-curso-7.mp4': heroVideo7,
 };
 
+const resolveHeroSource = (source) => {
+  if (!source) {
+    return source;
+  }
+
+  const normalized = source.startsWith('/') ? source : `/${source}`;
+
+  if (heroSourceMap[normalized]) {
+    return heroSourceMap[normalized];
+  }
+
+  try {
+    const trimmed = normalized.replace(/^\//, '');
+    return new URL(`../${trimmed}`, import.meta.url).href;
+  } catch (error) {
+    return source;
+  }
+};
+
 const normalizeHero = (course) => {
   if (!course.hero) {
     return course.hero;
   }
 
-  const source = course.hero.source;
-  const resolvedSource = source && heroSourceMap[source] ? heroSourceMap[source] : source;
+  const resolvedSource = resolveHeroSource(course.hero.source);
 
   return {
     ...course.hero,
