@@ -55,12 +55,15 @@ const OuvidoriaContent = () => {
   return (
     <section className="page-section">
       <div className="container">
-        <div className="ouvidoria-intro">
-          <p>A Ouvidoria da FAFIH é um canal de comunicação direta entre a comunidade acadêmica e a instituição. Aqui você pode registrar elogios, sugestões, reclamações ou denúncias de forma segura e confidencial.</p>
+        <div className="section-header">
+          <h1 className="page-title">Ouvidoria FAFIH</h1>
+          <p>
+            Um canal institucional direto de comunicação entre você e nossa instituição. Registre elogios, sugestões, reclamações ou denúncias com segurança e confidencialidade.
+          </p>
         </div>
 
-        <div className="ouvidoria-grid">
-          <div className="ouvidoria-info-cards">
+        <div className="two-column">
+          <div className="stacked-cards">
             <div className="info-card">
               <h3>O que é a Ouvidoria?</h3>
               <p>Um órgão independente que recebe, analisa e encaminha manifestações, promovendo a melhoria contínua dos serviços da FAFIH.</p>
@@ -74,19 +77,36 @@ const OuvidoriaContent = () => {
                 <li>Acompanhamento até a resolução</li>
               </ul>
             </div>
+            <div className="info-card">
+              <h3>Como funciona</h3>
+              <ul>
+                <li>1. Você registra sua manifestação</li>
+                <li>2. Analisamos e encaminhamos ao setor responsável</li>
+                <li>3. Acompanhamos o tratamento até a resposta</li>
+                <li>4. Retornamos com a solução apresentada</li>
+              </ul>
+            </div>
           </div>
 
-          <div className="ouvidoria-form-container">
-            <h2>Registre sua Manifestação</h2>
+          <div className="info-card">
+            <h1>Registre sua Manifestação</h1>
+            <br/>
             {submitSuccess && (
-              <div className="success-message">
-                <p>Sua manifestação foi enviada com sucesso! Retornaremos em até 10 dias úteis.</p>
-              </div>
+              <p style={{
+                background: '#e8f5e9',
+                color: '#2e7d32',
+                padding: '1rem',
+                borderRadius: '6px',
+                textAlign: 'center',
+                marginBottom: '1.5rem',
+              }}>
+                Sua manifestação foi enviada com sucesso! Retornaremos em até 10 dias úteis.
+              </p>
             )}
-            <form onSubmit={handleSubmit} className="ouvidoria-form">
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label>Tipo de Identificação</label>
-                <div className="radio-group">
+                <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
                   <label><input type="radio" name="identificacao" value="identificado" checked={formData.identificacao === 'identificado'} onChange={handleInputChange} /> Identificado</label>
                   <label><input type="radio" name="identificacao" value="anonimo" checked={formData.identificacao === 'anonimo'} onChange={handleInputChange} /> Anônimo</label>
                 </div>
@@ -148,21 +168,22 @@ const OuvidoriaContent = () => {
               </button>
             </form>
           </div>
+
         </div>
 
-        <div className="ouvidoria-contato">
-          <h2>Outros Canais de Contato</h2>
-          <div className="contato-grid">
-            <div className="contato-item">
-              <h3>Telefone</h3>
+        <div className="info-card" style={{ marginTop: '3rem' }}>
+          <h3>Outros Canais de Contato</h3>
+          <div className="info-cards" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
+            <div className="info-card">
+              <h4>Telefone</h4>
               <p>(11) 3807-2041</p>
             </div>
-            <div className="contato-item">
-              <h3>E-mail</h3>
+            <div className="info-card">
+              <h4>E-mail</h4>
               <p>ouvidoria@fafih.edu.br</p>
             </div>
-            <div className="contato-item">
-              <h3>Atendimento Presencial</h3>
+            <div className="info-card">
+              <h4>Atendimento Presencial</h4>
               <p>Segunda a Sexta, das 8h às 18h</p>
             </div>
           </div>

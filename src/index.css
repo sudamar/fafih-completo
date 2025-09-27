@@ -933,6 +933,39 @@ footer {
   padding: 4rem 5%;
 }
 
+.section-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  line-height: 1.7;
+}
+
+.page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient);
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
 .page-intro {
   font-size: 1.2rem;
   text-align: center;
@@ -2055,6 +2088,31 @@ footer {
   color: var(--primary-color);
   margin-bottom: 1rem;
   font-family: 'Montserrat', sans-serif;
+}
+
+.two-column {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 720px) {
+  .two-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .two-column {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: start;
+  }
+}
+
+.stacked-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
 }
 
 .contact-item-info {

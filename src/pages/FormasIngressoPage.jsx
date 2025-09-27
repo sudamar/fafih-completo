@@ -1,4 +1,4 @@
-import FormasIngressoContent from '../components/formas-ingresso/FormasIngressoContent';
+import FormasIngressoContent from '@/components/formas-ingresso/FormasIngressoContent';
 
 const FormasIngressoPage = () => {
   return (

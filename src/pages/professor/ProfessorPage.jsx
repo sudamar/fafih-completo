@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import ProfessorErrorBoundary from '../../features/professors/components/ProfessorErrorBoundary.jsx';
-import { useProfessor } from '../../features/professors/hooks/useProfessor.js';
+import ProfessorErrorBoundary from '@/features/professors/components/ProfessorErrorBoundary.jsx';
+import { useProfessor } from '@/features/professors/hooks/useProfessor.js';
 import {
   ProfessorHeader,
   PublicationsShowcase,
   CourseAssignments
-} from '../../components/domain/professor';
-import styles from './professor.module.css';
+} from '@/components/domain/professor';
+import styles from '@/professor.module.css';
 
 const ProfessorPageContent = ({ slug }) => {
   const {

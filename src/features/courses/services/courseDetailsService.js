@@ -9,7 +9,7 @@
  */
 
 // Importa dados detalhados diretamente do JSON
-import courseDetailsData from '../../../data/courseDetails.json' assert { type: 'json' };
+import courseDetailsData from '@/data/courseDetails.json' assert { type: 'json' };
 
 /**
  * Cache simples em memória

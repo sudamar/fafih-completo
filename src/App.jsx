@@ -1,30 +1,30 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/shared/Header';
-import Footer from './components/shared/Footer';
-import CookieConsent from './components/shared/CookieConsent';
-import IndexPage from './pages/IndexPage';
-import ExtensaoPage from './pages/ExtensaoPage';
-import PerguntasFrequentesPage from './pages/PerguntasFrequentesPage';
-import ApoioPsicopedagogicoPage from './pages/ApoioPsicopedagogicoPage';
-import ConhecaFafihPage from './pages/ConhecaFafihPage';
-import ConsultarDiplomaPage from './pages/ConsultarDiplomaPage';
-import CorpoDocentePage from './pages/CorpoDocentePage';
-import CpaPage from './pages/CpaPage';
-import CursoAionJoPage from './pages/CursoAionJoPage';
-import FormasIngressoPage from './pages/FormasIngressoPage';
-import IniciacaoCientificaPage from './pages/IniciacaoCientificaPage';
-import MembrosAnalistasPage from './pages/MembrosAnalistasPage';
-import NoticiasCartaAbertaPage from './pages/NoticiasCartaAbertaPage';
-import NoticiasCursosPage from './pages/NoticiasCursosPage';
-import OuvidoriaPage from './pages/OuvidoriaPage';
-import NucleoApoioDocentePage from './pages/NucleoApoioDocentePage';
-import PolosPage from './pages/PolosPage';
-import RegulamentosPage from './pages/RegulamentosPage';
-import EscolhaCursosPage from './pages/EscolhaCursosPage';
-import CursoDetalhesPage from './pages/CursoDetalhesPage';
-import CursoDetalhadoPage from './pages/CursoDetalhadoPage';
-import NotFoundPage from './pages/NotFoundPage';
+import Header from '@/components/shared/Header';
+import Footer from '@/components/shared/Footer';
+import CookieConsent from '@/components/shared/CookieConsent';
+import IndexPage from '@/pages/IndexPage';
+import ExtensaoPage from '@/pages/extensao/ExtensaoPage';
+import PerguntasFrequentesPage from '@/pages/contato/PerguntasFrequentesPage';
+import ApoioPsicopedagogicoPage from '@/pages/ApoioPsicopedagogicoPage';
+import ConhecaFafihPage from '@/pages/institucional/ConhecaFafihPage';
+import ServicoParaComunidadePage from '@/pages/institucional/ServicoParaComunidadePage';
+import ConsultarDiplomaPage from '@/pages/contato/ConsultarDiplomaPage';
+import CorpoDocentePage from '@/pages/institucional/CorpoDocentePage';
+import ProfessorPage from '@/pages/ProfessorPage';
+import CpaPage from '@/pages/cpa/CpaPage';
+import FormasIngressoPage from '@/pages/FormasIngressoPage';
+import IniciacaoCientificaPage from '@/pages/iniciacao/IniciacaoCientificaPage';
+// import MembrosAnalistasPage from '@/pages/MembrosAnalistasPage';
+import NoticiasCartaAbertaPage from '@/pages/NoticiasCartaAbertaPage';
+import NoticiasCursosPage from '@/pages/NoticiasCursosPage';
+import OuvidoriaPage from '@/pages/contato/OuvidoriaPage'
+import NucleoApoioDocentePage from '@/pages/NucleoApoioDocentePage';
+import PolosPage from '@/pages/PolosPage';
+import RegulamentosPage from '@/pages/RegulamentosPage';
+import EscolhaCursosPage from '@/pages/lista-cursos/EscolhaCursosPage';
+import CursoDetalhesPage from '@/pages/curso-detalhes/CourseDetailsPage';
+import NotFoundPage from '@/pages/notfound/NotFoundPage';
 
 function App() {
   useEffect(() => {
@@ -71,13 +71,14 @@ function App() {
           <Route path="/perguntas-frequentes" element={<PerguntasFrequentesPage />} />
           <Route path="/apoio-psicopedagogico" element={<ApoioPsicopedagogicoPage />} />
           <Route path="/conheca-fafih" element={<ConhecaFafihPage />} />
+          <Route path="/servico-para-comunidade" element={<ServicoParaComunidadePage />} />
           <Route path="/consultar-diploma" element={<ConsultarDiplomaPage />} />
           <Route path="/corpo-docente" element={<CorpoDocentePage />} />
+          <Route path="/professor/:slug" element={<ProfessorPage />} />
           <Route path="/cpa" element={<CpaPage />} />
-          <Route path="/curso-aion-jo" element={<CursoAionJoPage />} />
           <Route path="/formas-de-ingresso" element={<FormasIngressoPage />} />
           <Route path="/iniciacao-cientifica" element={<IniciacaoCientificaPage />} />
-          <Route path="/membros-analistas" element={<MembrosAnalistasPage />} />
+          {/* <Route path="/membros-analistas" element={<MembrosAnalistasPage />} /> */}
           <Route path="/noticia-carta-aberta" element={<NoticiasCartaAbertaPage />} />
           <Route path="/noticia-cursos" element={<NoticiasCursosPage />} />
           <Route path="/ouvidoria" element={<OuvidoriaPage />} />
@@ -86,8 +87,6 @@ function App() {
           <Route path="/regulamentos" element={<RegulamentosPage />} />
           <Route path="/escolha-cursos" element={<EscolhaCursosPage />} />
           <Route path="/curso-detalhes/:id" element={<CursoDetalhesPage />} />
-          <Route path="/curso-detalhado" element={<CursoDetalhadoPage />} />
-          <Route path="/curso-detalhado/:id" element={<CursoDetalhadoPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

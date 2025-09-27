@@ -5,7 +5,7 @@
  */
 
 // API e requisições
-export { useApi } from './useApi.js';
+export { useApi } from '@/useApi.js';
 
 // Persistência local
 export {
@@ -13,7 +13,7 @@ export {
   useLocalStorageBoolean,
   useLocalStorageNumber,
   useLocalStorageArray
-} from './useLocalStorage.js';
+} from '@/useLocalStorage.js';
 
 // Performance e timing
 export {
@@ -22,7 +22,7 @@ export {
   useDebouncedSearch,
   useThrottle,
   useDebounceWithLoading
-} from './useDebounce.js';
+} from '@/useDebounce.js';
 
 // Re-export padrão para conveniência
-export { useApi as default } from './useApi.js';
+export { useApi as default } from '@/useApi.js';

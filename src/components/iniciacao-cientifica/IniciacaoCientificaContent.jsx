@@ -30,7 +30,9 @@ const IniciacaoCientificaContent = () => {
   return (
     <section className="page-section">
       <div className="container">
-        <h1>Iniciação Científica</h1>
+        <div className="section-header">
+          <h1 className="page-title">Iniciação Científica</h1>
+        </div>
 
         <div className="conheca-intro">
           <p>Nossos programas de iniciação científica oferecem aos alunos a oportunidade de participar de projetos de pesquisa inovadores, desenvolvendo habilidades científicas e de avanço do conhecimento, sob a orientação de nossos renomados professores e com a possibilidade de bolsas de estudos.</p>

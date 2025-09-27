@@ -1,4 +1,4 @@
-import styles from './PublicationsShowcase.module.css';
+import styles from '@/PublicationsShowcase.module.css';
 
 const PublicationsShowcase = ({ publications = [] }) => {
   if (!publications.length) {

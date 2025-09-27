@@ -66,7 +66,7 @@ const Footer = () => {
                 <li><Link to="/conheca-fafih">Conheça a FAFIH</Link></li>
                 <li><a href="https://ijep.com.br/" target="_blank" rel="noopener noreferrer">Conheça o IJEP</a></li>
                 <li><a href="/#focos">Focos Acadêmicos</a></li>
-                <li><a href="iniciacao-cientifica.html">Iniciação Científica</a></li>
+                <li><Link to="/iniciacao-cientifica">Iniciação Científica</Link></li>
                 <li><Link to="/extensao">Extensão</Link></li>
                 <li><a href="/#noticias">Notícias</a></li>
                 <li><Link to="/cpa">Comissão Própria de Avaliação</Link></li>

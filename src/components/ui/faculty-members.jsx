@@ -1,5 +1,5 @@
-import styles from './faculty-members.module.css';
-import courseStyles from '../curso-detalhes/curso-detalhado.module.css';
+import styles from '@/components/ui/faculty-members.module.css';
+import courseStyles from '@/components/curso-detalhes/curso-detalhado.module.css';
 
 // Versão simples - apenas nome, foto, cargo e botão individual "Veja mais"
 export function FacultyMembersSimple({ facultyMembers }) {
@@ -42,7 +42,7 @@ export function FacultyMembersSimple({ facultyMembers }) {
               <h3 className={styles.facultyNameSimple}>{member.name}</h3>
               <p className={styles.facultyTitleSimple}>{member.title}</p>
               <a
-                href={`/professor/${generateProfessorId(member.name, index)}`}
+                href={`/professor/${member.slug || member.legacySlug || generateProfessorId(member.name, index)}`}
                 className={styles.professorLink}
               >
                 Saiba mais
@@ -111,7 +111,7 @@ export function FacultyMembers({ facultyMembers }) {
               <p className={styles.facultyTitle}>{member.title}</p>
               <p className={styles.facultyDescription}>{limitDescription(member.description)}</p>
               <a
-                href={`/professor/${generateProfessorId(member.name, index)}`}
+                href={`/professor/${member.slug || member.legacySlug || generateProfessorId(member.name, index)}`}
                 className={styles.professorLink}
               >
                 Saiba mais

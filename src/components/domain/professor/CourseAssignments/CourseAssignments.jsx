@@ -1,4 +1,4 @@
-import styles from './CourseAssignments.module.css';
+import styles from '@/CourseAssignments.module.css';
 
 const CourseAssignments = ({ courses = [] }) => {
   if (!courses.length) {

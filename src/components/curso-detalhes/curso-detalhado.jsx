@@ -2,10 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import styles from './curso-detalhado.module.css';
 import { getCourseDetails } from './courseDetailsData';
-import { Testimonials } from '../ui/testimonials';
-import { FacultyMembers } from '../ui/faculty-members';
-import { facultyMembers } from './facultyData';
-
+import { Testimonials } from '@/components/ui/testimonials';
+import { FacultyMembers } from '@/components/ui/faculty-members';
+import { listFacultyHighlights } from '@/services/professorCatalog.js';
+  
 const highlightBackgroundMap = {
   'bg-blue-50': 'linear-gradient(145deg, #e9f1ff, #d8e7ff)',
   'bg-green-50': 'linear-gradient(145deg, #e3f7f1, #ccefe3)',
@@ -124,6 +124,8 @@ const CursoDetalhado = ({ courseId }) => {
     [resolvedId, hasExplicitId]
   );
 
+  const courseFacultyMembers = useMemo(() => listFacultyHighlights(), []);
+
   if (!course) {
     return <Navigate to="/404" replace state={{ from: resolvedId }} />;
   }
@@ -192,8 +194,6 @@ const CursoDetalhado = ({ courseId }) => {
   const heroFallback = course.hero?.fallbackImage || course.image || '';
 
   const curriculumItems = course.curriculum ?? [];
-  // Using global faculty members from facultyData
-  const courseFacultyMembers = facultyMembers;
   const testimonials = course.testimonials ?? [];
   const promocaoPrice =  originalPrice + " por " + price;  
 

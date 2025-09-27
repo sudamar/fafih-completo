@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(xargs sed:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []

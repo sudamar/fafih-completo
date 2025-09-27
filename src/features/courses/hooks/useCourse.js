@@ -10,7 +10,7 @@
  */
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import courseService from '../services/courseService.js';
+import courseService from '@/features/courses/services/courseService.js';
 
 /**
  * Hook para gerenciar dados de um curso específico

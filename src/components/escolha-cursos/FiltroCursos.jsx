@@ -1,5 +1,5 @@
 import React from 'react';
-import CheckBox from '../ui/checkbox';
+import CheckBox from '@/components/ui/checkbox';
 
 const FilterGroup = ({ title, items, selectedItems, onFilterChange }) => (
   <div className="border border-gray-200 rounded-lg p-4 bg-gray-50/50">

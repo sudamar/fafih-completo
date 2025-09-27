@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getCourseDetails } from './courseDetailsData';
+import { getCourseDetails } from '@/courseDetailsData';
 
 const CursoDetalhes = () => {
   const { id } = useParams();

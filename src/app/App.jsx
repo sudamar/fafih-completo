@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import AppProviders from './providers.jsx';
-import AppRoutes from './routes.jsx';
+import AppProviders from '@/app/providers.jsx';
+import AppRoutes from '@/app/routes.jsx';
 
-import Header from '../components/shared/Header.jsx';
-import Footer from '../components/shared/Footer.jsx';
-import CookieConsent from '../components/shared/CookieConsent.jsx';
+import Header from '@/components/shared/Header.jsx';
+import Footer from '@/components/shared/Footer.jsx';
+import CookieConsent from '@/components/shared/CookieConsent.jsx';
 
 import styles from './app.module.css';
 

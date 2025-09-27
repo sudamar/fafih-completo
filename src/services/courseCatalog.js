@@ -1,11 +1,11 @@
-import rawCourses from '../data/courses.json';
-import heroVideo1 from '../assets/videos/video-curso-1.mp4';
-import heroVideo2 from '../assets/videos/video-curso-2.mp4';
-import heroVideo3 from '../assets/videos/video-curso-3.mp4';
-import heroVideo4 from '../assets/videos/video-curso-4.mp4';
-import heroVideo5 from '../assets/videos/video-curso-5.mp4';
-import heroVideo6 from '../assets/videos/video-curso-6.mp4';
-import heroVideo7 from '../assets/videos/video-curso-7.mp4';
+import rawCourses from '@/data/courses.json' with { type: 'json' };
+import heroVideo1 from '@/assets/videos/video-curso-1.mp4';
+import heroVideo2 from '@/assets/videos/video-curso-2.mp4';
+import heroVideo3 from '@/assets/videos/video-curso-3.mp4';
+import heroVideo4 from '@/assets/videos/video-curso-4.mp4';
+import heroVideo5 from '@/assets/videos/video-curso-5.mp4';
+import heroVideo6 from '@/assets/videos/video-curso-6.mp4';
+import heroVideo7 from '@/assets/videos/video-curso-7.mp4';
 
 const heroSourceMap = {
   '/assets/videos/video-curso-1.mp4': heroVideo1,
@@ -31,7 +31,7 @@ const resolveHeroSource = (source) => {
   try {
     const trimmed = normalized.replace(/^\//, '');
     return new URL(`../${trimmed}`, import.meta.url).href;
-  } catch (error) {
+  } catch {
     return source;
   }
 };

@@ -9,7 +9,7 @@
  */
 
 import { Component } from 'react';
-import errorHandler from '../../services/errorHandler.js';
+import errorHandler from '@/services/errorHandler.js';
 import './ErrorBoundary.module.css';
 
 class ErrorBoundary extends Component {

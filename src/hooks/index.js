@@ -5,7 +5,7 @@
  */
 
 // Hook principal para API
-export { default as useApi, useApi } from './useApi.js';
+export { default as useApi, useApi } from '@/useApi.js';
 
 // Hooks de debounce
 export {
@@ -13,7 +13,7 @@ export {
   useDebounce,
   useDebouncedCallback,
   useAdvancedDebounce
-} from './useDebounce.js';
+} from '@/useDebounce.js';
 
 // Hooks de localStorage
 export {
@@ -22,7 +22,7 @@ export {
   useLocalStorageBoolean,
   useLocalStorageObject,
   useLocalStorageArray
-} from './useLocalStorage.js';
+} from '@/useLocalStorage.js';
 
 // Hooks para operações assíncronas
 export {
@@ -30,17 +30,17 @@ export {
   useAsync,
   useAsyncCallback,
   useAsyncQueue
-} from './useAsync.js';
+} from '@/useAsync.js';
 
 // Re-export hooks de features
 export {
   useCourses,
   useCourse
-} from '../features/courses/hooks/index.js';
+} from '@/features/courses/hooks/index.js';
 
 export {
   useProfessors,
   useProfessor
-} from '../features/professors/hooks/index.js';
+} from '@/features/professors/hooks/index.js';
 
 console.log('🎣 All hooks exported');

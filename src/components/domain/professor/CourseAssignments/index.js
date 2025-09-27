@@ -1,1 +1,1 @@
-export { default } from './CourseAssignments.jsx';
+export { default } from '@/CourseAssignments.jsx';

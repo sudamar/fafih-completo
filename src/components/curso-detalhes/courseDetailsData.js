@@ -1,7 +1,7 @@
 import {
   getAllCourses,
   getCourseDetails as catalogCourseDetails,
-} from '../../services/courseCatalog.js';
+} from '@/services/courseCatalog.js';
 
 export const courseDetailsMap = Object.fromEntries(
   getAllCourses().map((course) => [String(course.id), course])

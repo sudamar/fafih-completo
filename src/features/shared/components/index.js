@@ -11,4 +11,4 @@ export {
   DataErrorBoundary,
   withErrorBoundary,
   useErrorHandler
-} from './ErrorBoundary.jsx';
+} from '@/ErrorBoundary.jsx';

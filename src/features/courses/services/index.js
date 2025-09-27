@@ -16,7 +16,7 @@ export {
   getStats,
   clearCache,
   getCacheInfo
-} from './courseService.js';
+} from '@/courseService.js';
 
 // Service de dados detalhados dos cursos (curriculum, highlights, etc.)
 export {
@@ -30,7 +30,7 @@ export {
   getCourseHighlights,
   getCourseContact,
   getCourseDetails_Legacy
-} from './courseDetailsService.js';
+} from '@/courseDetailsService.js';
 
 // Re-export default para conveniência
-export { default } from './courseService.js';
+export { default } from '@/courseService.js';

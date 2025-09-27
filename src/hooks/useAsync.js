@@ -10,7 +10,7 @@
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import errorHandler from '../services/errorHandler.js';
+import errorHandler from '@/services/errorHandler.js';
 
 /**
  * Hook para gerenciamento de operações assíncronas

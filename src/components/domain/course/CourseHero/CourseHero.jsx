@@ -1,4 +1,4 @@
-import styles from './CourseHero.module.css';
+import styles from './CourseHero.module.css'; 
 
 const getHeroMedia = (hero = {}, fallbackImage) => {
   if (!hero) {

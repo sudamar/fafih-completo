@@ -1,7 +1,7 @@
 import { useSearchParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useCourses } from '../../features/courses/hooks/useCourses.js';
-import styles from './courses-list.module.css';
+import { useCourses } from '@/features/courses/hooks/useCourses.js';
+import styles from '@/courses-list.module.css';
 
 const CoursesListPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -10,7 +10,7 @@ const CoursesListPage = () => {
 
   const {
     courses,
-    loading,
+    loading, 
     error,
     categories,
     stats,

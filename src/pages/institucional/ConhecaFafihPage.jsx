@@ -1,4 +1,4 @@
-import ConhecaContent from '../components/conheca-fafih/ConhecaContent';
+import ConhecaContent from '@/components/conheca-fafih/ConhecaContent';
 
 const ConhecaFafihPage = () => {
   return (

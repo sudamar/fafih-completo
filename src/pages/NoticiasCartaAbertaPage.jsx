@@ -1,4 +1,4 @@
-import NoticiasCartaAbertaContent from '../components/noticia-carta-aberta/NoticiasCartaAbertaContent';
+import NoticiasCartaAbertaContent from '@/components/noticia-carta-aberta/NoticiasCartaAbertaContent';
 
 const NoticiasCartaAbertaPage = () => {
   return (

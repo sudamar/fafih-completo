@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import CursoCard from './CursoCard';
-import { listCourseCards } from '../../services/courseCatalog.js';
+import { listCourseCards } from '@/services/courseCatalog.js';
 
 const EscolhaCursosContent = () => {
   const [activeFilter, setActiveFilter] = useState('all');

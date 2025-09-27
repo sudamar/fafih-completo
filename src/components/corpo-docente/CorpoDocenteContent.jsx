@@ -1,76 +1,10 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
+import { listProfessorsSummary } from '@/services/professorCatalog.js';
 
 const CorpoDocenteContent = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
 
-  const professores = [
-    {
-      id: 1,
-      nome: "Dr. Carlos Eduardo Silva",
-      area: "Filosofia",
-      formacao: "Doutor em Filosofia pela USP",
-      bio: "Especialista em Filosofia Contemporânea e Epistemologia, com mais de 15 anos de experiência no ensino superior. Desenvolveu pesquisas pioneiras sobre fenomenologia e hermenêutica, publicando diversos artigos em revistas indexadas. Atua como consultor em projetos interdisciplinares que conectam filosofia e práticas educativas, contribuindo para uma formação humanística integral.",
-      telefone: "(11) 3456-7890",
-      email: "carlos.silva@fafih.edu.br",
-      categoria: "doutor",
-      foto: "https://randomuser.me/api/portraits/men/1.jpg"
-    },
-    {
-      id: 2,
-      nome: "Dra. Maria Fernanda Santos",
-      area: "Artes Visuais",
-      formacao: "Doutora em Artes pela UNICAMP",
-      bio: "Artista visual e curadora com reconhecimento nacional, especializada em Arte Contemporânea e processos curatoriais. Sua pesquisa explora as intersecções entre arte, tecnologia e sociedade. Organizou mais de 20 exposições e possui obras em acervos importantes. Dedica-se à formação de novos artistas e à democratização do acesso à arte.",
-      telefone: "(11) 3456-7891",
-      email: "maria.santos@fafih.edu.br",
-      categoria: "doutor",
-      foto: "https://randomuser.me/api/portraits/women/2.jpg"
-    },
-    {
-      id: 3,
-      nome: "Ms. João Paulo Oliveira",
-      area: "Psicologia Analítica",
-      formacao: "Mestre em Psicologia pelo IJEP",
-      bio: "Psicólogo junguiano com formação especializada em Imaginário e Simbolismo. Desenvolve trabalhos terapêuticos e de pesquisa focados na integração da psique através de abordagens criativas. Membro ativo de grupos de estudos em Psicologia Analítica e facilitador de oficinas sobre desenvolvimento pessoal e autoconhecimento.",
-      telefone: "(11) 3456-7892",
-      email: "joao.oliveira@fafih.edu.br",
-      categoria: "mestre",
-      foto: "https://randomuser.me/api/portraits/men/3.jpg"
-    },
-    {
-      id: 4,
-      nome: "Dra. Ana Beatriz Costa",
-      area: "Literatura",
-      formacao: "Doutora em Literatura Comparada pela UERJ",
-      bio: "Pesquisadora em Literatura e Imaginário, com foco em Mitocrítica e análises simbólicas de textos literários. Autora de livros sobre literatura contemporânea e coordenadora de projetos de extensão em letramento literário. Sua abordagem interdisciplinar conecta literatura, antropologia e estudos culturais.",
-      telefone: "(11) 3456-7893",
-      email: "ana.costa@fafih.edu.br",
-      categoria: "doutor",
-      foto: "https://randomuser.me/api/portraits/women/4.jpg"
-    },
-    {
-      id: 5,
-      nome: "Dr. Roberto Mendes",
-      area: "História da Arte",
-      formacao: "Doutor em História da Arte pela PUC-SP",
-      bio: "Historiador da arte especializado em Arte Medieval e Iconografia, com pesquisas sobre simbolismo religioso e cultura visual. Consultor de museus e instituições culturais, desenvolve projetos de educação patrimonial. Suas análises iconográficas contribuem para a compreensão da arte como linguagem simbólica universal.",
-      telefone: "(11) 3456-7894",
-      email: "roberto.mendes@fafih.edu.br",
-      categoria: "doutor",
-      foto: "https://randomuser.me/api/portraits/men/5.jpg"
-    },
-    {
-      id: 6,
-      nome: "Ms. Claudia Ferreira",
-      area: "Educação",
-      formacao: "Mestre em Educação pela UNICAMP",
-      bio: "Educadora especializada em Pedagogia Waldorf e Arte-Educação, com ampla experiência em metodologias ativas e educação integral. Desenvolve projetos inovadores que integram arte, natureza e desenvolvimento humano. Formadora de professores e consultora em transformação de espaços educativos para uma aprendizagem mais significativa.",
-      telefone: "(11) 3456-7895",
-      email: "claudia.ferreira@fafih.edu.br",
-      categoria: "mestre",
-      foto: "https://randomuser.me/api/portraits/women/6.jpg"
-    }
-  ];
+  const professores = useMemo(() => listProfessorsSummary(), []);
 
   const filteredProfessores = activeFilter === 'todos'
     ? professores
@@ -79,7 +13,9 @@ const CorpoDocenteContent = () => {
   return (
     <section className="page-section">
       <div className="container">
-        <h1>Corpo Docente</h1>
+        <div className="section-header">
+          <h1 className="page-title">Corpo Docente</h1>
+        </div>
 
         <div className="docente-intro">
           <p>Conheça nosso corpo docente altamente qualificado, composto por professores doutores e mestres reconhecidos em suas áreas de atuação. Nossa equipe acadêmica é formada por pesquisadores, artistas e profissionais experientes, comprometidos com a excelência do ensino e a formação integral de nossos estudantes.</p>
@@ -114,10 +50,10 @@ const CorpoDocenteContent = () => {
             <div key={professor.id} className="professor-card-redesigned">
               <div className="professor-header">
                 <div className="professor-foto-redesigned">
-                  <img src={professor.foto} alt={professor.nome} />
+                  <img src={professor.foto} alt={professor.name} />
                 </div>
                 <div className="professor-nome-area">
-                  <h3>{professor.nome}</h3>
+                  <h3>{professor.name}</h3>
                   <p className="professor-area">{professor.area}</p>
                 </div>
               </div>
@@ -129,15 +65,23 @@ const CorpoDocenteContent = () => {
                 <div className="professor-contato-info">
                   <div className="contato-item">
                     <span className="contato-label">📞</span>
-                    <a href={`tel:${professor.telefone}`} className="contato-link">
-                      {professor.telefone}
-                    </a>
+                    {professor.telefone ? (
+                      <a href={`tel:${professor.telefone}`} className="contato-link">
+                        {professor.telefone}
+                      </a>
+                    ) : (
+                      <span className="contato-link">Não informado</span>
+                    )}
                   </div>
                   <div className="contato-item">
                     <span className="contato-label">✉️</span>
-                    <a href={`mailto:${professor.email}`} className="contato-link">
-                      {professor.email}
-                    </a>
+                    {professor.email ? (
+                      <a href={`mailto:${professor.email}`} className="contato-link">
+                        {professor.email}
+                      </a>
+                    ) : (
+                      <span className="contato-link">Não informado</span>
+                    )}
                   </div>
                 </div>
               </div>

@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import { facultyMembers } from '../curso-detalhes/facultyData';
+import { getProfessorDetailView } from '@/services/professorCatalog.js';
 import styles from './Professor.module.css';
 
 const ProfessorContent = () => {
-  const { nome } = useParams();
-  const professor = facultyMembers.find(p => p.name.toLowerCase().replace(/ /g, '-') === nome);
+  const { nome, slug } = useParams();
+
+  const professor = useMemo(() => {
+    return getProfessorDetailView(slug || nome);
+  }, [nome, slug]);
 
   if (!professor) {
     return <div className={styles.loading}>Professor não encontrado.</div>;

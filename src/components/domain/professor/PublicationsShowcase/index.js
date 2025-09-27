@@ -1,1 +1,1 @@
-export { default } from './PublicationsShowcase.jsx';
+export { default } from '@/PublicationsShowcase.jsx';

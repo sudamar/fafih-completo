@@ -1,16 +1,16 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import IndexPage from '../pages/IndexPage.jsx';
-import ExtensaoPage from '../pages/ExtensaoPage.jsx';
+import ExtensaoPage from '../pages/extensao/ExtensaoPage.jsx';
 import PerguntasFrequentesPage from '../pages/PerguntasFrequentesPage.jsx';
 import ApoioPsicopedagogicoPage from '../pages/ApoioPsicopedagogicoPage.jsx';
-import ConhecaFafihPage from '../pages/ConhecaFafihPage.jsx';
+import ConhecaFafihPage from '../pages/institucional/ConhecaFafihPage.jsx';
 import ConsultarDiplomaPage from '../pages/ConsultarDiplomaPage.jsx';
-import CorpoDocentePage from '../pages/CorpoDocentePage.jsx';
-import CpaPage from '../pages/CpaPage.jsx';
+import CorpoDocentePage from '../pages/corpo-docente/CorpoDocentePage.jsx';
+import CpaPage from '../pages/cpa/CpaPage.jsx';
 import CursoAionJoPage from '../pages/CursoAionJoPage.jsx';
 import FormasIngressoPage from '../pages/FormasIngressoPage.jsx';
-import IniciacaoCientificaPage from '../pages/IniciacaoCientificaPage.jsx';
+import IniciacaoCientificaPage from '../pages/iniciacao/IniciacaoCientificaPage.jsx';
 import MembrosAnalistasPage from '../pages/MembrosAnalistasPage.jsx';
 import NoticiasCartaAbertaPage from '../pages/NoticiasCartaAbertaPage.jsx';
 import NoticiasCursosPage from '../pages/NoticiasCursosPage.jsx';
@@ -18,11 +18,11 @@ import OuvidoriaPage from '../pages/OuvidoriaPage.jsx';
 import NucleoApoioDocentePage from '../pages/NucleoApoioDocentePage.jsx';
 import PolosPage from '../pages/PolosPage.jsx';
 import RegulamentosPage from '../pages/RegulamentosPage.jsx';
-import EscolhaCursosPage from '../pages/EscolhaCursosPage.jsx';
-import NotFoundPage from '../pages/NotFoundPage.jsx';
+import EscolhaCursosPage from '../pages/lista-cursos/EscolhaCursosPage.jsx';
+import NotFoundPage from '../pages/notfound/NotFoundPage.jsx';
 
-import CoursesListPage from '../pages/courses/CoursesListPage.jsx';
-import CourseDetailsPage from '../pages/course/CourseDetailsPage.jsx';
+import CoursesListPage from '../pages/lista-cursos/CoursesListPage.jsx';
+import CourseDetailsPage from '../pages/curso-detalhes/CourseDetailsPage.jsx';
 import ProfessorPage from '../pages/professor/ProfessorPage.jsx';
 
 export const ROUTES = [

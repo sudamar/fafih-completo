@@ -1,1 +1,1 @@
-export { default } from './ProfessorHeader.jsx';
+export { default } from '@/ProfessorHeader.jsx';

@@ -1,15 +1,11 @@
 import React from 'react';
-import ProfessorContent from '../components/professor/ProfessorContent';
-import Header from '../components/shared/Header';
-import Footer from '../components/shared/Footer';
+import ProfessorContent from '@/components/professor/ProfessorContent';
 
 const ProfessorPage = () => {
   return (
-    <div>
-      <Header />
+    <main>
       <ProfessorContent />
-      <Footer />
-    </div>
+    </main>
   );
 };
 

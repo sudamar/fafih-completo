@@ -1,4 +1,4 @@
-import styles from './ProfessorHeader.module.css';
+import styles from '@/ProfessorHeader.module.css';
 
 const ProfessorHeader = ({ professor }) => {
   if (!professor) {

@@ -10,7 +10,7 @@
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { apiRequest } from '../../../services/apiClient.js';
+import { apiRequest } from '@/services/apiClient.js';
 
 /**
  * Hook genérico para chamadas de API

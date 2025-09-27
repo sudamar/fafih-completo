@@ -58,7 +58,7 @@ const Header = () => {
                 <li><a href="calendario-academico.html">Calendário Acadêmico</a></li>
                 <li><a href="https://ijep.com.br/biblioteca-ijep" target="_blank" rel="noopener noreferrer">Biblioteca</a></li>
                 <li><a href="https://ijep.com.br/login-aluno" target="_blank" rel="noopener noreferrer">Egressos</a></li>
-                <li><a href="servicos-comunidade.html">Serviços para a Comunidade</a></li>
+                <li><Link to="/servico-para-comunidade">Serviço para Comunidade</Link></li>
                 <li><a href="/#noticias">Notícias</a></li>
                 <li><a href="https://ijep.com.br/" target="_blank" rel="noopener noreferrer">Mantenedora</a></li>
               </ul>
@@ -77,7 +77,7 @@ const Header = () => {
                 <li><a href="polos.html">Polos</a></li>
               </ul>
             </li>
-            <li><a href="iniciacao-cientifica">Iniciação Científica</a></li>
+            <li><Link to="/iniciacao-cientifica">Iniciação Científica</Link></li>
             <li><Link to="/extensao">Extensão</Link></li>
             <li><a href="https://ijep.com.br/login-aluno" target="_blank" rel="noopener noreferrer">Portal do Aluno</a></li>
             <li className={openDropdown === 'contato' ? 'open' : ''}>

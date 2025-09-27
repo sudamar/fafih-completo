@@ -1,4 +1,4 @@
-import RegulamentosContent from '../components/regulamentos/RegulamentosContent';
+import RegulamentosContent from '@/components/regulamentos/RegulamentosContent';
 
 const RegulamentosPage = () => {
   return (

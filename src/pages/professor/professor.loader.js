@@ -1,4 +1,4 @@
-import professorService from '../../features/professors/services/professorService.js';
+import professorService from '@/features/professors/services/professorService.js';
 
 export const professorLoader = async ({ params }) => {
   const slug = params?.slug;
