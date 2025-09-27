@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
 import CookieConsent from '@/components/shared/CookieConsent';
+import ScrollToAnchor from '@/components/shared/ScrollToAnchor';
 import IndexPage from '@/pages/IndexPage';
 import ExtensaoPage from '@/pages/extensao/ExtensaoPage';
 import PerguntasFrequentesPage from '@/pages/contato/PerguntasFrequentesPage';
@@ -62,6 +63,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToAnchor />
       <div className="App">
         <Header />
         <Routes>

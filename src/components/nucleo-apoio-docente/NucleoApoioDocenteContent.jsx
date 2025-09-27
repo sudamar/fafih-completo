@@ -2,7 +2,10 @@ const NucleoApoioDocenteContent = () => {
   return (
     <section className="page-section">
       <div className="container">
-        <h1>Núcleo de Apoio e Desenvolvimento Docente (NADD)</h1>
+        <div className="text-center mb-8">
+          <h2>Núcleo de Apoio e Desenvolvimento Docente (NADD)</h2>
+          <p className="page-intro" style={{fontSize: '1.1rem', marginTop: '-2rem'}}>Suporte didático-pedagógico para o aprimoramento do ensino.</p>
+        </div>
         
         <div className="content-wrapper">
           <h3>O que é o NADD?</h3>

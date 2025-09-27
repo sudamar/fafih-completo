@@ -58,6 +58,12 @@ const IniciacaoCientificaContent = () => {
           <a href="/" className="btn-page-action btn-secondary">Voltar</a>
         </div>
       </div>
+
+      <style jsx>{`
+        .conheca-intro::before {
+          display: none !important;
+        }
+      `}</style>
     </section>
   );
 };

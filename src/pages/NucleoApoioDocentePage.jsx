@@ -2,9 +2,11 @@ import NucleoApoioDocenteContent from '@/components/nucleo-apoio-docente/NucleoA
 
 const NucleoApoioDocentePage = () => {
   return (
-    <main>
-      <NucleoApoioDocenteContent />
-    </main>
+    <div className="bg-gray-50">
+      <main>
+        <NucleoApoioDocenteContent />
+      </main>
+    </div>
   );
 };
 

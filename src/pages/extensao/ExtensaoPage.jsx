@@ -22,6 +22,12 @@ const ExtensaoPage = () => {
             </div>
           </div>
         </section>
+
+        <style jsx>{`
+          .conheca-intro::before {
+            display: none !important;
+          }
+        `}</style>
       </main>
     </div>
   );
