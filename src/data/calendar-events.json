@@ -1,0 +1,264 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Vestibular 2024.2",
+      "type": "vestibular",
+      "date": "2024-10-15",
+      "time": "14:00",
+      "location": "Todos os Polos",
+      "description": "Processo seletivo para ingresso nos cursos de pós-graduação do segundo semestre",
+      "color": "#e74c3c"
+    },
+    {
+      "id": 2,
+      "title": "Resultado do Vestibular 2024.2",
+      "type": "vestibular",
+      "date": "2024-10-30",
+      "time": "18:00",
+      "location": "Online",
+      "description": "Divulgação dos resultados do processo seletivo",
+      "color": "#e74c3c"
+    },
+    {
+      "id": 3,
+      "title": "Início dos Cursos de Pós-graduação 2024.2",
+      "type": "inicio-cursos",
+      "date": "2024-11-04",
+      "time": "19:00",
+      "location": "Todos os Polos",
+      "description": "Início das aulas do segundo semestre letivo",
+      "color": "#27ae60"
+    },
+    {
+      "id": 4,
+      "title": "Aulas Pós-graduação - Polo Brasília",
+      "type": "aulas-pos",
+      "date": "2024-11-09",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo Brasília",
+      "description": "Aulas presenciais do segundo sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "2nd-saturday"
+    },
+    {
+      "id": 5,
+      "title": "Aulas Pós-graduação - Polo São Paulo",
+      "type": "aulas-pos",
+      "date": "2024-11-16",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo São Paulo",
+      "description": "Aulas presenciais do terceiro sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "3rd-saturday"
+    },
+    {
+      "id": 6,
+      "title": "Aulas Pós-graduação - Polo Rio de Janeiro",
+      "type": "aulas-pos",
+      "date": "2024-11-23",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo Rio de Janeiro",
+      "description": "Aulas presenciais do quarto sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "4th-saturday"
+    },
+    {
+      "id": 7,
+      "title": "Aulas Pós-graduação - Polo Brasília",
+      "type": "aulas-pos",
+      "date": "2024-12-14",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo Brasília",
+      "description": "Aulas presenciais do segundo sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "2nd-saturday"
+    },
+    {
+      "id": 8,
+      "title": "Aulas Pós-graduação - Polo São Paulo",
+      "type": "aulas-pos",
+      "date": "2024-12-21",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo São Paulo",
+      "description": "Aulas presenciais do terceiro sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "3rd-saturday"
+    },
+    {
+      "id": 9,
+      "title": "Recesso de Final de Ano",
+      "type": "recesso",
+      "date": "2024-12-23",
+      "endDate": "2025-01-06",
+      "location": "Todos os Polos",
+      "description": "Período de recesso acadêmico de final de ano",
+      "color": "#f39c12"
+    },
+    {
+      "id": 10,
+      "title": "Retorno das Atividades Acadêmicas",
+      "type": "inicio-cursos",
+      "date": "2025-01-07",
+      "time": "19:00",
+      "location": "Todos os Polos",
+      "description": "Retorno das atividades acadêmicas após recesso",
+      "color": "#27ae60"
+    },
+    {
+      "id": 11,
+      "title": "Aulas Pós-graduação - Polo Brasília",
+      "type": "aulas-pos",
+      "date": "2025-01-11",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo Brasília",
+      "description": "Aulas presenciais do segundo sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "2nd-saturday"
+    },
+    {
+      "id": 12,
+      "title": "Aulas Pós-graduação - Polo São Paulo",
+      "type": "aulas-pos",
+      "date": "2025-01-18",
+      "time": "08:00",
+      "endTime": "18:00",
+      "location": "Polo São Paulo",
+      "description": "Aulas presenciais do terceiro sábado do mês",
+      "color": "#3498db",
+      "recurring": "monthly",
+      "recurringDay": "3rd-saturday"
+    },
+    {
+      "id": 13,
+      "title": "Semana de Avaliações",
+      "type": "avaliacao",
+      "date": "2025-02-03",
+      "endDate": "2025-02-07",
+      "location": "Todos os Polos",
+      "description": "Período de avaliações do primeiro semestre",
+      "color": "#9b59b6"
+    },
+    {
+      "id": 14,
+      "title": "Encerramento do Semestre 2024.2",
+      "type": "fim-cursos",
+      "date": "2025-02-28",
+      "location": "Todos os Polos",
+      "description": "Término das atividades do segundo semestre letivo",
+      "color": "#e67e22"
+    },
+    {
+      "id": 15,
+      "title": "Vestibular 2025.1",
+      "type": "vestibular",
+      "date": "2025-03-15",
+      "time": "14:00",
+      "location": "Todos os Polos",
+      "description": "Processo seletivo para ingresso nos cursos de pós-graduação do primeiro semestre",
+      "color": "#e74c3c"
+    },
+    {
+      "id": 16,
+      "title": "Resultado do Vestibular 2025.1",
+      "type": "vestibular",
+      "date": "2025-03-30",
+      "time": "18:00",
+      "location": "Online",
+      "description": "Divulgação dos resultados do processo seletivo",
+      "color": "#e74c3c"
+    },
+    {
+      "id": 17,
+      "title": "Início dos Cursos de Pós-graduação 2025.1",
+      "type": "inicio-cursos",
+      "date": "2025-04-07",
+      "time": "19:00",
+      "location": "Todos os Polos",
+      "description": "Início das aulas do primeiro semestre letivo",
+      "color": "#27ae60"
+    },
+    {
+      "id": 18,
+      "title": "Seminário de Pesquisa FAFIH",
+      "type": "evento-especial",
+      "date": "2025-04-26",
+      "time": "09:00",
+      "endTime": "17:00",
+      "location": "Polo São Paulo",
+      "description": "Apresentação dos trabalhos de pesquisa dos alunos",
+      "color": "#8e44ad"
+    },
+    {
+      "id": 19,
+      "title": "Workshop: Metodologia de Pesquisa",
+      "type": "evento-especial",
+      "date": "2025-05-10",
+      "time": "14:00",
+      "endTime": "18:00",
+      "location": "Online",
+      "description": "Workshop sobre metodologias de pesquisa acadêmica",
+      "color": "#8e44ad"
+    },
+    {
+      "id": 20,
+      "title": "Palestra: Psicologia Junguiana Contemporânea",
+      "type": "evento-especial",
+      "date": "2025-05-24",
+      "time": "19:00",
+      "endTime": "21:00",
+      "location": "Polo Brasília",
+      "description": "Palestra magna sobre as aplicações contemporâneas da psicologia junguiana",
+      "color": "#8e44ad"
+    }
+  ],
+  "eventTypes": {
+    "vestibular": {
+      "label": "Vestibular",
+      "color": "#e74c3c",
+      "icon": "📝"
+    },
+    "inicio-cursos": {
+      "label": "Início de Cursos",
+      "color": "#27ae60",
+      "icon": "🎓"
+    },
+    "fim-cursos": {
+      "label": "Fim de Cursos",
+      "color": "#e67e22",
+      "icon": "🏁"
+    },
+    "aulas-pos": {
+      "label": "Aulas de Pós-graduação",
+      "color": "#3498db",
+      "icon": "📚"
+    },
+    "avaliacao": {
+      "label": "Avaliações",
+      "color": "#9b59b6",
+      "icon": "📊"
+    },
+    "evento-especial": {
+      "label": "Eventos Especiais",
+      "color": "#8e44ad",
+      "icon": "✨"
+    },
+    "recesso": {
+      "label": "Recesso",
+      "color": "#f39c12",
+      "icon": "🏖️"
+    }
+  }
+}

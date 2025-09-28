@@ -55,7 +55,7 @@ const Header = () => {
                 <li><Link to="/conheca-fafih">Conheça a FAFIH</Link></li>
                 <li><a href="/#focos">Focos Acadêmicos</a></li>
                 <li><Link to="/corpo-docente">Corpo Docente</Link></li>
-                <li><a href="calendario-academico.html">Calendário Acadêmico</a></li>
+                <li><Link to="/calendario-academico">Calendário Acadêmico</Link></li>
                 <li><a href="https://ijep.com.br/biblioteca-ijep" target="_blank" rel="noopener noreferrer">Biblioteca</a></li>
                 <li><a href="https://ijep.com.br/login-aluno" target="_blank" rel="noopener noreferrer">Egressos</a></li>
                 <li><Link to="/servico-para-comunidade">Serviço para Comunidade</Link></li>
