@@ -4,7 +4,8 @@ import '@/components/iniciacao-cientifica/IniciacaoCientifica.css';
 
 const CalendarioAcademicoContent = () => {
   const [activeFilter, setActiveFilter] = useState('todos');
-  const [selectedMonth, setSelectedMonth] = useState('todos');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
   // Função para formatar data
   const formatDate = (dateString) => {
@@ -43,34 +44,42 @@ const CalendarioAcademicoContent = () => {
       events = events.filter(event => event.type === activeFilter);
     }
 
-    // Filtro por mês
-    if (selectedMonth !== 'todos') {
+    // Filtro por intervalo de datas
+    if (startDate || endDate) {
       events = events.filter(event => {
         const eventDate = new Date(event.date);
-        return eventDate.getMonth() + 1 === parseInt(selectedMonth);
+        const start = startDate ? new Date(startDate) : null;
+        const end = endDate ? new Date(endDate) : null;
+
+        // Se apenas data inicial foi especificada
+        if (start && !end) {
+          return eventDate >= start;
+        }
+
+        // Se apenas data final foi especificada
+        if (!start && end) {
+          return eventDate <= end;
+        }
+
+        // Se ambas as datas foram especificadas
+        if (start && end) {
+          return eventDate >= start && eventDate <= end;
+        }
+
+        return true;
       });
     }
 
     return sortEventsByDate(events);
-  }, [activeFilter, selectedMonth]);
+  }, [activeFilter, startDate, endDate]);
 
-  // Obter meses únicos dos eventos
-  const availableMonths = useMemo(() => {
-    const months = calendarData.events.map(event => {
-      const date = new Date(event.date);
-      return {
-        value: date.getMonth() + 1,
-        label: date.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })
-      };
-    });
+  // Função para limpar filtros
+  const clearFilters = () => {
+    setActiveFilter('todos');
+    setStartDate('');
+    setEndDate('');
+  };
 
-    // Remover duplicatas
-    const uniqueMonths = months.filter((month, index, self) =>
-      index === self.findIndex(m => m.value === month.value)
-    );
-
-    return uniqueMonths.sort((a, b) => a.value - b.value);
-  }, []);
 
   return (
     <section className="page-section">
@@ -109,22 +118,35 @@ const CalendarioAcademicoContent = () => {
             </div>
           </div>
 
-          {/* Filtro por mês */}
+          {/* Filtro por intervalo de datas */}
           <div className="filter-section">
-            <h3>Por Mês</h3>
-            <div className="filter-select-container">
-              <select
-                value={selectedMonth}
-                onChange={(e) => setSelectedMonth(e.target.value)}
-                className="filter-select"
-              >
-                <option value="todos">Todos os meses</option>
-                {availableMonths.map(month => (
-                  <option key={month.value} value={month.value}>
-                    {month.label}
-                  </option>
-                ))}
-              </select>
+            <h3>Por Período</h3>
+            <div className="date-range-container">
+              <div className="date-input-group">
+                <label htmlFor="start-date">Data Inicial:</label>
+                <input
+                  id="start-date"
+                  type="date"
+                  value={startDate}
+                  onChange={(e) => setStartDate(e.target.value)}
+                  className="date-input"
+                />
+              </div>
+              <div className="date-input-group">
+                <label htmlFor="end-date">Data Final:</label>
+                <input
+                  id="end-date"
+                  type="date"
+                  value={endDate}
+                  onChange={(e) => setEndDate(e.target.value)}
+                  className="date-input"
+                />
+              </div>
+              {(startDate || endDate) && (
+                <button className="clear-dates-btn" onClick={clearFilters}>
+                  ✕ Limpar Filtros
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -246,16 +268,108 @@ const CalendarioAcademicoContent = () => {
           display: none !important;
         }
 
+        .ic-card h2::after {
+          display: none !important;
+        }
+
+        .date-range-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr auto;
+          gap: 1.5rem;
+          align-items: end;
+          margin-top: 1.5rem;
+          padding: 1.5rem;
+          background: #f8f9fa;
+          border-radius: 12px;
+          border: 1px solid #e9ecef;
+        }
+
+        .date-input-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.7rem;
+        }
+
+        .date-input-group label {
+          font-weight: 600;
+          color: var(--primary-color);
+          font-size: 0.95rem;
+          font-family: 'Montserrat', sans-serif;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+        }
+
+        .date-input-group:first-child label:before {
+          content: "📅";
+          font-size: 0.9rem;
+        }
+
+        .date-input-group:nth-child(2) label:before {
+          content: "🏁";
+          font-size: 0.9rem;
+        }
+
+        .date-input {
+          padding: 0.8rem 1rem;
+          border: 2px solid #e9ecef;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          background: white;
+          color: var(--text-color);
+          min-width: 160px;
+          transition: all 0.3s ease;
+          font-family: inherit;
+        }
+
+        .date-input:focus {
+          outline: none;
+          border-color: var(--secondary-color);
+          box-shadow: 0 0 0 3px rgba(44, 103, 143, 0.1);
+          background: #fafbfc;
+        }
+
+        .date-input:hover {
+          border-color: var(--secondary-color);
+        }
+
+        .clear-dates-btn {
+          background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+          color: white;
+          border: none;
+          padding: 0.8rem 1.4rem;
+          border-radius: 25px;
+          cursor: pointer;
+          font-size: 0.9rem;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          height: fit-content;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .clear-dates-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .clear-dates-btn:active {
+          transform: translateY(0);
+        }
+
         .filter-container {
           margin: 2rem 0;
-          padding: 1.5rem;
+          padding: 2rem;
           background: var(--card-bg);
-          border-radius: 10px;
+          border-radius: 15px;
           box-shadow: var(--shadow);
+          border: 1px solid #e9ecef;
         }
 
         .filter-section {
-          margin-bottom: 1.5rem;
+          margin-bottom: 2rem;
         }
 
         .filter-section:last-child {
@@ -263,34 +377,61 @@ const CalendarioAcademicoContent = () => {
         }
 
         .filter-section h3 {
-          color: var(--secondary-color);
-          font-size: 1.1rem;
-          margin-bottom: 0.8rem;
+          color: var(--primary-color);
+          font-size: 1.2rem;
+          margin-bottom: 1.2rem;
           font-family: 'Montserrat', sans-serif;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .filter-section h3:before {
+          content: "🔍";
+          font-size: 1rem;
+        }
+
+        .filter-section h3:nth-child(1):before {
+          content: "🏷️";
         }
 
         .filter-buttons {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.5rem;
+          gap: 0.8rem;
         }
 
         .filter-btn {
-          background: var(--background-color);
-          border: 2px solid var(--secondary-color);
-          color: var(--secondary-color);
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
+          background: #f8f9fa;
+          border: 2px solid #e9ecef;
+          color: var(--text-color);
+          padding: 0.6rem 1.2rem;
+          border-radius: 25px;
           cursor: pointer;
           transition: all 0.3s ease;
           font-size: 0.9rem;
           font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          position: relative;
+          overflow: hidden;
         }
 
-        .filter-btn:hover,
+        .filter-btn:hover {
+          background: #e9ecef;
+          border-color: var(--secondary-color);
+          transform: translateY(-1px);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
         .filter-btn.active {
           background: var(--secondary-color);
           color: white;
+          border-color: var(--secondary-color);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(44, 103, 143, 0.3);
         }
 
         .filter-select-container {
@@ -461,13 +602,39 @@ const CalendarioAcademicoContent = () => {
 
         /* Responsividade */
         @media (max-width: 768px) {
+          .filter-container {
+            padding: 1.5rem;
+          }
+
+          .date-range-container {
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            padding: 1.2rem;
+          }
+
+          .date-input {
+            min-width: auto;
+            width: 100%;
+          }
+
+          .clear-dates-btn {
+            justify-self: center;
+            width: fit-content;
+          }
+
           .filter-buttons {
             justify-content: center;
+            gap: 0.6rem;
           }
 
           .filter-btn {
-            font-size: 0.8rem;
-            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+          }
+
+          .filter-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
           }
 
           .legend-grid {
@@ -476,6 +643,45 @@ const CalendarioAcademicoContent = () => {
 
           .polo-schedule-grid {
             grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .filter-container {
+            padding: 1rem;
+            margin: 1.5rem 0;
+          }
+
+          .date-range-container {
+            padding: 1rem;
+            gap: 1rem;
+          }
+
+          .filter-btn {
+            font-size: 0.8rem;
+            padding: 0.5rem 0.8rem;
+          }
+
+          .date-input-group label {
+            font-size: 0.9rem;
+          }
+
+          .date-input {
+            font-size: 0.9rem;
+            padding: 0.7rem 0.8rem;
+          }
+
+          .clear-dates-btn {
+            font-size: 0.85rem;
+            padding: 0.7rem 1.2rem;
+          }
+
+          .filter-section h3 {
+            font-size: 1rem;
+          }
+
+          .filter-buttons {
+            gap: 0.5rem;
           }
         }
       `}</style>
