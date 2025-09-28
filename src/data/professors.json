@@ -3,7 +3,7 @@
     "id": 1,
     "slug": "waldemar-magaldi-filho",
     "name": "Doutor Waldemar Magaldi Filho",
-    "photo": "/assets/images/professores/waldemar-magaldi.jpg",
+    "photo": null,
     "title": "Coordenador dos cursos, Membro Didáta do IJEP, Fundador do Instituto",
     "bio": [
       "Psicólogo. Especialista em Homeopatia; Psicologia Junguiana, Psicossomática, Arteterapia, DAC/DQ e MDR.",
@@ -61,7 +61,7 @@
     "id": 2,
     "slug": "simone-magaldi",
     "name": "Doutora E. Simone D. Magaldi",
-    "photo": "/assets/images/professores/simone-magaldi.jpg",
+    "photo": null,
     "title": "Membro Didata, Diretora e Fundadora do IJEP",
     "bio": [
       "Pedagoga, Filósofa, analista - Especialista em Psicologia Junguiana pela UNAERP.",
@@ -112,7 +112,7 @@
     "id": 3,
     "slug": "lilian-wurzba",
     "name": "Doutora Lilian Wurzba",
-    "photo": "/assets/images/professores/lilian-wurzba.jpg",
+    "photo": null,
     "title": "Membro Didata do IJEP",
     "bio": [
       "Psicóloga, Especialista em Psicologia Analítica, Mestre e Doutora em Ciências da Religião pela PUC/SP."
@@ -154,7 +154,7 @@
     "id": 4,
     "slug": "maria-cristina-guarnieri",
     "name": "Doutora Maria Cristina M. Guarnieri",
-    "photo": "/assets/images/professores/maria-cristina-guarnieri.jpg",
+    "photo": null,
     "title": "Membro Didata",
     "bio": [
       "Psicóloga, Especialista em Psicologia Junguiana, Mestre e Doutora em Ciências da Religião - PUC-SP"
@@ -186,7 +186,7 @@
     "id": 5,
     "slug": "leonardo-torres",
     "name": "Doutor Leonardo Torres",
-    "photo": "/assets/images/professores/leonardo-torres.jpg",
+    "photo": null,
     "title": "Membro Analista Didata em Formação pelo IJEP",
     "bio": [
       "Doutor e Mestre em Comunicação e Cultura pela UNIP/SP. Especialista em Psicologia Junguiana e Psicossomática pelo IJEP."
@@ -232,7 +232,7 @@
     "id": 6,
     "slug": "jose-luiz-balestrini",
     "name": "Doutor José Luiz Balestrini",
-    "photo": "/assets/images/professores/jose-luiz-balestrini.jpg",
+    "photo": null,
     "title": "Analista didáta em formação do IJEP",
     "bio": [
       "Psicólogo, Especialista em Psicologia Junguiana (IJEP), Especialista em Psicossomática (IJEP), Mestre e Doutorando em Comunicação e Cultura (UNIP), Especialista em Medicina Tradicional Chinesa (SEEB, SATOSP), Mestre de Kung Fu, Doutor Honoris Causa em Filosofia das Artes Marciais (FIOGA)."
@@ -284,7 +284,7 @@
     "id": 7,
     "slug": "oswaldo-cudizio",
     "name": "Mestre Oswaldo Cudizio",
-    "photo": "/assets/images/professores/oswaldo-cudizio.jpg",
+    "photo": null,
     "title": "Professor do IJEP",
     "bio": [
       "Médico, Especialista em Pediatria e Homeopatia, Mestre e Doutorando em Psicossomática."
@@ -320,7 +320,7 @@
     "id": 8,
     "slug": "ajax-perez-salvador",
     "name": "Mestre Ajax Pérez Salvador",
-    "photo": "/assets/images/professores/ajax-perez-salvador.jpg",
+    "photo": null,
     "title": "Analista Didata do IJEP, Membro Didata do IJEP",
     "bio": [
       "Médico Psiquiatra e Psicoterapeuta. Especialista em Saúde Pública, Mestre em Saúde Mental -- USP, Ex-preceptor de Residência Médica Psiquiátrica 8ª COREM PMSP."

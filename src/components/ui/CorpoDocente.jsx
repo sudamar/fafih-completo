@@ -69,10 +69,10 @@ const CorpoDocente = ({ title = "Filtrar por Titulação", showIntro = false, li
             <div className="professor-header">
               <div className="professor-foto-redesigned">
                 <img
-                  src={professor.photo || "https://via.placeholder.com/80x80/2C678F/ffffff?text=Prof"}
+                  src={professor.photo ? professor.photo : `https://ui-avatars.com/api/?name=${encodeURIComponent(professor.name)}&size=80&background=2C678F&color=ffffff&bold=true`}
                   alt={professor.name}
                   onError={(e) => {
-                    e.target.src = "https://via.placeholder.com/80x80/2C678F/ffffff?text=Prof";
+                    e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(professor.name)}&size=80&background=2C678F&color=ffffff&bold=true`;
                   }}
                 />
               </div>
