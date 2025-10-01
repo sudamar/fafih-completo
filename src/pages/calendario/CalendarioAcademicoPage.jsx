@@ -1,10 +1,10 @@
-import CalendarioAcademicoContent from '@/components/calendario/CalendarioAcademicoContent';
+import CalendarContent from '@/components/domain/calendar/CalendarContent.jsx';
 
 const CalendarioAcademicoPage = () => {
   return (
     <div className="bg-gray-50">
       <main>
-        <CalendarioAcademicoContent />
+        <CalendarContent />
       </main>
     </div>
   );

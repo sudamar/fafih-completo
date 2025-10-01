@@ -1,50 +1,7 @@
-const PolosContent = () => {
-  const polos = [
-    {
-      name: 'Polo São Paulo - Capital',
-      address: 'Rua Augusta, 1508 - Consolação, São Paulo - SP, 01304-001',
-      phone: '(11) 3456-7890',
-      email: 'saopaulo@fafih.edu.br',
-      coordinator: 'Prof. Dr. João Silva',
-      courses: [
-        'Pós-Graduação em Psicologia Junguiana',
-        'Arteterapia e Expressão Criativa',
-        'Filosofia Contemporânea',
-        'Todos os cursos de extensão',
-      ],
-    },
-    {
-      name: 'Polo Rio de Janeiro',
-      address: 'Av. Copacabana, 1200 - Copacabana, Rio de Janeiro - RJ, 22070-001',
-      phone: '(21) 3456-7890',
-      email: 'riodejaneiro@fafih.edu.br',
-      coordinator: 'Profa. Dra. Maria Santos',
-      courses: [
-        'Pós-Graduação em Psicologia Junguiana',
-        'Psicossomática',
-        'Arte e Imaginário',
-        'Cursos de curta duração',
-      ],
-    },
-    {
-      name: 'Polo Brasília',
-      address: 'SCS Quadra 02, Bloco C - Asa Sul, Brasília - DF, 70318-900',
-      phone: '(61) 3456-7890',
-      email: 'brasilia@fafih.edu.br',
-      coordinator: 'Profa. Dra. Ana Costa',
-      courses: [
-        'Pós-Graduação em Psicologia Junguiana',
-        'Arte e Criatividade',
-        'Eventos e workshops',
-      ],
-    },
-  ];
+import { getPolosContent } from '@/services/polosService.js';
 
-  const getMapsUrl = (address) => {
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-      address
-    )}`;
-  };
+const PolosContent = () => {
+  const { locations, highlights } = getPolosContent();
 
   return (
     <section className="page-section">
@@ -60,7 +17,7 @@ const PolosContent = () => {
         </div>
 
         <div className="info-cards">
-          {polos.map((polo) => (
+          {locations.map((polo) => (
             <div className="info-card" key={polo.name}>
               <div>
                 <h3>{polo.name}</h3>
@@ -88,7 +45,7 @@ const PolosContent = () => {
                 </div>
               </div>
               <a
-                href={getMapsUrl(polo.address)}
+                href={polo.mapUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="map-button"
@@ -105,24 +62,12 @@ const PolosContent = () => {
             className="info-cards"
             style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}
           >
-            <div className="info-card">
-              <h4>Infraestrutura</h4>
-              <p>
-                Todos os polos contam com salas climatizadas, recursos
-                audiovisuais, biblioteca e laboratórios especializados.
-              </p>
-            </div>
-            <div className="info-card">
-              <h4>Modalidades</h4>
-              <p>
-                Oferecemos ensino presencial, híbrido e semipresencial,
-                adaptando-se às necessidades dos estudantes.
-              </p>
-            </div>
-            <div className="info-card">
-              <h4>Contato Central</h4>
-              <p>Para informações: (11) 3456-7890 ou polos@fafih.edu.br</p>
-            </div>
+            {highlights.map((highlight) => (
+              <div className="info-card" key={highlight.title}>
+                <h4>{highlight.title}</h4>
+                <p>{highlight.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

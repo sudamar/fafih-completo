@@ -1,0 +1,56 @@
+{
+  "locations": [
+    {
+      "name": "Polo São Paulo - Capital",
+      "address": "Rua Augusta, 1508 - Consolação, São Paulo - SP, 01304-001",
+      "phone": "(11) 3456-7890",
+      "email": "saopaulo@fafih.edu.br",
+      "coordinator": "Prof. Dr. João Silva",
+      "courses": [
+        "Pós-Graduação em Psicologia Junguiana",
+        "Arteterapia e Expressão Criativa",
+        "Filosofia Contemporânea",
+        "Todos os cursos de extensão"
+      ]
+    },
+    {
+      "name": "Polo Rio de Janeiro",
+      "address": "Av. Copacabana, 1200 - Copacabana, Rio de Janeiro - RJ, 22070-001",
+      "phone": "(21) 3456-7890",
+      "email": "riodejaneiro@fafih.edu.br",
+      "coordinator": "Profa. Dra. Maria Santos",
+      "courses": [
+        "Pós-Graduação em Psicologia Junguiana",
+        "Psicossomática",
+        "Arte e Imaginário",
+        "Cursos de curta duração"
+      ]
+    },
+    {
+      "name": "Polo Brasília",
+      "address": "SCS Quadra 02, Bloco C - Asa Sul, Brasília - DF, 70318-900",
+      "phone": "(61) 3456-7890",
+      "email": "brasilia@fafih.edu.br",
+      "coordinator": "Profa. Dra. Ana Costa",
+      "courses": [
+        "Pós-Graduação em Psicologia Junguiana",
+        "Arte e Criatividade",
+        "Eventos e workshops"
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Infraestrutura",
+      "description": "Todos os polos contam com salas climatizadas, recursos audiovisuais, biblioteca e laboratórios especializados."
+    },
+    {
+      "title": "Modalidades",
+      "description": "Oferecemos ensino presencial, híbrido e semipresencial, adaptando-se às necessidades dos estudantes."
+    },
+    {
+      "title": "Contato Central",
+      "description": "Para informações: (11) 3456-7890 ou polos@fafih.edu.br"
+    }
+  ]
+}

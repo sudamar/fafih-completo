@@ -1,4 +1,9 @@
 {
+  "hero": {
+    "title": "Calendário Acadêmico",
+    "intro": "Acompanhe todas as datas importantes do ano letivo, incluindo vestibulares, cronograma de aulas presenciais e eventos especiais.",
+    "description": "Use os filtros para localizar eventos por tipo ou período e organize sua rotina acadêmica com antecedência."
+  },
   "events": [
     {
       "id": 1,
@@ -260,5 +265,28 @@
       "color": "#f39c12",
       "icon": "🏖️"
     }
-  }
+  },
+  "schedules": [
+    {
+      "icon": "🏛️",
+      "title": "Polo Brasília",
+      "frequency": "Todo 2º sábado do mês",
+      "time": "08:00 às 18:00",
+      "modality": "Presencial"
+    },
+    {
+      "icon": "🏙️",
+      "title": "Polo São Paulo",
+      "frequency": "Todo 3º sábado do mês",
+      "time": "08:00 às 18:00",
+      "modality": "Presencial"
+    },
+    {
+      "icon": "🏖️",
+      "title": "Polo Rio de Janeiro",
+      "frequency": "Todo 4º sábado do mês",
+      "time": "08:00 às 18:00",
+      "modality": "Presencial"
+    }
+  ]
 }

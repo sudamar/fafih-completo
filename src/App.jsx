@@ -47,7 +47,7 @@ function App() {
     document.head.appendChild(link3);
 
     // Update page title and meta
-    document.title = 'FAFIH - Faculdade de Artes, Filosofia e do Imaginário Humano';
+    document.title = 'Fafih';
 
     const metaViewport = document.querySelector('meta[name="viewport"]');
     if (metaViewport) {
