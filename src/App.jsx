@@ -88,6 +88,7 @@ function App() {
           <Route path="/polos" element={<PolosPage />} />
           <Route path="/regulamentos" element={<RegulamentosPage />} />
           <Route path="/escolha-cursos" element={<EscolhaCursosPage />} />
+          <Route path="/cursos/:slug" element={<CursoDetalhesPage />} />
           <Route path="/curso-detalhes/:id" element={<CursoDetalhesPage />} />
           <Route path="/calendario-academico" element={<CalendarioAcademicoPage />} />
           <Route path="/404" element={<NotFoundPage />} />

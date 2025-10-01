@@ -94,8 +94,6 @@ const CalendarioAcademicoContent = () => {
 
         {/* Filtros */}
         <div className="filter-container">
-          <h2>Filtrar Eventos</h2>
-
           {/* Filtro por tipo */}
           <div className="filter-section">
             <h3>Por Tipo de Evento</h3>

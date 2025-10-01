@@ -71,7 +71,7 @@ const Header = () => {
                 <li><Link to="/escolha-cursos?filter=especializacao">Pós-Graduação</Link></li>
                 <li><Link to="/escolha-cursos?filter=cursos">Curta e Média Duração</Link></li>
                 <li><Link to="/escolha-cursos?filter=eventos">Eventos</Link></li>
-                <li><Link to="/curso-detalhado">Modelo de Curso</Link></li>
+                <li><Link to="/cursos/pos-graduacao-psicologia-junguiana">Modelo de Curso</Link></li>
                 <li><a href="formas-de-ingresso.html">Formas de Ingresso</a></li>
                 <li><a href="regulamentos.html">Regulamentos</a></li>
                 <li><a href="polos">Polos</a></li>

@@ -114,11 +114,10 @@ const formatPrice = (price) => {
 };
 
 const CourseDetailsPage = () => {
-  const params = useParams();
+  const { id, slug } = useParams();
   const navigate = useNavigate();
-  const courseId = params?.id;
-  const hasExplicitId = courseId !== undefined && courseId !== null;
-  const resolvedId = hasExplicitId ? courseId : '1';
+  const routeIdentifier = slug ?? id;
+  const resolvedId = routeIdentifier ?? '1';
 
   const [course, setCourse] = useState(null);
   const [courseLoading, setCourseLoading] = useState(true);

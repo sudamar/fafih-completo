@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import styles from './curso-detalhado.module.css';
-import { getCourseDetails } from './courseDetailsData';
+import { getCourseDetails } from '@/services/courseCatalog.js';
 import { Testimonials } from '@/components/ui/testimonials';
 import { FacultyMembers } from '@/components/ui/faculty-members';
 import { listFacultyHighlights } from '@/services/professorCatalog.js';
