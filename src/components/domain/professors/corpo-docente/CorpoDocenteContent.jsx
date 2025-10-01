@@ -1,16 +1,14 @@
-import CorpoDocente from '@/components/ui/CorpoDocente';
+import FacultyDirectory from '@/components/domain/professors/FacultyDirectory.jsx';
 
 const CorpoDocenteContent = () => {
-
-
   return (
-    <section className="page-section">
+    <section className="page-section" data-testid="corpo-docente-content">
       <div className="container">
         <div className="section-header">
           <h1 className="page-title">Corpo Docente</h1>
         </div>
 
-        <CorpoDocente showIntro={true} />
+        <FacultyDirectory showIntro />
 
         <div className="content-section">
           <h2>Critérios de Seleção</h2>
@@ -111,6 +109,14 @@ const CorpoDocenteContent = () => {
       </div>
 
       <style jsx>{`
+        .filter-container h2::after {
+          display: none;
+        }
+
+        .filter-container h2 {
+          margin-bottom: 1.25rem;
+        }
+
         .content-section h2::after {
           display: none;
         }

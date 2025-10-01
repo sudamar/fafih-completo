@@ -1,4 +1,4 @@
-import CorpoDocenteContent from '@/components/corpo-docente/CorpoDocenteContent';
+import CorpoDocenteContent from '@/components/domain/professors/corpo-docente/CorpoDocenteContent.jsx';
 
 const CorpoDocentePage = () => {
   return (
