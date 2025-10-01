@@ -110,6 +110,15 @@ const CorpoDocenteContent = () => {
         </div>
       </div>
 
+      <style jsx>{`
+        .content-section h2::after {
+          display: none;
+        }
+
+        .content-section h2 {
+          margin-bottom: 2rem;
+        }
+      `}</style>
     </section>
   );
 };

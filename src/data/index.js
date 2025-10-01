@@ -1,6 +1,6 @@
 // Data Barrel Export
 import coursesData from './courses.json';
-import professorsData from './professors.json';
+import professorsData from './professors.json' with { type: 'json' };
 
 export const courses = coursesData;
 export const professors = professorsData;

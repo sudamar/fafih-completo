@@ -10,7 +10,7 @@
  */
 
 // Importa dados diretamente do JSON
-import professorsData from '@/data/professors.json';
+import professorsData from '@/data/professors.json' with { type: 'json' };
 
 /**
  * Cache simples em memória
