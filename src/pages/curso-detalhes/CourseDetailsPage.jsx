@@ -1,9 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Navigate, useParams, useNavigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { getCourseDetails } from '@/services/courseCatalog.js';
 import { useProfessors } from '@/features/professors/hooks/useProfessors';
 import { Testimonials } from '@/components/ui/testimonials';
 import { FacultyMembers } from '@/components/ui/faculty-members';
+import CourseBreadcrumb from '@/components/domain/course/CourseBreadcrumb.jsx';
+import CourseHero from '@/components/domain/course/CourseHero.jsx';
+import CourseOverview from '@/components/domain/course/CourseOverview.jsx';
+import CourseInfoSections from '@/components/domain/course/CourseInfoSections.jsx';
+import CourseCurriculum from '@/components/domain/course/CourseCurriculum.jsx';
+import CourseSupport from '@/components/domain/course/CourseSupport.jsx';
+import CourseSidebar from '@/components/domain/course/CourseSidebar.jsx';
 import styles from '@/components/curso-detalhes/curso-detalhado.module.css';
 
 const highlightBackgroundMap = {
@@ -115,14 +122,11 @@ const formatPrice = (price) => {
 
 const CourseDetailsPage = () => {
   const { id, slug } = useParams();
-  const navigate = useNavigate();
-  const routeIdentifier = slug ?? id;
-  const resolvedId = routeIdentifier ?? '1';
+  const resolvedId = slug ?? id ?? '1';
 
   const [course, setCourse] = useState(null);
   const [courseLoading, setCourseLoading] = useState(true);
   const [courseError, setCourseError] = useState(null);
-  const [openCurriculum, setOpenCurriculum] = useState([]);
 
   const {
     professors: courseFacultyMembers,
@@ -148,24 +152,6 @@ const CourseDetailsPage = () => {
       document.title = `${course.title} | FAFIH`;
     }
   }, [course?.title]);
-
-  useEffect(() => {
-    if (course?.curriculum) {
-      setOpenCurriculum(course.curriculum.map(() => false));
-    }
-  }, [course?.id, course?.curriculum?.length]);
-
-  const toggleCurriculum = (index) => {
-    setOpenCurriculum((prev) => {
-      const next = [...prev];
-      next[index] = !next[index];
-      return next;
-    });
-  };
-
-  const handleGoBack = () => {
-    navigate(-1);
-  };
 
   // Todos os useMemo devem estar aqui, antes de qualquer return condicional
   const breadcrumbItems = useMemo(() => {
@@ -252,14 +238,48 @@ const CourseDetailsPage = () => {
   const precoMatricula = useMemo(() => formatPrice(course?.precoMatricula), [course?.precoMatricula]);
   const originalPrice = useMemo(() => formatPrice(course?.originalPrice), [course?.originalPrice]);
 
-  const heroLabel = useMemo(() => course?.hero?.alt ?? `Apresentação do curso ${course?.title || ''}`, [course]);
-  const heroType = useMemo(() => course?.hero?.type ?? 'image', [course]);
-  const heroSource = useMemo(() => course?.hero?.source || '', [course]);
-  const heroFallback = useMemo(() => course?.hero?.fallbackImage || course?.image || '', [course]);
+  const heroMedia = useMemo(() => ({
+    type: course?.hero?.type ?? 'image',
+    source: course?.hero?.source || '',
+    fallbackImage: course?.hero?.fallbackImage || course?.image || '',
+    alt: course?.hero?.alt,
+  }), [course]);
+
+  const sidebarPriceLabel = useMemo(() => {
+    if (!course?.duration) {
+      return 'Matrícula';
+    }
+
+    const match = course.duration.match(/(\d+)/);
+    if (!match) {
+      return 'Matrícula';
+    }
+
+    const months = parseInt(match[1], 10) + 1;
+    return `${months}x`;
+  }, [course?.duration]);
 
   const curriculumItems = useMemo(() => course?.curriculum ?? [], [course]);
   const testimonials = useMemo(() => course?.testimonials ?? [], [course]);
-  const promocaoPrice = useMemo(() => originalPrice + " por " + price, [originalPrice, price]);
+  const normalizedTestimonials = useMemo(() => (
+    testimonials.map((testimonial) => ({
+      image: testimonial.image || 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      text: testimonial.text,
+      name: testimonial.author,
+      username: `@${testimonial.author?.toLowerCase().replace(/\s+/g, '') || 'aluno'}`,
+      social: 'https://i.imgur.com/VRtqhGC.png',
+    }))
+  ), [testimonials]);
+
+  const displayedFacultyMembers = useMemo(() => (
+    facultyLoading ? [] : courseFacultyMembers
+  ), [facultyLoading, courseFacultyMembers]);
+  const promocaoPrice = useMemo(() => {
+    if (originalPrice && price) {
+      return `${originalPrice} por ${price}`;
+    }
+    return price;
+  }, [originalPrice, price]);
 
   const enrollmentInfo = useMemo(() => {
     if (!course) return [];
@@ -317,246 +337,29 @@ const CourseDetailsPage = () => {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
-        <nav aria-label="Breadcrumb" className={styles.breadcrumbWrapper}>
-          {breadcrumbItems.map((item, index) => (
-            <span key={`${item.label}-${index}`} className={styles.breadcrumbItem}>
-              {index > 0 && <span className={styles.breadcrumbSeparator}>›</span>}
-              {item.href ? (
-                <a href={item.href} className={styles.breadcrumbLink}>
-                  {item.label}
-                </a>
-              ) : (
-                <span className={styles.breadcrumbActive}>{item.label}</span>
-              )}
-            </span>
-          ))}
-        </nav>
+        <CourseBreadcrumb items={breadcrumbItems} />
 
         <div className={styles.main}>
           <div className={styles.content}>
-            <article className={`${styles.card} ${styles.hero}`}>
-              <figure className={styles.heroFigure}>
-                {heroType === 'video' && heroSource ? (
-                  <video
-                    className={styles.heroImage}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    title={heroLabel}
-                    aria-label={heroLabel}
-                  >
-                    <source src={heroSource} type="video/mp4" />
-                    {heroFallback && (
-                      <img src={heroFallback} alt={heroLabel} className={styles.heroImage} />
-                    )}
-                  </video>
-                ) : heroFallback ? (
-                  <img
-                    src={heroFallback}
-                    alt={heroLabel}
-                    className={styles.heroImage}
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className={styles.heroPlaceholder} aria-hidden="true" />
-                )}
-                <div className={styles.heroOverlay} />
-                <figcaption className={styles.heroContent}>
-                  {heroBadges.length > 0 && (
-                    <div className={styles.badgeList}>
-                      {heroBadges.map((badge) => (
-                        <span
-                          key={badge.label}
-                          className={styles.badge}
-                          style={{ background: badge.color }}
-                        >
-                          {badge.label}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <div>
-                    <h1 className={styles.courseTitle}>{course.title}</h1>
-                    {course.subtitle && <p className={styles.courseSubtitle}>{course.subtitle}</p>}
-                  </div>
-                </figcaption>
-              </figure>
-            </article>
+            <CourseHero
+              title={course.title}
+              subtitle={course.subtitle}
+              badges={heroBadges}
+              media={heroMedia}
+            />
 
-            <article className={`${styles.card} ${styles.innerCard}`}>
-              <header className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>Sobre o Curso</h2>
-              </header>
-              <div>
-                {overviewParagraphs.map((paragraph) => (
-                  <p key={paragraph} className={styles.sectionDescription}>
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
+            <CourseOverview
+              paragraphs={overviewParagraphs}
+              highlights={highlightCards}
+            />
 
-              {highlightCards.length > 0 && (
-                <div className={styles.highlightGrid}>
-                  {highlightCards.map((card) => (
-                    <div
-                      key={card.title}
-                      className={styles.highlightCard}
-                      style={{ background: card.background }}
-                    >
-                      <span
-                        className={styles.highlightIcon}
-                        style={{ background: card.iconBackground }}
-                      >
-                        <i aria-hidden className={card.icon} />
-                      </span>
-                      <h3 className={styles.highlightTitle}>{card.title}</h3>
-                      <p className={styles.highlightText}>{card.description}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </article>
+            <CourseInfoSections
+              justification={justificationParagraphs}
+              objectives={objectivesList}
+              targetAudience={audienceList}
+            />
 
-            <article className={`${styles.card} ${styles.innerCard}`}>
-              <header className={styles.sectionHeader}>
-                <h2 className={styles.sectionTitle}>Demais Informações</h2>
-              </header>
-
-              {justificationParagraphs.length > 0 && (
-                <section className={styles.textBlock}>
-                  <h3>Justificativa</h3>
-                  {justificationParagraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </section>
-              )}
-
-              {objectivesList.length > 0 && (
-                <section className={styles.textBlock}>
-                  <h3>Objetivos</h3>
-                  <ul className={styles.bulletList}>
-                    {objectivesList.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </section>
-              )}
-
-              {audienceList.length > 0 && (
-                <section className={styles.textBlock}>
-                  <h3>Para quem é</h3>
-                  <div>
-                    {audienceList.map((item, index) => (
-                      <p key={index}>{item}</p>
-                    ))}
-                  </div>
-                </section>
-              )}
-            </article>
-
-            {curriculumItems.length > 0 && (
-              <article className={`${styles.card} ${styles.innerCard}`}>
-                <header className={styles.sectionHeader}>
-                  <h2 className={styles.sectionTitle}>Grade Curricular</h2>
-                </header>
-                <div className={styles.curriculumList}>
-                  {curriculumItems.map((item, index) => {
-                    const hours = item.hours || item.horas || '';
-                    const summary = item.summary || (() => {
-                      const text = item.description || '';
-                      return text.includes('-') ? text.split('-').slice(1).join('-').trim() : text;
-                    })();
-                    const ementaList = Array.isArray(item.ementa)
-                      ? item.ementa
-                      : item.ementa
-                        ? [item.ementa]
-                        : [];
-                    const objetivosCurriculo = Array.isArray(item.objetivos)
-                      ? item.objetivos
-                      : item.objetivos
-                        ? [item.objetivos]
-                        : [];
-                    const bibliografia = item.bibliography || [];
-                    const bibliografiaDescricao = '';
-
-                    return (
-                      <div key={item.number} className={styles.curriculumItem}>
-                        <button
-                          type="button"
-                          className={styles.curriculumHeader}
-                          onClick={() => toggleCurriculum(index)}
-                          aria-expanded={openCurriculum[index] ?? false}
-                        >
-                          <div className={styles.curriculumMain}>
-                            <span
-                              className={`${styles.curriculumToggleSymbol} ${
-                                openCurriculum[index] ? styles.curriculumToggleOpen : ''
-                              }`}
-                              aria-hidden="true"
-                            >
-                              {openCurriculum[index] ? '−' : '+'}
-                            </span>
-                            <div className={styles.curriculumTexts}>
-                              <h3>{item.title}</h3>
-                              {summary && (
-                                <span className={styles.curriculumSummary}>{summary}</span>
-                              )}
-                            </div>
-                          </div>
-                        </button>
-                        <div
-                          className={`${styles.curriculumContent} ${
-                            openCurriculum[index] ? styles.curriculumContentOpen : ''
-                          }`}
-                        >
-                          {hours && (
-                            <p className={styles.curriculumHours}>
-                              <strong>Carga horária:</strong> {hours}
-                            </p>
-                          )}
-                          {summary && <p className={styles.curriculumSummaryText}>{summary}</p>}
-                          {ementaList.length > 0 && (
-                            <div className={styles.curriculumSection}>
-                              <h4>Ementa</h4>
-                              <ul className={styles.curriculumListDetailed}>
-                                {ementaList.map((topic) => (
-                                  <li key={topic}>{topic}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                          {objetivosCurriculo.length > 0 && (
-                            <div className={styles.curriculumSection}>
-                              <h4>Objetivos</h4>
-                              <ul className={styles.curriculumListDetailed}>
-                                {objetivosCurriculo.map((goal) => (
-                                  <li key={goal}>{goal}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                          {bibliografia.length > 0 && (
-                            <div className={styles.curriculumSection}>
-                              <h4>Bibliografia</h4>
-                              {bibliografiaDescricao && (
-                                <p className={styles.curriculumBibliographyNote}>{bibliografiaDescricao}</p>
-                              )}
-                              <ul className={styles.curriculumListDetailed}>
-                                {bibliografia.map((ref) => (
-                                  <li key={ref}>{ref}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </article>
-            )}
+            <CourseCurriculum items={curriculumItems} />
 
             {course.cargahoraria && (
               <article className={`${styles.card} ${styles.innerCard}`}>
@@ -629,107 +432,22 @@ const CourseDetailsPage = () => {
               </article>
             )}
 
-            <FacultyMembers facultyMembers={courseFacultyMembers} />
+            <FacultyMembers facultyMembers={displayedFacultyMembers} />
 
-            {testimonials.length > 0 && (
-              <Testimonials testimonials={testimonials.map(testimonial => ({
-                image: testimonial.image || 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                text: testimonial.text,
-                name: testimonial.author,
-                username: `@${testimonial.author.toLowerCase().replace(/\s+/g, '')}`,
-                social: 'https://i.imgur.com/VRtqhGC.png'
-              }))} />
+            {normalizedTestimonials.length > 0 && (
+              <Testimonials testimonials={normalizedTestimonials} />
             )}
 
-            {supportChannels.length > 0 && (
-              <section className={styles.contactCard}>
-                <div className={styles.contactIntro}>
-                  <span className={styles.contactIconBeam}>{renderContactIcon('support')}</span>
-                  <div className={styles.contactIntroText}>
-                    <h3 className={styles.contactTitle}>Precisa de Ajuda?</h3>
-                    <p className={styles.contactSubtitle}>
-                      Nossa equipe está pronta para orientar você durante a inscrição.
-                    </p>
-                  </div>
-                </div>
-                <div className={styles.contactGrid}>
-                  {supportChannels.map((channel) => (
-                    <div
-                      key={channel.value}
-                      className={styles.contactTile}
-                      style={{ borderColor: `${channel.accent}1f` }}
-                    >
-                      <div className={styles.contactTileHeader}>
-                        <span
-                          className={styles.contactTileIcon}
-                          style={{
-                            background: channel.tint,
-                            color: channel.accent,
-                          }}
-                        >
-                          {renderContactIcon(channel.type)}
-                        </span>
-                        <span className={styles.contactTileTitle}>{channel.title}</span>
-                      </div>
-                      <span className={styles.contactTileValue}>{channel.value}</span>
-                      {channel.helper && (
-                        <span className={styles.contactTileHelper}>{channel.helper}</span>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </section>
-            )}
+            <CourseSupport renderIcon={renderContactIcon} channels={supportChannels} />
           </div>
 
-          <aside className={styles.sidebar}>
-            <section className={styles.sidebarCard}>
-              <div className={styles.sidebarPrice}>
-                {precoMatricula && (
-                  <>
-                    <small className={styles.priceLabel}>
-                      {(() => {
-                        const durationMatch = course.duration?.match(/(\d+)/);
-                        if (durationMatch) {
-                          const months = parseInt(durationMatch[1]) + 1;
-                          return `${months}x`;
-                        }
-                        return 'Matrícula';
-                      })()}
-                    </small>
-                    <strong>{precoMatricula}</strong>
-                  </>
-                )}
-                {course.categoryLabel && <span>{course.categoryLabel}</span>}
-                {/* {course.modalidade && <small>{course.modalidade}</small>} */}
-              </div>
-
-              {enrollmentInfo.length > 0 && (
-                <div className={styles.sidebarMeta}>
-                  {enrollmentInfo.map((item) => (
-                    <span key={item.label}>
-                      <span className={styles.metaIcon}>
-                        <i aria-hidden className={item.icon} />
-                      </span>
-                      {item.label}: {item.value}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              <div className={styles.sidebarButtons}>
-                <button type="button" className={styles.primaryButton}>
-                  Inscrever-se Agora
-                </button>
-                <button type="button" className={styles.secondaryButton}>
-                  Download da Ementa
-                </button>
-                <button type="button" className={styles.secondaryButton} onClick={handleGoBack}>
-                  ← Voltar
-                </button>
-              </div>
-            </section>
-          </aside>
+          <CourseSidebar
+            enrollmentInfo={enrollmentInfo}
+            priceLabel={precoMatricula ? sidebarPriceLabel : undefined}
+            priceValue={precoMatricula}
+            categoryLabel={course.categoryLabel}
+            modality={course.modalidade}
+          />
         </div>
       </div>
     </section>

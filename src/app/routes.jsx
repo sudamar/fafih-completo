@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import IndexPage from '../pages/IndexPage.jsx';
 import ExtensaoPage from '../pages/extensao/ExtensaoPage.jsx';
@@ -48,9 +48,6 @@ export const ROUTES = [
   { path: '/escolha-cursos', element: <EscolhaCursosPage /> },
   { path: '/cursos', element: <CoursesListPage /> },
   { path: '/cursos/:slug', element: <CourseDetailsPage /> },
-  { path: '/curso-detalhes/:id', element: <CourseDetailsPage /> },
-  { path: '/curso-detalhado/:id', element: <CourseDetailsPage /> },
-  { path: '/curso-detalhado', element: <Navigate to="/cursos" replace /> },
   { path: '/404', element: <NotFoundPage /> }
 ];
 

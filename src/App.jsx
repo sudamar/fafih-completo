@@ -23,7 +23,7 @@ import NucleoApoioDocentePage from '@/pages/NucleoApoioDocentePage';
 import PolosPage from '@/pages/PolosPage';
 import RegulamentosPage from '@/pages/RegulamentosPage';
 import EscolhaCursosPage from '@/pages/lista-cursos/EscolhaCursosPage';
-import CursoDetalhesPage from '@/pages/curso-detalhes/CourseDetailsPage';
+import CourseDetailsPage from '@/pages/curso-detalhes/CourseDetailsPage';
 import CalendarioAcademicoPage from '@/pages/calendario/CalendarioAcademicoPage';
 import NotFoundPage from '@/pages/notfound/NotFoundPage';
 
@@ -88,8 +88,7 @@ function App() {
           <Route path="/polos" element={<PolosPage />} />
           <Route path="/regulamentos" element={<RegulamentosPage />} />
           <Route path="/escolha-cursos" element={<EscolhaCursosPage />} />
-          <Route path="/cursos/:slug" element={<CursoDetalhesPage />} />
-          <Route path="/curso-detalhes/:id" element={<CursoDetalhesPage />} />
+          <Route path="/cursos/:slug" element={<CourseDetailsPage />} />
           <Route path="/calendario-academico" element={<CalendarioAcademicoPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<NotFoundPage />} />
