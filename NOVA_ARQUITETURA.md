@@ -16,15 +16,23 @@ Este documento define a estratégia de migração da aplicação FAFIH para uma 
 - **Estilos inconsistentes**: Design system unificado
 
 #### 🎨 Padrões de títulos
-- `h1.page-title` exibe o traço colorido inferior e mantém a hierarquia principal da página.
+- `h1.page-title` exibe o traço colorido inferior (80px, gradiente) e mantém a hierarquia principal da página.
 - `h2` de seções usa a classe `card-heading` — **azul escuro: #2A5BBD** — e, se necessário, a variante `no-underline` remove o traço decorativo.
-- `h3` dentro de cards/seções usa `card-subheading`, garantindo o **azul claro: #2C678F (var(--secondary-color))** e tipografia consistente.
+- `h3` dentro de cards/seções usa `card-subheading`, garantindo o **azul muito escuro: #0B2242** e tipografia consistente.
 - Quando precisar ajustar tamanhos específicos de cards, sobrescreva apenas font-size/margem localmente, mantendo `card-heading`/`card-subheading` para cores e ausência de linhas.
+
+#### 📝 Padrão de descrição introdutória
+- `.conheca-intro` é usada para descrições introdutórias das páginas (ex.: Iniciação Científica, Membros Analistas).
+- **Fundo**: gradiente cinza claro (#f8f9fa → #e9ecef)
+- **Sem borda superior colorida** (`.conheca-intro::before` está com `display: none`)
+- Padding de 3rem, border-radius de 15px, texto centralizado
+- Mantém consistência visual em todas as páginas que usam descrição inicial
 
 #### 🧊 Cards informativos
 - **Card Elevated**: base utilizada em `.info-card`, `.servico-item`, `.projeto-destaque`, `.numero-item`, `.contato-info`, `.ingresso-card`; fundo branco, borda 1px e sombra média com hover suave (gradiente sutil aplicado via pseudo-elemento).
 - **Card Accent-Left**: para versões com barra lateral azul (ex.: antigos destaques), aplicar classe utilitária `card-accent-left` (definida junto ao estilo base) sobre o card elevado, mantendo borda lateral gradiente.
 - **Card Course**: mantém estrutura de curso (hero/sidebar) e reaproveita `card-heading`/`card-subheading`; evitar definir sombras locais — usar o estilo base de cards elevados.
+- **Highlight Cards**: cards de destaque usados em páginas de curso (CourseDetailsPage) com gradiente de fundo e ícone colorido. Estrutura visual: ícone no topo com gradiente circular, título em negrito, descrição curta. Gradientes mapeados por cores (blue, green, purple, red, amber, yellow, indigo) com fallback padrão.
 - Evite duplicar CSS; reutilize as classes listadas e ajuste apenas elementos internos (ícones, métricas) quando necessário.
 
 ### 🚀 **Benefícios Esperados**
@@ -139,6 +147,14 @@ src/
    - Migrar `courseDetailsData.js` → `data/courses.json`
    - Criar `data/professors.json` baseado nos dados existentes
    - Padronizar formato de dados (camelCase, estruturas consistentes)
+
+4. **Design System Documentation**
+   - Página `/valida-dls` criada como catálogo visual de componentes
+   - Documentação de todos os elementos: títulos, cards, botões, formulários, abas, cores, tipografia, gradientes, ícones sociais e sombras
+   - Labels de referência (`@DLS-*`) para facilitar comunicação entre desenvolvedores
+   - Componentes etiquetados com `data-component` para inspeção e debug
+   - CSS global centralizado em `index.css` (seção "Design System Page Styles")
+   - **15 componentes documentados** com classes CSS evidenciadas em cada seção
 
 #### **Entregáveis**
 - [ ] Nova estrutura de pastas funcionando
@@ -361,6 +377,217 @@ src/
 - [ ] API integration ready
 - [ ] Testes passando
 - [ ] Documentação atualizada
+
+---
+
+## 🎨 Catálogo Completo do Design System
+
+### 📍 **Localização**: `/valida-dls`
+**Arquivo Principal**: `src/components/valida-dls/ValidaDLSContent.jsx`
+**CSS Global**: `src/index.css` (seção "Design System Page Styles", linha 3051+)
+
+### 📦 **Componentes Documentados** (15 Total)
+
+#### 1. **#tabs_exemplo** - Abas/Tabs
+**Uso**: Navegação por abas para organizar conteúdo
+**Classes CSS**:
+- `.tabs-container` - Container principal das abas
+- `.tab-link` - Botão de aba individual
+- `.tab-link.active` - Aba ativa
+- `.tab-content` - Conteúdo da aba
+- `.tab-content.active` - Conteúdo visível
+
+#### 2. **#titulos_exemplo** - Títulos
+**Uso**: Hierarquia de títulos padronizada
+**Classes CSS**:
+- `.page-title` - Título principal da página (h1) com traço colorido inferior 80px
+- `.card-heading` - Título de card/seção (h2) azul escuro #2A5BBD
+- `.card-subheading` - Subtítulo de card (h3) azul muito escuro #0B2242
+- `.section-subtitle` - Subtítulo de seção (h2) sem linha decorativa
+
+#### 3. **#cards_basicos** - Cards Básicos
+**Uso**: Cards para conteúdo geral
+**Classes CSS**:
+- `.dls-demo-card` - Card padrão com sombra
+- `.card-accent-left` - Card com borda gradiente à esquerda
+- `.ingresso-card` - Card específico para ingresso
+- `.info-card` - Card informativo com gradiente de fundo
+
+#### 4. **#cards_highlight** - Highlight Cards (Destaques)
+**Uso**: Cards de destaque com gradientes e ícones (usado em páginas de curso)
+**Classes CSS**:
+- `.dls-highlight-grid` - Grid responsivo para cards de destaque
+- `.dls-highlight-card` - Card individual com gradiente de fundo
+- `.dls-highlight-icon` - Ícone circular com gradiente
+- `.dls-highlight-title` - Título do destaque
+- `.dls-highlight-text` - Texto descritivo
+**Gradientes disponíveis**: blue, green, purple, red, amber, yellow, indigo
+
+#### 5. **#cards_depoimentos** - Cards de Depoimentos (Carousel)
+**Uso**: Carousel de depoimentos com navegação
+**Classes CSS**:
+- `.dls-testimonials-container` - Container principal
+- `.dls-testimonial-card` - Card do depoimento
+- `.dls-testimonial-content` - Conteúdo do depoimento
+- `.dls-quote-icon` - Ícone de citação (aspas)
+- `.dls-testimonial-text` - Texto do depoimento
+- `.dls-testimonial-author` - Seção do autor
+- `.dls-author-image` - Foto do autor
+- `.dls-author-info` - Informações do autor
+- `.dls-author-name` - Nome do autor
+- `.dls-author-role` - Função/cargo do autor
+- `.dls-carousel-indicators` - Indicadores de navegação
+- `.dls-indicator` - Indicador individual (bolinhas)
+
+#### 6. **#toggle_accordion** - Accordion/Toggle (Grade Curricular)
+**Uso**: Sistema de expansão/colapso para grade curricular
+**Classes CSS**:
+- `.dls-curriculum-list` - Lista de itens do accordion
+- `.dls-curriculum-item` - Item individual
+- `.dls-curriculum-header` - Cabeçalho clicável
+- `.dls-curriculum-main` - Conteúdo principal do header
+- `.dls-curriculum-toggle-symbol` - Botão circular (+/−) 44px, azul #2105d0
+- `.dls-curriculum-toggle-open` - Botão quando aberto (verde #05b18b)
+- `.dls-curriculum-texts` - Container de textos
+- `.dls-curriculum-summary` - Resumo do módulo
+- `.dls-curriculum-content` - Conteúdo colapsável
+- `.dls-curriculum-content-open` - Conteúdo expandido
+- `.dls-curriculum-hours` - Carga horária
+- `.dls-curriculum-section` - Seção dentro do conteúdo
+- `.dls-curriculum-list-detailed` - Lista detalhada (ementa, objetivos)
+
+#### 7. **#tabela_carga_horaria** - Tabela de Carga Horária
+**Uso**: Distribuição de horas de atividades do curso
+**Classes CSS**:
+- `.dls-workload-content` - Container principal
+- `.dls-workload-description` - Descrição introdutória
+- `.dls-workload-table` - Seção da tabela
+- `.dls-workload-grid` - Grid da tabela (fundo #f8fafc, borda)
+- `.dls-workload-item` - Item/linha da tabela
+- `.dls-workload-activity` - Nome da atividade
+- `.dls-workload-hours` - Quantidade de horas
+- `.dls-workload-total` - Linha total (fundo rgba(33,5,208,0.05), borda superior)
+- `.dls-workload-note` - Nota de rodapé
+
+#### 8. **#botoes_exemplos** - Botões
+**Uso**: Todos os estilos de botões da aplicação
+**Classes CSS**:
+- `.btn-inscreva-se` - Botão de inscrição do header
+- `.btn-saiba-mais-institucional` - Botão institucional
+- `.btn-card` - Botão genérico de card
+- `.btn-page-action` - Botão de ação de página
+- `.btn-primary` - Botão primário
+- `.btn-secondary` - Botão secundário
+- `.btn-detalhes` - Botão de detalhes
+- `.btn-matricular` - Botão de matrícula
+- `.btn-matricular-modal` - Botão de matrícula em modal
+- `.btn-download` - Botão de download
+- `.btn-contato` - Botão de contato
+- `.btn-matricule-agora` - Botão de call-to-action
+- `.btn-voltar` - Botão de voltar
+- `.btn-submit` - Botão de submit de formulário
+
+#### 9. **#formularios_exemplos** - Formulários
+**Uso**: Campos de formulário padronizados
+**Classes CSS**:
+- `.dls-demo-form` - Container do formulário
+- `.dls-form-group` - Grupo de campo (label + input)
+- `.dls-form-actions` - Container de botões de ação
+
+#### 10. **#cores_tipografia** - Tipografia & Cores
+**Uso**: Paleta de cores e fontes do projeto
+**Classes CSS**:
+- `.dls-color-palette` - Grid de cores
+- `.dls-color-box` - Caixa de cor individual
+- `.dls-typography-demo` - Demonstração de tipografia
+**Variáveis CSS**:
+- `--primary-color` (#0A2342)
+- `--secondary-color` (#2C678F)
+- `--background-color` (#F4F4F9)
+- `--card-bg` (#FFFFFF)
+- `--footer-blue` (#1d4397)
+- `--card-green-dark` (#006400)
+**Fontes**: Montserrat (títulos), Lato (corpo)
+
+#### 11. **#gradiente_rainbow** - Gradiente Rainbow
+**Uso**: Gradiente arco-íris usado em bordas e detalhes
+**Classes CSS**:
+- `.dls-gradient-demo` - Demonstração do gradiente
+**Variável CSS**:
+- `--gradient` (linear-gradient 90deg: roxo → azul → verde → amarelo → laranja → vermelho)
+
+#### 12. **#icones_sociais** - Ícones Sociais
+**Uso**: Cores padronizadas para redes sociais
+**Classes CSS**:
+- `.dls-social-colors` - Grid de cores sociais
+- `.dls-social-box` - Caixa de cor social
+**Variáveis CSS**:
+- `--linkedin-color` (#0077B5)
+- `--instagram-color` (#E1306C)
+- `--youtube-color` (#FF0000)
+- `--tiktok-color` (#000000)
+
+#### 13. **#sombras_efeitos** - Sombras e Efeitos
+**Uso**: Sombra padrão aplicada em cards e elementos
+**Classes CSS**:
+- `.dls-shadow-demo` - Container de demonstração
+- `.dls-shadow-box` - Caixa com sombra
+**Variável CSS**:
+- `--shadow` (0 4px 12px rgba(0,0,0,0.08))
+
+#### 14. **#card_detalhado** - Card Detalhado (Polo)
+**Uso**: Card complexo com múltiplas informações (endereço, contato, lista)
+**Classes CSS**:
+- `.dls-polo-card` - Container do card (flexbox vertical)
+- `.info-card` - Estilo base de card informativo
+- `.dls-polo-info` - Seção de informações (endereço, telefone, email)
+- `.dls-polo-cursos` - Seção de cursos oferecidos (fundo #f8f9ff)
+- `.dls-map-button` - Botão de ver no mapa
+
+#### 15. **#cards_pessoas** - Cards de Pessoas (Professores)
+**Uso**: Cards de perfil com foto, bio e contato
+**Classes CSS**:
+- `.dls-professores-grid` - Grid responsivo de professores
+- `.dls-professor-card` - Card individual (min-height 450px)
+- `.dls-professor-header` - Cabeçalho com foto e nome
+- `.dls-professor-foto` - Container da foto (80px circular)
+- `.dls-professor-nome-area` - Nome e área de atuação
+- `.dls-professor-area` - Área de especialização
+- `.dls-professor-info` - Container de informações
+- `.dls-professor-content` - Conteúdo principal (formação + bio)
+- `.dls-professor-formacao` - Formação acadêmica (itálico)
+- `.dls-professor-bio` - Biografia (texto justificado)
+- `.dls-professor-contato-info` - Seção de contato (borda superior)
+- `.dls-contato-item` - Item de contato individual
+- `.dls-contato-label` - Emoji/ícone de contato
+- `.dls-contato-link` - Link de contato (telefone/email)
+
+---
+
+### 🔍 **Como Usar o Design System**
+
+1. **Acesse o catálogo**: Navegue para `/valida-dls` no navegador
+2. **Identifique o componente**: Localize visualmente o componente desejado
+3. **Copie o ID**: Use o ID de referência (ex: `#cards_pessoas`)
+4. **Veja as classes**: Classes CSS estão evidenciadas abaixo de cada ID
+5. **Aplique no código**: Use as classes CSS globais em seus componentes
+6. **Referencie nos prompts**: Use o ID para pedir ajustes (ex: "ajuste usando #toggle_accordion")
+
+### 📝 **Exemplo de Uso**
+```jsx
+// Em vez de criar CSS local, use as classes do DLS:
+<div className="dls-professor-card">
+  <div className="dls-professor-header">
+    <div className="dls-professor-foto">
+      <img src={photo} alt={name} />
+    </div>
+    <div className="dls-professor-nome-area">
+      <h3>{name}</h3>
+      <p className="dls-professor-area">{area}</p>
+    </div>
+  </div>
+</div>
+```
 
 ---
 

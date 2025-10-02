@@ -1,4 +1,4 @@
-import PolosContent from '@/components/polos/PolosContent';
+import { PolosContent } from '@/components/domain/polos';
 
 const PolosPage = () => {
   return (

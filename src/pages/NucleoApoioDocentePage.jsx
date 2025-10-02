@@ -1,4 +1,4 @@
-import NucleoApoioDocenteContent from '@/components/nucleo-apoio-docente/NucleoApoioDocenteContent';
+import { NucleoApoioDocenteContent } from '@/components/domain/nucleo-apoio-docente';
 
 const NucleoApoioDocentePage = () => {
   return (

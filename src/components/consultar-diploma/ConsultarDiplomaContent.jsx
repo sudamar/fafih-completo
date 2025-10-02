@@ -37,11 +37,11 @@ const ConsultarDiplomaContent = () => {
   return (
     <section className={styles.pageSection}>
       <div className={styles.container}>
-        <h1>Consulta de Diplomas</h1>
+        <h1 className="page-title">Consulta de Diplomas</h1>
         <p className={styles.introText}>Este é um portal público de consulta de diplomas emitidos pela FAFIH. Aqui você consulta toda a nossa base de diplomas emitidos e registrados de todos os níveis de ensino. Use-o para validar um diploma que esteja em suas mãos.</p>
 
         <div className={styles.searchFormContainer}>
-          <h2>Busca de Diploma</h2>
+          <h2 className="section-subtitle">Busca de Diploma</h2>
           <form onSubmit={handleSubmit}>
             <div className={styles.searchGroup}>
               <div className={styles.formField}>

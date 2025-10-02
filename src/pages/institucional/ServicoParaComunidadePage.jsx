@@ -1,4 +1,4 @@
-import ServicoParaComunidadeContent from '@/components/servico-comunidade/ServicoParaComunidadeContent';
+import ServicoParaComunidadeContent from '../../components/servico-comunidade/ServicoParaComunidadeContent';
 
 const ServicoParaComunidadePage = () => {
   return (

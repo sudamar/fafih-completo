@@ -980,7 +980,7 @@ footer {
 
 .card-subheading {
   font-family: 'Montserrat', sans-serif;
-  color: var(--secondary-color);
+  color: #0B2242;
   margin-bottom: 0.75rem;
   line-height: 1.35;
   position: relative;
@@ -988,6 +988,18 @@ footer {
 }
 
 .card-subheading::after {
+  display: none;
+}
+
+.section-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #2A5BBD;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  font-size: 1.5rem;
+}
+
+.section-subtitle::after {
   display: none;
 }
 
@@ -2372,6 +2384,8 @@ footer {
 }
 
 /* Conheca FAFIH */
+/* Descrição introdutória padrão para páginas (ex.: Iniciação Científica, Membros Analistas) */
+/* Fundo gradiente cinza, SEM borda superior colorida */
 .conheca-intro {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 3rem;
@@ -2381,15 +2395,113 @@ footer {
   position: relative;
 }
 
+/* Borda superior colorida REMOVIDA - manter display: none */
 .conheca-intro::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: var(--gradient);
-  border-radius: 15px 15px 0 0;
+  display: none;
+}
+
+/* Membros Analistas */
+.analistas-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.analista-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.analista-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.analista-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.analista-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--secondary-color);
+}
+
+.analista-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.analista-nome {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.analista-tipo {
+  color: var(--secondary-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.analista-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.detail-item strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.email-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  word-break: break-all;
+}
+
+.email-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.biografia {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  margin-top: 0.5rem !important;
+}
+
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #666;
+  font-size: 1.1rem;
 }
 
 .content-section {
@@ -2404,8 +2516,6 @@ footer {
   color: var(--primary-color);
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--secondary-color);
-  padding-bottom: 0.5rem;
 }
 
 .content-section h3 {
@@ -2937,6 +3047,616 @@ footer {
   font-weight: 500;
 }
 
+/* ========================================
+   Design System Page Styles
+   ======================================== */
+
+.dls-section {
+  margin-bottom: 5rem;
+  padding: 3rem;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.dls-section h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.dls-section h1::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Cards Grid */
+.dls-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.dls-demo-card {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.dls-demo-card:hover {
+  transform: translateY(-5px);
+}
+
+.dls-demo-card.ingresso-card {
+  border: 2px solid var(--primary-color);
+}
+
+.dls-demo-card.info-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Buttons Grid */
+.dls-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dls-buttons-grid button {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Forms */
+.dls-demo-form {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.dls-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.dls-form-group label {
+  display: block;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.dls-form-group input,
+.dls-form-group select,
+.dls-form-group textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.dls-form-group input:focus,
+.dls-form-group select:focus,
+.dls-form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+}
+
+.dls-form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.dls-form-actions button {
+  flex: 1;
+}
+
+/* Color Palette */
+.dls-color-palette {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dls-color-box {
+  padding: 3rem 1rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dls-color-box span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.dls-color-box code {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Typography Demo */
+.dls-typography-demo {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Gradient Demo */
+.dls-gradient-demo {
+  height: 80px;
+  background: var(--gradient);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Social Colors */
+.dls-social-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dls-social-box {
+  padding: 2rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dls-social-box span {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.dls-social-box code {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Shadow Demo */
+.dls-shadow-demo {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.dls-shadow-box {
+  padding: 3rem 4rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.dls-shadow-box p {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.dls-shadow-box code {
+  color: var(--text-color);
+  background-color: #f4f4f4;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Highlight Cards */
+.dls-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.dls-highlight-card {
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dls-highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.dls-highlight-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.dls-highlight-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.dls-highlight-text {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Testimonials / Depoimentos */
+.dls-testimonials-container {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.dls-testimonials-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dls-testimonial-card {
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.dls-testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dls-quote-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--secondary-color);
+  opacity: 0.3;
+}
+
+.dls-quote-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dls-testimonial-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--text-color);
+  font-style: italic;
+  margin: 0;
+}
+
+.dls-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dls-author-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.dls-author-info {
+  text-align: left;
+}
+
+.dls-author-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0 0 0.25rem 0;
+}
+
+.dls-author-role {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+}
+
+.dls-carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.dls-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dls-indicator.active {
+  background: var(--secondary-color);
+}
+
+.dls-indicator:hover {
+  transform: scale(1.2);
+}
+
+/* Curriculum Accordion */
+.dls-curriculum-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dls-curriculum-item {
+  border-radius: 16px;
+  border: 1px solid #e1e7f0;
+  padding: 0;
+  overflow: hidden;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+  background: white;
+}
+
+.dls-curriculum-item:hover {
+  border-color: #2105d0;
+  box-shadow: 0 14px 28px rgba(33, 5, 208, 0.08);
+}
+
+.dls-curriculum-header {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-align: left;
+}
+
+.dls-curriculum-header:focus-visible {
+  outline: 2px solid #2105d0;
+  outline-offset: 2px;
+}
+
+.dls-curriculum-main {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.dls-curriculum-toggle-symbol {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #2105d0;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dls-curriculum-toggle-open {
+  background: #05b18b;
+}
+
+.dls-curriculum-texts {
+  flex: 1;
+  text-align: left;
+}
+
+.dls-curriculum-texts h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125rem;
+  color: var(--primary-color);
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.dls-curriculum-summary {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.dls-curriculum-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.dls-curriculum-content-open {
+  max-height: 1000px;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.dls-curriculum-hours {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.dls-curriculum-section {
+  margin-top: 1.5rem;
+}
+
+.dls-curriculum-section h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 0 0 0.75rem 0;
+  font-weight: 600;
+}
+
+.dls-curriculum-list-detailed {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dls-curriculum-list-detailed li {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  position: relative;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.dls-curriculum-list-detailed li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+/* Workload Table / Tabela Carga Horária */
+.dls-workload-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dls-workload-description p {
+  margin-bottom: 1rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.dls-workload-table h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2f53;
+  margin-bottom: 1rem;
+}
+
+.dls-workload-grid {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.dls-workload-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dls-workload-item:last-child {
+  border-bottom: none;
+}
+
+.dls-workload-total {
+  font-weight: 700;
+  background: rgba(33, 5, 208, 0.05);
+  margin: 0.5rem -1.5rem -1.5rem;
+  padding: 1rem 1.5rem 0.75rem;
+  border-radius: 0 0 12px 12px;
+  border-top: 2px solid #2105d0;
+}
+
+.dls-workload-activity {
+  color: #1f2f53;
+  font-weight: 500;
+}
+
+.dls-workload-hours {
+  color: #2105d0;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.dls-workload-note {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dls-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .dls-cards-grid,
+  .dls-buttons-grid,
+  .dls-highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dls-color-palette,
+  .dls-social-colors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dls-testimonial-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .dls-testimonial-text {
+    font-size: 1rem;
+  }
+}
+
 .no-events {
   text-align: center;
   color: #666;
@@ -2968,6 +3688,199 @@ footer {
   font-size: 0.95rem;
 }
 
+/* DLS - Card Detalhado (Polo) */
+.dls-polo-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dls-polo-info {
+  margin-bottom: 1.5rem;
+}
+
+.dls-polo-info p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.dls-polo-cursos {
+  background: #f8f9ff;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.dls-polo-cursos h4 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.dls-polo-cursos ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.dls-polo-cursos li {
+  margin-bottom: 0.3rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.dls-map-button {
+  display: block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.dls-map-button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* DLS - Cards de Pessoas (Professores) */
+.dls-professores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+.dls-professor-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  min-height: 450px;
+}
+
+.dls-professor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.dls-professor-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.dls-professor-foto {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+}
+
+.dls-professor-foto img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--secondary-color);
+}
+
+.dls-professor-nome-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.dls-professor-nome-area h3 {
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.dls-professor-area {
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.dls-professor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.dls-professor-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dls-professor-formacao {
+  font-style: italic;
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.dls-professor-bio {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.dls-professor-contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 1px solid #e9ecef;
+  flex-shrink: 0;
+}
+
+.dls-contato-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dls-contato-label {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.dls-contato-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.dls-contato-link:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .calendar-filter-container {
     padding: 1.5rem;
@@ -2988,5 +3901,39 @@ footer {
 
   .ic-grid {
     grid-template-columns: 1fr;
+  }
+
+  .analistas-directory {
+    grid-template-columns: 1fr;
+  }
+
+  .analista-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .analista-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .dls-professores-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dls-professor-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .dls-professor-foto {
+    width: 100px;
+    height: 100px;
+  }
+
+  .dls-professor-nome-area {
+    min-height: auto;
+    align-items: center;
   }
 }

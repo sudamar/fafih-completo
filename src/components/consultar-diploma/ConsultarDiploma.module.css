@@ -15,15 +15,16 @@
     text-align: center;
     margin-bottom: 4rem;
     position: relative;
+    padding-bottom: 1.5rem;
 }
 
 .container h1::after {
     content: '';
     position: absolute;
-    width: 100px;
+    width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #6A0DAD, #0000FF, #008000, #FFFF00, #FFA500, #FF0000); /* Using the gradient directly */
-    bottom: -20px;
+    background: var(--gradient);
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
@@ -59,6 +60,8 @@
     text-align: left;
     margin-bottom: 2rem;
     font-size: 1.8rem;
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 .searchGroup {

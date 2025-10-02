@@ -98,8 +98,8 @@ const Footer = () => {
               <li><Link to="/apoio-psicopedagogico">Núcleo de Apoio Psicopedagógico</Link></li>
               <li><a href="https://ijep.com.br/login-aluno" target="_blank" rel="noopener noreferrer">Egresso</a></li>
               <li><Link to="/corpo-docente">Corpo Docente</Link></li>
-              <li><a href="membros-analistas.html">Membros Analistas</a></li>
-              <li><a href="nucleo-apoio-docente.html">Núcleo de Apoio e Desenvolvimento Docente</a></li>
+              <li><Link to="/membros-analistas">Membros Analistas</Link></li>
+              <li><Link to="/nucleo-apoio-docente">Núcleo de Apoio e Desenvolvimento Docente</Link></li>
               <li><a href="portal-do-docente.html">Portal do Docente</a></li>
               <li><Link to="/servico-para-comunidade">Serviços para a Comunidade</Link></li>
             </ul>

@@ -76,6 +76,7 @@ const Header = () => {
                 <li><Link to="/formas-de-ingresso">Formas de Ingresso</Link></li>
                 <li><Link to="/regulamentos">Regulamentos</Link></li>
                 <li><Link to="/polos">Polos</Link></li>
+                <li><Link to="/valida-dls">Design System</Link></li>
               </ul>
             </li>
             <li><Link to="/iniciacao-cientifica">Iniciação Científica</Link></li>

@@ -16,6 +16,7 @@ import ProfessorPage from '@/pages/ProfessorPage';
 import CpaPage from '@/pages/cpa/CpaPage';
 import FormasIngressoPage from '@/pages/FormasIngressoPage';
 import IniciacaoCientificaPage from '@/pages/iniciacao/IniciacaoCientificaPage';
+import MembrosAnalistasPage from '@/pages/MembrosAnalistasPage';
 import NoticiasCartaAbertaPage from '@/pages/NoticiasCartaAbertaPage';
 import NoticiasCursosPage from '@/pages/NoticiasCursosPage';
 import OuvidoriaPage from '@/pages/contato/OuvidoriaPage'
@@ -26,6 +27,7 @@ import EscolhaCursosPage from '@/pages/lista-cursos/EscolhaCursosPage';
 import CourseDetailsPage from '@/pages/curso-detalhes/CourseDetailsPage';
 import CalendarioAcademicoPage from '@/pages/calendario/CalendarioAcademicoPage';
 import NotFoundPage from '@/pages/notfound/NotFoundPage';
+import ValidaDLSPage from '@/pages/ValidaDLSPage';
 
 function App() {
   useEffect(() => {
@@ -80,7 +82,7 @@ function App() {
           <Route path="/cpa" element={<CpaPage />} />
           <Route path="/formas-de-ingresso" element={<FormasIngressoPage />} />
           <Route path="/iniciacao-cientifica" element={<IniciacaoCientificaPage />} />
-          {/* <Route path="/membros-analistas" element={<MembrosAnalistasPage />} /> */}
+          <Route path="/membros-analistas" element={<MembrosAnalistasPage />} />
           <Route path="/noticia-carta-aberta" element={<NoticiasCartaAbertaPage />} />
           <Route path="/noticia-cursos" element={<NoticiasCursosPage />} />
           <Route path="/ouvidoria" element={<OuvidoriaPage />} />
@@ -90,6 +92,7 @@ function App() {
           <Route path="/escolha-cursos" element={<EscolhaCursosPage />} />
           <Route path="/cursos/:slug" element={<CourseDetailsPage />} />
           <Route path="/calendario-academico" element={<CalendarioAcademicoPage />} />
+          <Route path="/valida-dls" element={<ValidaDLSPage />} />
           <Route path="/404" element={<NotFoundPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
