@@ -1,4 +1,4 @@
-import IniciacaoCientificaContent from '@/components/iniciacao-cientifica/IniciacaoCientificaContent';
+import { IniciacaoCientificaContent } from '@/components/domain/iniciacao-cientifica';
 
 const IniciacaoCientificaPage = () => {
   return (

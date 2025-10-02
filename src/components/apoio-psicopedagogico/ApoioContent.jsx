@@ -1,4 +1,4 @@
-import '@/components/iniciacao-cientifica/IniciacaoCientifica.css';
+import '@/components/domain/iniciacao-cientifica/iniciacao-cientifica.css';
 
 const ApoioContent = () => {
   return (

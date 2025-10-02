@@ -56,6 +56,7 @@ const Header = () => {
                 <li><a href="/#focos">Focos Acadêmicos</a></li>
                 <li><Link to="/corpo-docente">Corpo Docente</Link></li>
                 <li><Link to="/calendario-academico">Calendário Acadêmico</Link></li>
+                <li><Link to="/formas-de-ingresso">Formas de Ingresso</Link></li>
                 <li><a href="https://ijep.com.br/biblioteca-ijep" target="_blank" rel="noopener noreferrer">Biblioteca</a></li>
                 <li><a href="https://ijep.com.br/login-aluno" target="_blank" rel="noopener noreferrer">Egressos</a></li>
                 <li><Link to="/servico-para-comunidade">Serviço para Comunidade</Link></li>
@@ -72,9 +73,9 @@ const Header = () => {
                 <li><Link to="/escolha-cursos?filter=cursos">Curta e Média Duração</Link></li>
                 <li><Link to="/escolha-cursos?filter=eventos">Eventos</Link></li>
                 <li><Link to="/cursos/pos-graduacao-psicologia-junguiana">Modelo de Curso</Link></li>
-                <li><a href="formas-de-ingresso.html">Formas de Ingresso</a></li>
-                <li><a href="regulamentos.html">Regulamentos</a></li>
-                <li><a href="polos">Polos</a></li>
+                <li><Link to="/formas-de-ingresso">Formas de Ingresso</Link></li>
+                <li><Link to="/regulamentos">Regulamentos</Link></li>
+                <li><Link to="/polos">Polos</Link></li>
               </ul>
             </li>
             <li><Link to="/iniciacao-cientifica">Iniciação Científica</Link></li>

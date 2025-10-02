@@ -68,9 +68,10 @@ const Footer = () => {
                 <li><a href="/#focos">Focos Acadêmicos</a></li>
                 <li><Link to="/iniciacao-cientifica">Iniciação Científica</Link></li>
                 <li><Link to="/extensao">Extensão</Link></li>
+                <li><Link to="/formas-de-ingresso">Formas de Ingresso</Link></li>
                 <li><a href="/#noticias">Notícias</a></li>
                 <li><Link to="/cpa">Comissão Própria de Avaliação</Link></li>
-                <li><a href="calendario-academico.html">Calendário Acadêmico</a></li>
+                <li><Link to="/calendario-academico">Calendário Acadêmico</Link></li>
                 <li><a href="https://ijep.com.br/biblioteca-ijep" target="_blank" rel="noopener noreferrer">Biblioteca</a></li>
                 <li><Link to="/consultar-diploma">Consultar Diploma</Link></li>
                 <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
@@ -85,8 +86,8 @@ const Footer = () => {
               <li><a href="/?filter=especializacao#cursos">Pós-graduação</a></li>
               <li><a href="/?filter=extensao#cursos">Curta e Média Duração</a></li>
               <li><a href="/?filter=eventos#cursos">Eventos</a></li>
-              <li><a href="formas-de-ingresso.html">Formas de Ingresso</a></li>
-              <li><a href="regulamentos.html">Regulamentos</a></li>
+              <li><Link to="/formas-de-ingresso">Formas de Ingresso</Link></li>
+              <li><Link to="/regulamentos">Regulamentos</Link></li>
               <li><Link to="/polos">Polos</Link></li>
             </ul>
           </div>

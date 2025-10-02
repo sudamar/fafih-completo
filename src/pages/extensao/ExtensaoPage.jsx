@@ -1,4 +1,4 @@
-import ExtensaoTabs from '@/components/extensao/ExtensaoTabs';
+import { ExtensaoContent } from '@/components/domain/extensao';
 import { Link } from 'react-router-dom';
 
 const ExtensaoPage = () => {
@@ -15,7 +15,7 @@ const ExtensaoPage = () => {
               <p>A Curricularização da Extensão é um processo orgânico e dinâmico. Ocorre quando a Faculdade oferece importantes serviços à população, realizando a integração entre teoria e prática.</p>
             </div>
 
-            <ExtensaoTabs />
+            <ExtensaoContent />
 
             <div className="page-actions">
               <Link to="/" className="btn-page-action btn-secondary">Voltar</Link>

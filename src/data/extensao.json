@@ -1,0 +1,192 @@
+{
+  "tabs": [
+    {
+      "id": "Apresentacao",
+      "blocks": [
+        { "type": "heading", "level": 2, "text": "Seja bem-vindo à Extensão" },
+        {
+          "type": "paragraph",
+          "text": "A Curricularização da Extensão é um processo orgânico e dinâmico. Ocorre pela vontade de mudar o mundo por meio da Educação, o transformando em um lugar melhor para todos. Mais do que o cumprimento da legislação, a curricularização da extensão mudou o modelo da Educação Superior."
+        },
+        {
+          "type": "paragraph",
+          "text": "Entendendo as demandas da comunidade, podemos nos conectar com elas e realizar ações efetivas, contribuindo com uma transformação positiva da sociedade, tendo como protagonista o estudante."
+        },
+        { "type": "heading", "level": 3, "text": "Definição Legal" },
+        {
+          "type": "quote",
+          "text": "A Extensão na Educação Superior Brasileira é a atividade que se integra à matriz curricular e à organização da pesquisa, constituindo-se em processo interdisciplinar, político educacional, cultural, científico, tecnológico, que promove a interação transformadora entre as instituições de ensino superior e os outros setores da sociedade, por meio da produção e da aplicação do conhecimento, em articulação permanente com o ensino e a pesquisa. (RESOLUÇÃO MEC Nº 7, DE 18 DE DEZEMBRO DE 2018)"
+        },
+        { "type": "heading", "level": 3, "text": "O Papel da Extensão na FAFIH" },
+        {
+          "type": "paragraph",
+          "text": "Toda Instituição de Ensino Superior deve ter os três pilares da educação: Ensino, Pesquisa e Extensão. As atividades de extensão da FAFIH tem por objetivo ampliar a formação acadêmica, possibilitando experiências práticas que desenvolvam a consciência social, política, cultural e ambiental dos estudantes e de toda a comunidade acadêmica, bem como assegurar a sua com o Ensino e a Iniciação Científica, baseando-se nas necessidades e interesses reais da Sociedade."
+        },
+        { "type": "heading", "level": 3, "text": "Pilares a extensão universitária?" },
+        {
+          "type": "list",
+          "items": [
+            "Atuar como um dos pilares da educação superior e articular com o ensino e a pesquisa, conforme previsto na Constituição Federal.",
+            "Aplicar na prática o conhecimento produzido na faculdade para a sociedade, realizando a conexão entre a academia e o mundo exterior em situações reais.",
+            "Promover a formação integral do estudante como cidadão crítico, ético e responsável.",
+            "Oferecer ao corpo docente a oportunidade de validar a teoria na prática e atualizar seu o conteúdo didático, quando necessário.",
+            "Levar o conhecimento acadêmico, recursos da faculdade e serviços especializados para a população.",
+            "Incluir projetos sociais, cursos, oficinas, eventos prestação de serviços à comunidade em diversas áreas.",
+            "Atuar na solução de problemas reais e contribuir para o desenvolvimento econômico, social e cultural do entorno.",
+            "Interagir com a sociedade como um processo educativo, cultural e científico.",
+            "Proporcionar que toda a comunidade acadêmica aprenda com as experiências e saberes locais.",
+            "Ter na matriz curricular dos cursos de graduação a dedicação de, no mínimo, dez por cento (10%) do total da carga horária curricular, conforme previsto na Resolução nº 7, de 18 de dezembro de 2018."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Programas",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Em breve, a lista de programas será disponibilizada.",
+          "emphasis": "italic"
+        }
+      ]
+    },
+    {
+      "id": "Atividades",
+      "activities": {
+        "title": "Projetos de Extensão",
+        "description": "Consulte abaixo a lista de projetos de extensão disponíveis. Clique no nome do projeto para ver mais detalhes e informações sobre como participar.",
+        "projects": [
+          {
+            "name": "Oficinas de Arte e Saúde Mental",
+            "startDate": "01/03/2025",
+            "endDate": "15/05/2025",
+            "modality": "Oficina",
+            "hours": "40h",
+            "area": "Psicologia Analítica",
+            "info": "Promover o bem-estar emocional em comunidades locais através de oficinas de arteterapia."
+          },
+          {
+            "name": "Círculos de Leitura Filosófica",
+            "startDate": "15/02/2025",
+            "endDate": "30/04/2025",
+            "modality": "Evento",
+            "hours": "30h",
+            "area": "Filosofia",
+            "info": "Estimular o pensamento crítico e o diálogo filosófico com a comunidade externa por meio de encontros de leitura."
+          }
+        ],
+        "schedule": [
+          { "activity": "Planejamento e Contato com a Comunidade", "hours": "4h" },
+          { "activity": "Execução das Atividades", "hours": "30h" },
+          { "activity": "Relatório e Avaliação", "hours": "6h" }
+        ]
+      }
+    },
+    {
+      "id": "Jornada",
+      "journey": {
+        "title": "Jornada do Estudante na Extensão",
+        "steps": [
+          {
+            "title": "Início",
+            "description": "Acesse em seu AVA, na aba EXTENSÃO, as atividades disponíveis para realização.",
+            "icon": "flag",
+            "iconPosition": "left"
+          },
+          {
+            "title": "Escolha da Atividade",
+            "description": "1. Selecione a atividade de extensão que deseja participar.\n2. Faça a leitura completa da atividade.\n3. Busque um local na comunidade para realizá-la.",
+            "icon": "tools",
+            "iconPosition": "right"
+          },
+          {
+            "title": "Documentação",
+            "description": "Os documentos necessários para realizar a atividade de extensão encontram-se disponíveis na aba \"Regulamentação\" nesta página.",
+            "icon": "document",
+            "iconPosition": "left"
+          },
+          {
+            "title": "Desenvolvimento",
+            "description": "Uma vez que você aderiu à atividade, ela ficará disponível em \"minhas atividades\". Após a realização, você fará a submissão das evidências na etapa \"Comprovação\".",
+            "icon": "checklist",
+            "iconPosition": "right"
+          },
+          {
+            "title": "Avaliação da Comunidade",
+            "description": "Após o preenchimento do questionário, será disponibilizado um link para avaliação da comunidade. Encaminhe este link para o responsável do local onde a atividade foi realizada, para que possa fazer a avaliação sobre sua atuação e o impacto social do trabalho realizado.",
+            "icon": "people",
+            "iconPosition": "left"
+          },
+          {
+            "title": "Avaliação e Encerramento",
+            "description": "Aguarde a validação das evidências. Ao final da jornada, você terá acesso ao certificado ou declaração de conclusão, com a creditação da carga horária de extensão.",
+            "icon": "certificate",
+            "iconPosition": "right"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Editais",
+      "documents": {
+        "title": "Editais de Extensão",
+        "description": "Fique atento aos editais para submissão de novos projetos de extensão e oportunidades de participação.",
+        "items": [
+          { "label": "Edital 001/2025 - Projetos de Extensão", "url": "#" },
+          { "label": "Edital 002/2025 - Programas Contínuos", "url": "#" }
+        ]
+      }
+    },
+    {
+      "id": "Regulamentacao",
+      "documents": {
+        "title": "Regulamentação e Documentos",
+        "groups": [
+          {
+            "title": "Documentos Legais",
+            "description": "Consulte aqui, os documentos legais que regulamentam a extensão universitária.",
+            "items": [
+              {
+                "label": "RESOLUÇÃO Nº 7, DE 18 DE DEZEMBRO DE 2018 - Diretrizes para Extensão na Educação Superior",
+                "url": "https://portal.mec.gov.br/index.php?option=com_docman&view=download&alias=105102-rces007-18&Itemid=30192",
+                "external": true
+              }
+            ]
+          },
+          {
+            "title": "Documentos Institucionais",
+            "description": "Consulte aqui, os documentos para o desenvolvimento das atividades extensionistas.",
+            "items": [
+              { "label": "FORMULÁRIO DE PROPOSTA DE ATIVIDADE", "url": "#" },
+              { "label": "PLANO DE ENSINO DA ATIVIDADE DE EXTENSÃO", "url": "#" },
+              { "label": "FORMULÁRIO DE AVALIAÇÃO DAS ATIVIDADES DE EXTENSÃO", "url": "#" },
+              { "label": "FICHA DE FREQUÊNCIA", "url": "#" },
+              { "label": "TERMO DE CESSÃO DE USO DE IMAGEM", "url": "#" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "FAQ",
+      "faq": {
+        "title": "FAQ | Curricularização da Extensão",
+        "groupTitle": "1. Conceitos e Normativas",
+        "items": [
+          {
+            "question": "1.1. Qual é o conceito de extensão curricular?",
+            "answer": "A extensão integra a matriz curricular com atividades e projetos que vão além do currículo formal, ampliando oportunidades de aprendizagem e envolvimento estudantil. Complementa a formação com experiências enriquecedoras e desenvolve competências acadêmicas e socioemocionais, como colaboração, liderança, resiliência, pensamento crítico e ética. Seu objetivo central é levar conhecimento e habilidades técnicas da instituição à comunidade, atendendo suas demandas."
+          },
+          {
+            "question": "1.2. Qual é a norma do Ministério da Educação que estabelece as diretrizes da curricularização da extensão?",
+            "answer": "Resolução nº 7, de 18 de dezembro de 2018, que estabelece as Diretrizes para a Extensão na Educação Superior Brasileira."
+          },
+          {
+            "question": "1.3. Quais são as modalidades de atividades de extensão determinadas na Resolução nº 7, de 18 de dezembro de 2018?",
+            "answer": "As atividades extensionistas, segundo sua caracterização nos Projetos Político-pedagógicos dos cursos, inserem-se nas seguintes modalidades:\n\n• Programas: atividades integradas, de médio e longo prazo, orientadas a um objetivo comum, articulando projetos e outras atividades de extensão.\n• Projetos: atividade de caráter educativo, social, cultural, científico, tecnológico com prazo determinado.\n• Cursos e oficinas: cursos de atualização, treinamento, qualificação profissional, aperfeiçoamento.\n• Eventos: congresso, seminário, ciclo de debates, exposição, espetáculo, evento esportivo, festival.\n• Prestação de serviço: serviço de consultoria, assessoria e curadoria, assistência à saúde humana, assistência à saúde animal, assistência jurídica e judicial."
+          }
+        ]
+      }
+    }
+  ]
+}

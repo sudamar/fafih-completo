@@ -2,55 +2,53 @@ const ServicoParaComunidadeContent = () => {
   return (
     <section className="page-section">
       <div className="container">
-        <h1>Serviço para Comunidade</h1>
-
-        <div className="servico-intro">
-          <p>A FAFIH acredita na importância de estabelecer uma ponte sólida entre a universidade e a comunidade, oferecendo serviços especializados que promovem o desenvolvimento social, cultural e educacional da região.</p>
+        <div className="section-header">
+          <h1 className="page-title">Serviço para Comunidade</h1>
         </div>
 
-        <div className="content-section">
-          <h2>Nossa Responsabilidade Social</h2>
-          <p>Como instituição de ensino superior comprometida com a transformação social, a FAFIH desenvolve projetos e oferece serviços que atendem às necessidades da comunidade local e regional, aplicando nosso conhecimento em artes, filosofia e estudos do imaginário humano para benefício de todos.</p>
-        </div>
+        <p className="page-intro">
+          A FAFIH acredita na importância de estabelecer uma ponte sólida entre a universidade e a comunidade,
+          oferecendo serviços especializados que promovem o desenvolvimento social, cultural e educacional da região.
+        </p>
 
         <div className="content-section">
-          <h2>Serviços Oferecidos</h2>
+          <h2 className="card-heading">Serviços Oferecidos</h2>
 
           <div className="servicos-grid">
             <div className="servico-item">
-              <h3>Atendimento Psicológico Comunitário</h3>
+              <h3 className="card-subheading">Atendimento Psicológico Comunitário</h3>
               <p>Oferecemos atendimento psicológico baseado na abordagem junguiana para a comunidade, com preços acessíveis e atendimento gratuito para casos de vulnerabilidade social.</p>
             </div>
 
             <div className="servico-item">
-              <h3>Oficinas de Arte e Criatividade</h3>
+              <h3 className="card-subheading">Oficinas de Arte e Criatividade</h3>
               <p>Workshops e oficinas abertas ao público, explorando diferentes formas de expressão artística como meio de desenvolvimento pessoal e comunitário.</p>
             </div>
 
             <div className="servico-item">
-              <h3>Círculos de Diálogo Filosófico</h3>
+              <h3 className="card-subheading">Círculos de Diálogo Filosófico</h3>
               <p>Encontros comunitários para discussão de temas filosóficos relevantes, promovendo o pensamento crítico e o debate construtivo sobre questões contemporâneas.</p>
             </div>
 
             <div className="servico-item">
-              <h3>Consultoria em Desenvolvimento Humano</h3>
+              <h3 className="card-subheading">Consultoria em Desenvolvimento Humano</h3>
               <p>Assessoria para organizações não governamentais, empresas e instituições públicas em projetos de desenvolvimento humano e cultural.</p>
             </div>
 
             <div className="servico-item">
-              <h3>Programas de Capacitação</h3>
+              <h3 className="card-subheading">Programas de Capacitação</h3>
               <p>Cursos e treinamentos para profissionais da área de saúde, educação e assistência social, focados em abordagens inovadoras do cuidado humano.</p>
             </div>
 
             <div className="servico-item">
-              <h3>Eventos Culturais e Educativos</h3>
+              <h3 className="card-subheading">Eventos Culturais e Educativos</h3>
               <p>Palestras, seminários, exposições e apresentações artísticas abertas ao público, promovendo o acesso ao conhecimento e à cultura.</p>
             </div>
           </div>
         </div>
 
         <div className="content-section">
-          <h2>Parcerias e Colaborações</h2>
+          <h2 className="card-heading no-underline">Parcerias e Colaborações</h2>
           <p>Trabalhamos em parceria com:</p>
           <ul>
             <li>Secretarias municipais de Saúde, Educação e Cultura</li>
@@ -63,26 +61,28 @@ const ServicoParaComunidadeContent = () => {
         </div>
 
         <div className="content-section">
-          <h2>Projetos em Andamento</h2>
+          <h2 className="card-heading no-underline">Projetos em Andamento</h2>
 
-          <div className="projeto-destaque">
-            <h3>Projeto "Arte e Cura"</h3>
-            <p>Programa de arteterapia em hospitais e centros de saúde, utilizando a expressão artística como ferramenta complementar no processo de cura e bem-estar.</p>
-          </div>
+          <div className="projetos-grid">
+            <div className="projeto-destaque">
+              <h3 className="card-subheading">Projeto "Arte e Cura"</h3>
+              <p>Programa de arteterapia em hospitais e centros de saúde, utilizando a expressão artística como ferramenta complementar no processo de cura e bem-estar.</p>
+            </div>
 
-          <div className="projeto-destaque">
-            <h3>Programa "Filosofia na Escola"</h3>
-            <p>Iniciativa que leva o ensino de filosofia para escolas públicas da região, desenvolvendo o pensamento crítico e reflexivo em crianças e adolescentes.</p>
-          </div>
+            <div className="projeto-destaque">
+              <h3 className="card-subheading">Programa "Filosofia na Escola"</h3>
+              <p>Iniciativa que leva o ensino de filosofia para escolas públicas da região, desenvolvendo o pensamento crítico e reflexivo em crianças e adolescentes.</p>
+            </div>
 
-          <div className="projeto-destaque">
-            <h3>Centro de Estudos do Imaginário Popular</h3>
-            <p>Pesquisa e preservação das tradições culturais locais, promovendo o reconhecimento e valorização do patrimônio cultural imaterial da região.</p>
+            <div className="projeto-destaque">
+              <h3 className="card-subheading">Centro de Estudos do Imaginário Popular</h3>
+              <p>Pesquisa e preservação das tradições culturais locais, promovendo o reconhecimento e valorização do patrimônio cultural imaterial da região.</p>
+            </div>
           </div>
         </div>
 
         <div className="content-section">
-          <h2>Como Participar</h2>
+          <h2 className="card-heading no-underline">Como Participar</h2>
           <p>A comunidade pode participar de nossos serviços através de:</p>
           <ul>
             <li><strong>Inscrições diretas:</strong> Para oficinas, palestras e eventos abertos</li>
@@ -93,7 +93,7 @@ const ServicoParaComunidadeContent = () => {
         </div>
 
         <div className="content-section">
-          <h2>Impacto Social</h2>
+          <h2 className="card-heading no-underline">Impacto Social</h2>
           <p>Nossos serviços já impactaram:</p>
           <div className="impacto-numeros">
             <div className="numero-item">
@@ -116,7 +116,7 @@ const ServicoParaComunidadeContent = () => {
         </div>
 
         <div className="content-section">
-          <h2>Entre em Contato</h2>
+          <h2 className="card-heading no-underline">Entre em Contato</h2>
           <p>Para mais informações sobre nossos serviços para a comunidade ou para propor parcerias:</p>
           <div className="contato-info">
             <p><strong>E-mail:</strong> comunidade@fafih.edu.br</p>
@@ -127,51 +127,8 @@ const ServicoParaComunidadeContent = () => {
       </div>
 
       <style jsx>{`
-        .page-section {
-          padding: 2rem 0;
-        }
-
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1rem;
-        }
-
-        h1 {
-          color: #2105D0;
-          text-align: center;
-          margin-bottom: 2rem;
-          font-size: 2.5rem;
-        }
-
-        .servico-intro {
-          background: #f8f9ff;
-          padding: 2rem;
-          border-radius: 8px;
-          margin-bottom: 3rem;
-          text-align: center;
-        }
-
-        .servico-intro p {
-          font-size: 1.2rem;
-          color: #333;
-          margin: 0;
-        }
-
         .content-section {
           margin-bottom: 3rem;
-        }
-
-        .content-section h2 {
-          color: #2105D0;
-          margin-bottom: 1rem;
-          font-size: 1.8rem;
-        }
-
-        .content-section h3 {
-          color: #0A2342;
-          margin-bottom: 0.5rem;
-          font-size: 1.3rem;
         }
 
         .content-section p {
@@ -180,92 +137,109 @@ const ServicoParaComunidadeContent = () => {
           margin-bottom: 1rem;
         }
 
-        .servicos-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 2rem;
-          margin-top: 2rem;
+        .content-section > .card-heading {
+          font-size: 1.6rem;
         }
 
-        .servico-item {
-          background: white;
-          padding: 2rem;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-          border-left: 4px solid #05B18B;
-        }
-
-        .servico-item h3 {
-          color: #05B18B;
-          margin-bottom: 1rem;
-        }
-
-        .projeto-destaque {
-          background: #f0f8ff;
-          padding: 1.5rem;
-          border-radius: 8px;
-          margin-bottom: 1.5rem;
-          border-left: 4px solid #2105D0;
-        }
-
-        .projeto-destaque h3 {
-          color: #2105D0;
-          margin-bottom: 0.5rem;
-        }
-
-        .impacto-numeros {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 2rem;
-          margin-top: 2rem;
-        }
-
-        .numero-item {
-          text-align: center;
-          padding: 1.5rem;
-          background: linear-gradient(135deg, #2105D0, #05B18B);
-          color: white;
-          border-radius: 8px;
-        }
-
-        .numero {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: bold;
-          margin-bottom: 0.5rem;
-        }
-
-        .descricao {
-          font-size: 0.9rem;
-        }
-
-        .contato-info {
-          background: #f8f9ff;
-          padding: 1.5rem;
-          border-radius: 8px;
+        .content-section > .card-heading + p {
           margin-top: 1rem;
         }
 
-        .contato-info p {
-          margin: 0.5rem 0;
-          color: #333;
+        .servicos-grid,
+        .impacto-numeros {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
         }
 
-        ul {
-          padding-left: 1.5rem;
+        .projetos-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          margin-top: 2rem;
         }
 
-        li {
-          margin-bottom: 0.5rem;
-          color: #555;
-          line-height: 1.6;
+        .servico-item,
+        .projeto-destaque {
+          background: #fff;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          border-radius: 8px;
+          padding: 1.5rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .servico-item::before,
+        .projeto-destaque::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(135deg, rgba(33, 5, 208, 0.03), rgba(5, 177, 139, 0.03));
+          opacity: 0;
+          transition: opacity 0.3s ease;
+          pointer-events: none;
+        }
+
+        .servico-item:hover,
+        .projeto-destaque:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .servico-item:hover::before,
+        .projeto-destaque:hover::before {
+          opacity: 1;
+        }
+
+        .numero-item {
+          background: linear-gradient(135deg, #2105D0, #05B18B);
+          color: #ffffff;
+          text-align: center;
+          border-radius: 8px;
+          padding: 2rem 1.5rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+          transition: all 0.3s ease;
+        }
+
+        .numero-item:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .numero {
+          font-size: 2.6rem;
+          font-weight: 700;
+        }
+
+        .descricao {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+
+        .contato-info {
+          background: linear-gradient(135deg, rgba(33, 5, 208, 0.06), rgba(5, 177, 139, 0.06));
+          border: 1px solid rgba(33, 5, 208, 0.12);
+          border-radius: 8px;
+          padding: 1.5rem;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (max-width: 1024px) {
+          .projetos-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         @media (max-width: 768px) {
-          h1 {
-            font-size: 2rem;
-          }
-
           .servicos-grid {
             grid-template-columns: 1fr;
           }
@@ -274,10 +248,12 @@ const ServicoParaComunidadeContent = () => {
             grid-template-columns: repeat(2, 1fr);
           }
 
-          .servico-intro {
+          .servico-item,
+          .projeto-destaque {
             padding: 1.5rem;
           }
         }
+
       `}</style>
     </section>
   );

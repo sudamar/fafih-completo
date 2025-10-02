@@ -15,6 +15,18 @@ Este documento define a estratégia de migração da aplicação FAFIH para uma 
 - **Rotas duplicadas**: Centralização do roteamento no React
 - **Estilos inconsistentes**: Design system unificado
 
+#### 🎨 Padrões de títulos
+- `h1.page-title` exibe o traço colorido inferior e mantém a hierarquia principal da página.
+- `h2` de seções usa a classe `card-heading` — **azul escuro: #2A5BBD** — e, se necessário, a variante `no-underline` remove o traço decorativo.
+- `h3` dentro de cards/seções usa `card-subheading`, garantindo o **azul claro: #2C678F (var(--secondary-color))** e tipografia consistente.
+- Quando precisar ajustar tamanhos específicos de cards, sobrescreva apenas font-size/margem localmente, mantendo `card-heading`/`card-subheading` para cores e ausência de linhas.
+
+#### 🧊 Cards informativos
+- **Card Elevated**: base utilizada em `.info-card`, `.servico-item`, `.projeto-destaque`, `.numero-item`, `.contato-info`, `.ingresso-card`; fundo branco, borda 1px e sombra média com hover suave (gradiente sutil aplicado via pseudo-elemento).
+- **Card Accent-Left**: para versões com barra lateral azul (ex.: antigos destaques), aplicar classe utilitária `card-accent-left` (definida junto ao estilo base) sobre o card elevado, mantendo borda lateral gradiente.
+- **Card Course**: mantém estrutura de curso (hero/sidebar) e reaproveita `card-heading`/`card-subheading`; evitar definir sombras locais — usar o estilo base de cards elevados.
+- Evite duplicar CSS; reutilize as classes listadas e ajuste apenas elementos internos (ícones, métricas) quando necessário.
+
 ### 🚀 **Benefícios Esperados**
 - **Manutenibilidade**: Código mais organizado e testável
 - **Escalabilidade**: Preparado para crescimento de funcionalidades

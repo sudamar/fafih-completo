@@ -5,7 +5,7 @@ import CalendarFilters from './CalendarFilters.jsx';
 import CalendarLegend from './CalendarLegend.jsx';
 import CalendarEventsList from './CalendarEventsList.jsx';
 import CalendarSchedules from './CalendarSchedules.jsx';
-import '@/components/iniciacao-cientifica/IniciacaoCientifica.css';
+import '@/components/domain/iniciacao-cientifica/iniciacao-cientifica.css';
 
 const sortByDate = (events) => events.slice().sort((a, b) => new Date(a.date) - new Date(b.date));
 

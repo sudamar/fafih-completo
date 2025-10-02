@@ -1,0 +1,30 @@
+{
+  "intro": "Descubra os caminhos para se tornar um aluno da FAFIH e iniciar sua jornada de transformação através do conhecimento.",
+  "options": [
+    {
+      "title": "Vestibular",
+      "description": "Realize uma redação e uma prova com 15 questões de Matemática e Língua Portuguesa. Não cobramos taxa de inscrição e o resultado sai na hora.",
+      "action": { "label": "Saiba Mais e Inscreva-se", "url": "#" }
+    },
+    {
+      "title": "ENEM",
+      "description": "Utilize sua nota do ENEM e ingresse sem novo vestibular. Uma forma prática de aproveitar seu desempenho e garantir sua vaga.",
+      "action": { "label": "Consulte as Condições", "url": "#" }
+    },
+    {
+      "title": "Transferência Externa",
+      "description": "Continue sua graduação conosco. Solicite a transferência e aproveite disciplinas já cursadas, mediante análise curricular.",
+      "action": { "label": "Veja o Edital", "url": "#" }
+    },
+    {
+      "title": "Portador de Diploma",
+      "description": "Já possui uma graduação? Inicie uma nova jornada eliminando matérias equivalentes (sujeito à análise acadêmica e disponibilidade de vagas).",
+      "action": { "label": "Inicie sua Solicitação", "url": "#" }
+    }
+  ],
+  "pageActions": [
+    { "label": "Voltar", "url": "/", "variant": "secondary" },
+    { "label": "Edital do Processo Seletivo", "url": "#", "variant": "secondary" },
+    { "label": "Inscreva-se Agora", "url": "#", "variant": "primary" }
+  ]
+}
