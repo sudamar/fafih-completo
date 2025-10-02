@@ -24,6 +24,17 @@ export default defineConfig([
     },
     rules: {
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-restricted-imports': [
+        'warn',
+        {
+          patterns: [
+            {
+              group: ['@/components/ui', '@/components/ui/*'],
+              message: 'Use design-system exports from "src/design-system" instead of importing de "@/components/ui".',
+            },
+          ],
+        },
+      ],
     },
   },
 ])

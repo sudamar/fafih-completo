@@ -35,6 +35,14 @@ Este documento define a estratégia de migração da aplicação FAFIH para uma 
 - **Highlight Cards**: cards de destaque usados em páginas de curso (CourseDetailsPage) com gradiente de fundo e ícone colorido. Estrutura visual: ícone no topo com gradiente circular, título em negrito, descrição curta. Gradientes mapeados por cores (blue, green, purple, red, amber, yellow, indigo) com fallback padrão.
 - Evite duplicar CSS; reutilize as classes listadas e ajuste apenas elementos internos (ícones, métricas) quando necessário.
 
+#### 🧩 Biblioteca do Design System
+- Componentes base ficam em `src/design-system` e devem ser importados sempre por `@/design-system`.
+- Exemplo de uso: `import { Heading, Card, CardGrid } from '@/design-system';`
+- `Heading` mapeia automaticamente níveis (h1 → `page-title`, h2 → `card-heading`, h3 → `card-subheading`) e aceita `noUnderline` quando necessário.
+- `Card` fornece o container elevado unificado (`variant="default"`) e a variação com barra lateral (`variant="accent"`).
+- `CardGrid` facilita grids responsivos de cards, com `columns` opcional para ajustes específicos.
+- Não criar componentes fora dessa biblioteca; se surgir uma nova necessidade estética, evoluir primeiro o catálogo `design-system`.
+
 ### 🚀 **Benefícios Esperados**
 - **Manutenibilidade**: Código mais organizado e testável
 - **Escalabilidade**: Preparado para crescimento de funcionalidades
